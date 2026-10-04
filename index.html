@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insight - Vibrant News & Stories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Vercel Web Analytics & Speed Insights Integration -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            orange: '#f97316',
+                            yellow: '#eab308',
+                            cyan: '#06b6d4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #8b5cf6, #ec4899); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #7c3aed, #db2777); }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-left.active { opacity: 1; transform: translateX(0); }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Blob Backgrounds */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Card Hover Effects */
+        .hover-card {
+            transition: all 0.4s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+        }
+
+        /* Tab Active States */
+        .tab-btn.active {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Background Blobs for extra color -->
+    <div class="blob bg-brand-purple w-96 h-96 rounded-full top-0 left-0"></div>
+    <div class="blob bg-brand-pink w-96 h-96 rounded-full top-40 right-0"></div>
+    <div class="blob bg-brand-cyan w-96 h-96 rounded-full bottom-0 left-1/4"></div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-lg border-b border-white/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center text-white font-bold text-xl shadow-lg animate-bounce" style="animation-duration: 3s;">
+                        GI
+                    </div>
+                    <span class="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange">
+                        Global Insight
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-purple to-brand-pink transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#news" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors relative group">
+                        News & Articles
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-purple to-brand-pink transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#stories" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors relative group">
+                        Stories
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-purple to-brand-pink transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="px-6 py-2 rounded-full text-white font-bold bg-gradient-to-r from-brand-orange to-brand-pink hover:from-brand-pink hover:to-brand-purple shadow-lg hover:shadow-brand-pink/50 transition-all transform hover:scale-105">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-pink focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-bold text-gray-800 hover:bg-brand-pink/10 hover:text-brand-pink">Home</a>
+                <a href="#news" class="block px-3 py-2 rounded-md text-base font-bold text-gray-800 hover:bg-brand-pink/10 hover:text-brand-pink">News & Articles</a>
+                <a href="#stories" class="block px-3 py-2 rounded-md text-base font-bold text-gray-800 hover:bg-brand-pink/10 hover:text-brand-pink">Stories</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-bold text-brand-purple hover:bg-brand-purple/10">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-pink-50 -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-pink/20 mb-6">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink font-bold">
+                            <i class="fas fa-sparkles mr-2 text-brand-pink"></i> Discover the Extraordinary
+                        </span>
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                        Explore <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink">Ideas, News & Stories</span> 
+                        That Inspire.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl font-light">
+                        Dive into a colorful universe of knowledge. From global headlines and cutting-edge tech to enchanting stories for all ages, we bring the world directly to your fingertips in vivid detail.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#news" class="px-8 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-brand-purple to-brand-pink hover:from-brand-pink hover:to-brand-purple shadow-xl hover:shadow-brand-pink/50 transition-all transform hover:-translate-y-1">
+                            Read Latest News
+                        </a>
+                        <a href="#stories" class="px-8 py-4 rounded-full text-gray-800 font-bold text-lg bg-white border-2 border-brand-purple hover:bg-brand-purple/5 shadow-lg transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                            <i class="fas fa-book-open text-brand-purple"></i> Explore Stories
+                        </a>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block reveal">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-pink to-brand-orange rounded-[3rem] transform rotate-6 opacity-30 animate-pulse"></div>
+                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" alt="News and Ideas" class="relative z-10 rounded-[3rem] shadow-2xl animate-float border-4 border-white">
+                    
+                    <!-- Floating badges -->
+                    <div class="absolute -left-10 top-1/4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 4s;">
+                        <i class="fas fa-globe-americas text-3xl text-brand-cyan"></i>
+                    </div>
+                    <div class="absolute -right-5 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 5s;">
+                        <i class="fas fa-rocket text-3xl text-brand-orange"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-24 relative bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-4xl font-extrabold mb-4">Trending <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-cyan">News & Articles</span></h2>
+                <p class="text-gray-500 text-lg">Stay updated with comprehensive, beautifully detailed articles across diverse categories. Click the categories below to filter our vast collection of knowledge.</p>
+            </div>
+
+            <!-- News Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal" id="news-tabs">
+                <button class="tab-btn active px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-600 transition-all duration-300" data-target="world">
+                    <i class="fas fa-globe mr-2"></i> World
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200" data-target="tech">
+                    <i class="fas fa-microchip mr-2"></i> Technology
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200" data-target="health">
+                    <i class="fas fa-heartbeat mr-2"></i> Health
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200" data-target="business">
+                    <i class="fas fa-chart-line mr-2"></i> Business
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-full font-semibold bg-gray-100 text-gray-600 transition-all duration-300 hover:bg-gray-200" data-target="entertainment">
+                    <i class="fas fa-film mr-2"></i> Entertainment
+                </button>
+            </div>
+
+            <!-- News Content Container -->
+            <div id="news-content-container" class="relative min-h-[600px]">
+                
+                <div class="news-category grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500" id="cat-world">
+                    <!-- Article 1 -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1529245005118-2e1d7f57cb59?q=80&w=800&auto=format&fit=crop" alt="World Summit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-cyan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">World</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 4, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-purple transition-colors">Global Climate Summit Reaches Historic Agreement on Emissions</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">World leaders convened in Geneva today to sign a sweeping new treaty aimed at drastically reducing carbon emissions over the next decade. The comprehensive plan involves massive investments in green energy infrastructure across developing nations.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-purple flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?q=80&w=800&auto=format&fit=crop" alt="City Aerial" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-cyan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">World</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 3, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-purple transition-colors">European Union Announces Expansion Plans for 2027</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">In a surprising turn of events, the European parliament has fast-tracked the accession process for three neighboring countries. This monumental shift in policy aims to bolster economic stability in the region amidst shifting global trade dynamics.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-purple flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <!-- Article 3 -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="Space" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-cyan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Space</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 2, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-purple transition-colors">International Space Station Transition Plan Finalized</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Space agencies worldwide have agreed on a collaborative framework to de-orbit the aging ISS while simultaneously launching modular commercial stations. This marks the beginning of a new era of private-public partnerships in low Earth orbit.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-purple flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500" id="cat-tech">
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" alt="Cyber Security" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Tech</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 4, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-cyan transition-colors">Quantum Computing Reaches Crucial Milestone in Error Correction</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Researchers have successfully demonstrated logical qubits with lower error rates than their physical counterparts. This breakthrough theoretically paves the way for scalable, fault-tolerant quantum computers capable of solving complex molecular simulations.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-cyan flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop" alt="AI Brain" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">AI</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 3, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-cyan transition-colors">Next-Gen AI Models Show Unprecedented Reasoning Capabilities</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">The latest iterations of generative AI have surprised developers with their ability to perform multi-step logical deduction without prompt engineering. The implications for automated software engineering and scientific research are staggering.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-cyan flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop" alt="Matrix Code" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Software</div>
+                        </div>
+                        <div class="p-8">
+                            <div class="text-sm text-gray-400 mb-3 flex items-center gap-2"><i class="far fa-clock"></i> October 1, 2026</div>
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-cyan transition-colors">Open Source Security Initiative Gains Major Corporate Backing</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Following recent vulnerabilities in foundational web protocols, a consortium of tech giants has pledged $500 million to audit and secure critical open-source infrastructure. Independent developers welcome the financial support.</p>
+                            <a href="#" class="text-brand-pink font-semibold hover:text-brand-cyan flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health -->
+                <div class="news-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500" id="cat-health">
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=800&auto=format&fit=crop" alt="Medical" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Health</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-pink transition-colors">Breakthrough in Personalized mRNA Therapies for Autoimmune Diseases</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">A new clinical trial shows promising results using customized mRNA vaccines to re-train the immune system, potentially offering a functional cure for conditions like Lupus and Rheumatoid Arthritis.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop" alt="Yoga" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Wellness</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-pink transition-colors">The Rise of 'Micro-Workouts': Why 10 Minutes is All You Need</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Sports scientists confirm that accumulating short bursts of high-intensity activity throughout the day provides cardiovascular benefits comparable to traditional 45-minute gym sessions.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?q=80&w=800&auto=format&fit=crop" alt="Healthy Food" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-pink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Nutrition</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-pink transition-colors">Gut Microbiome Diversity Linked to Improved Mental Resilience</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">A decade-long study mapping the gut-brain axis reveals that consuming a wide variety of fermented foods and prebiotic fibers significantly reduces markers of stress and anxiety in adults.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business -->
+                <div class="news-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500" id="cat-business">
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop" alt="Stock Market" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Finance</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-orange transition-colors">Global Markets Rally as Inflation Cools Faster Than Expected</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Central banks cautiously signal a pause in interest rate hikes after the latest consumer price index reports show inflation normalizing across major economies, sending tech stocks soaring.</p>
+                            <a href="#" class="text-brand-pink font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Corporate Building" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Business</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-orange transition-colors">The 4-Day Workweek is Becoming the New Corporate Standard</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Following highly successful pilot programs in the UK and Japan, multinational corporations are permanently adopting reduced-hour schedules, citing increased productivity and employee retention.</p>
+                            <a href="#" class="text-brand-pink font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop" alt="Startup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Startups</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-orange transition-colors">Green-Tech Startups Secure Record Funding in Q3</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Venture capital firms are shifting massive amounts of capital toward sustainable agriculture and carbon-capture startups, marking a definitive pivot away from traditional consumer software apps.</p>
+                            <a href="#" class="text-brand-pink font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertainment -->
+                <div class="news-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-opacity duration-500" id="cat-entertainment">
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=800&auto=format&fit=crop" alt="Cinema" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-yellow text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Movies</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-yellow transition-colors">Indie Sci-Fi Thriller Sweeps Major Awards at Cannes</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">A low-budget, mind-bending film shot entirely on smartphones has shocked critics by taking home the prestigious Palme d'Or, proving that compelling narrative trumps massive VFX budgets.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1493225457289-732386dc018a?q=80&w=800&auto=format&fit=crop" alt="Concert" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-yellow text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Music</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-yellow transition-colors">Virtual Reality Concerts Blur the Line Between Audience and Performer</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Major artists are utilizing advanced volumetric capture to host global concerts where fans can walk around the stage as avatars in real-time, revolutionizing the live music industry.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover-card group">
+                        <div class="relative overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=800&auto=format&fit=crop" alt="Camera" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-brand-yellow text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Culture</div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-3 group-hover:text-brand-yellow transition-colors">The Return of Analog: Why Gen Z is Ditching Digital for Film</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Sales of vintage film cameras and point-and-shoots have skyrocketed 300% this year. Cultural analysts attribute the trend to a desire for tangible memories and imperfect, authentic aesthetics.</p>
+                            <a href="#" class="text-brand-purple font-semibold flex items-center gap-1">Read Full Article <i class="fas fa-arrow-right text-sm"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="stories" class="py-24 relative bg-gray-50 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-purple/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h2 class="text-4xl font-extrabold mb-4">Enchanting <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-orange">Stories</span></h2>
+                <p class="text-gray-500 text-lg">Immerse yourself in tales of wonder, mystery, and drama. Choose a category below to dive into our curated collection of short stories.</p>
+            </div>
+
+            <!-- Story Toggle -->
+            <div class="flex justify-center mb-12 reveal">
+                <div class="bg-white p-1.5 rounded-full shadow-md border border-gray-200 inline-flex">
+                    <button class="story-tab active px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 bg-gradient-to-r from-brand-purple to-brand-pink text-white shadow-md" data-target="children">
+                        <i class="fas fa-child mr-2"></i> Children's Stories
+                    </button>
+                    <button class="story-tab px-8 py-3 rounded-full font-bold text-sm text-gray-600 transition-all duration-300 hover:text-brand-purple" data-target="adults">
+                        <i class="fas fa-user-tie mr-2"></i> Adult Stories
+                    </button>
+                </div>
+            </div>
+
+            <div id="stories-container" class="relative">
+                
+                <!-- Children's Stories -->
+                <div class="story-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="story-children">
+                    <div class="bg-white rounded-3xl p-6 shadow-xl border border-brand-purple/10 hover-card relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-pink/10 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" alt="Magical Forest">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-brand-cyan/20 text-brand-cyan font-bold px-3 py-1 rounded-full text-xs">Adventure</span>
+                            <span class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">The Magical Forest of Eldoria</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Little Timmy wandered past the old oak tree, only to find the leaves shimmering in hues of violet and gold. A tiny, glowing creature appeared, inviting him on an adventure...</p>
+                        <button class="w-full py-3 rounded-xl bg-brand-purple/10 text-brand-purple font-bold hover:bg-brand-purple hover:text-white transition-colors">Read Story</button>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-6 shadow-xl border border-brand-purple/10 hover-card relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                        <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" alt="Dragon">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-brand-orange/20 text-brand-orange font-bold px-3 py-1 rounded-full text-xs">Fantasy</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Barnaby, The Clumsy Dragon</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Unlike other dragons who breathed terrifying fire, Barnaby could only sneeze bubbles. But when the village faced a unique problem, bubbles were exactly what they needed...</p>
+                        <button class="w-full py-3 rounded-xl bg-brand-purple/10 text-brand-purple font-bold hover:bg-brand-purple hover:text-white transition-colors">Read Story</button>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 shadow-xl border border-brand-purple/10 hover-card relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 rounded-bl-full -z-10 transition-transform group-hover:scale-150"></div>
+                        <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" alt="Space">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-brand-purple/20 text-brand-purple font-bold px-3 py-1 rounded-full text-xs">Sci-Fi</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Captain Mia's Starship</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">Mia built a rocket out of cardboard boxes. She didn't expect it to actually take off. Now she's navigating the Milky Way, accompanied by her robotic plush bear, Buzz.</p>
+                        <button class="w-full py-3 rounded-xl bg-brand-purple/10 text-brand-purple font-bold hover:bg-brand-purple hover:text-white transition-colors">Read Story</button>
+                    </div>
+                </div>
+
+                <!-- Adult Stories -->
+                <div class="story-group hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="story-adults">
+                    <div class="bg-gray-900 rounded-3xl p-6 shadow-2xl hover-card group border border-gray-800">
+                        <img src="https://images.unsplash.com/photo-1518063073256-4b95eb561c28?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity" alt="Dark City">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-red-500/20 text-red-400 font-bold px-3 py-1 rounded-full text-xs border border-red-500/30">Mystery</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">A City's Echo</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Detective Vance stared at the neon reflections in the puddles. The culprit hadn't left a fingerprint, but they left an echo—a sound loop tied to the victim's augmented reality implant.</p>
+                        <button class="w-full py-3 rounded-xl bg-gray-800 text-white font-bold hover:bg-red-600 transition-colors">Read Chapter 1</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-3xl p-6 shadow-2xl hover-card group border border-gray-800">
+                        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity" alt="Coffee Shop">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-blue-500/20 text-blue-400 font-bold px-3 py-1 rounded-full text-xs border border-blue-500/30">Drama</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">The Last Coffee Shop</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">In a fully automated world, Elara ran the only café where coffee was still poured by human hands. When a corporate executive walks in seeking shelter from the rain, worlds collide.</p>
+                        <button class="w-full py-3 rounded-xl bg-gray-800 text-white font-bold hover:bg-blue-600 transition-colors">Read Chapter 1</button>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-3xl p-6 shadow-2xl hover-card group border border-gray-800">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop" class="w-full h-48 object-cover rounded-2xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity" alt="Corporate Boardroom">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-green-500/20 text-green-400 font-bold px-3 py-1 rounded-full text-xs border border-green-500/30">Thriller</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">The Corporate Ladder</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Ascending to the 80th floor of the OmniCorp building meant you made it. But Sarah discovered that the executives on the top floor weren't running a business—they were running a simulation.</p>
+                        <button class="w-full py-3 rounded-xl bg-gray-800 text-white font-bold hover:bg-green-600 transition-colors">Read Chapter 1</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative bg-white">
+        <!-- Decorative blob -->
+        <div class="absolute right-0 bottom-0 w-96 h-96 bg-brand-cyan/20 blur-[100px] rounded-full"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-br from-brand-purple via-brand-pink to-brand-orange rounded-[3rem] p-1 sm:p-2 shadow-2xl reveal">
+                <div class="bg-white rounded-[2.8rem] p-8 md:p-16 h-full w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        
+                        <!-- Contact Info -->
+                        <div>
+                            <h2 class="text-4xl font-extrabold mb-6 text-gray-900">Get in <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink">Touch</span></h2>
+                            <p class="text-gray-600 mb-10 text-lg">Have a story idea, feedback on our news articles, or just want to say hello? Reach out to us using the details below.</p>
+                            
+                            <div class="space-y-8">
+                                <div class="flex items-start gap-6 group">
+                                    <div class="w-14 h-14 rounded-full bg-brand-pink/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-pink group-hover:text-white transition-colors">
+                                        <i class="fas fa-phone-alt text-2xl text-brand-pink group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-1">Phone Number</h4>
+                                        <p class="text-xl font-bold text-gray-800">+92 323 3195957 </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-6 group">
+                                    <div class="w-14 h-14 rounded-full bg-brand-purple/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-purple group-hover:text-white transition-colors">
+                                        <i class="fas fa-envelope text-2xl text-brand-purple group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-1">Email Address</h4>
+                                        <p class="text-xl font-bold text-gray-800 break-all">mrk158897@gmail.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-6 group">
+                                    <div class="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                                        <i class="fas fa-map-marker-alt text-2xl text-brand-orange group-hover:text-white transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-gray-400 font-semibold text-sm uppercase tracking-wider mb-1">Office Addresses</h4>
+                                        <p class="text-lg font-bold text-gray-800 mb-1">Bilal Town Appartment 4, Islamabad</p>
+                                        <p class="text-md font-semibold text-gray-600">Khairpur, Sindh, Pakistan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form Mockup -->
+                        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-inner">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Send a Message</h3>
+                            <form onsubmit="event.preventDefault(); alertCustom('Message sent successfully! We will get back to you soon.');">
+                                <div class="space-y-5">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-600 mb-2">Your Name</label>
+                                        <input type="text" required class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent transition-all bg-white" placeholder="John Doe">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-600 mb-2">Email Address</label>
+                                        <input type="email" required class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all bg-white" placeholder="john@example.com">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-600 mb-2">Message</label>
+                                        <textarea required rows="4" class="w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all bg-white resize-none" placeholder="Write your thoughts here..."></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 rounded-xl text-white font-bold text-lg bg-gradient-to-r from-brand-purple to-brand-pink hover:from-brand-pink hover:to-brand-orange shadow-lg hover:shadow-brand-pink/50 transition-all transform hover:-translate-y-1">
+                                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Alert Box (Replacing default alert) -->
+    <div id="custom-alert" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full mx-4 transform scale-90 opacity-0 transition-all duration-300" id="alert-content">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-3xl text-green-500"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-2">Success!</h3>
+            <p id="alert-message" class="text-center text-gray-600 mb-6"></p>
+            <button onclick="closeAlert()" class="w-full py-3 rounded-xl bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors">Close</button>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-12 relative overflow-hidden border-t-4 border-brand-pink">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center text-white font-bold text-sm">
+                        GI
+                    </div>
+                    <span class="font-extrabold text-xl tracking-tight">Global Insight</span>
+                </div>
+                <p class="text-gray-400 text-sm text-center md:text-left">
+                    &copy; 2026 Global Insight News & Ideas. All rights reserved. Designed with <i class="fas fa-heart text-brand-pink"></i>
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-purple transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-pink transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition-colors"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Alert Logic (No default alert() allowed)
+        function alertCustom(message) {
+            const alertBox = document.getElementById('custom-alert');
+            const alertContent = document.getElementById('alert-content');
+            document.getElementById('alert-message').innerText = message;
+            
+            alertBox.classList.remove('hidden');
+            alertBox.classList.add('flex');
+            
+            // Tiny delay to allow display block to apply before animating opacity
+            setTimeout(() => {
+                alertContent.classList.remove('scale-90', 'opacity-0');
+                alertContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeAlert() {
+            const alertBox = document.getElementById('custom-alert');
+            const alertContent = document.getElementById('alert-content');
+            
+            alertContent.classList.remove('scale-100', 'opacity-100');
+            alertContent.classList.add('scale-90', 'opacity-0');
+            
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+                alertBox.classList.remove('flex');
+            }, 300);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+
+            // News Tabs Logic
+            const newsTabs = document.querySelectorAll('.tab-btn');
+            const newsCategories = document.querySelectorAll('.news-category');
+
+            newsTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    newsTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-gradient-to-r', 'from-brand-purple', 'to-brand-pink', 'text-white', 'shadow-lg');
+                        t.classList.add('bg-gray-100', 'text-gray-600');
+                    });
+                    
+                    // Add active class to clicked tab
+                    tab.classList.remove('bg-gray-100', 'text-gray-600');
+                    tab.classList.add('active', 'bg-gradient-to-r', 'from-brand-purple', 'to-brand-pink', 'text-white', 'shadow-lg');
+
+                    const target = tab.getAttribute('data-target');
+
+                    // Hide all content, fade out
+                    newsCategories.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Show target content, fade in
+                    const targetContent = document.getElementById(`cat-${target}`);
+                    if(targetContent) {
+                        targetContent.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Stories Tabs Logic
+            const storyTabs = document.querySelectorAll('.story-tab');
+            const storyGroups = document.querySelectorAll('.story-group');
+
+            storyTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Reset tabs
+                    storyTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-gradient-to-r', 'from-brand-purple', 'to-brand-pink', 'text-white', 'shadow-md');
+                        t.classList.add('text-gray-600');
+                    });
+                    
+                    // Set active tab
+                    tab.classList.remove('text-gray-600');
+                    tab.classList.add('active', 'bg-gradient-to-r', 'from-brand-purple', 'to-brand-pink', 'text-white', 'shadow-md');
+
+                    const target = tab.getAttribute('data-target');
+
+                    storyGroups.forEach(group => {
+                        group.classList.add('hidden');
+                    });
+
+                    const targetGroup = document.getElementById(`story-${target}`);
+                    if(targetGroup) {
+                        targetGroup.classList.remove('hidden');
+                    }
+                });
+            });
+
+            // Scroll Reveal Animation via Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Optional: only animate once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

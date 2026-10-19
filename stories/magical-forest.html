@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Magical Forest of Eldoria | Global Insight</title>
-    <meta name="description" content="Discover the magical forest of Eldoria in an original adventure story about courage, friendship, and the wonders of nature.">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Read The Magical Forest of Eldoria, an original fantasy adventure filled with mystery, magical creatures, unforgettable characters, and powerful lessons about courage and friendship.">
     <meta name="author" content="Global Insight">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#070b14">
 
-    <link rel="icon" href="../favicon.ico">
+    <link rel="canonical" href="https://globalinsightsaqib.vercel.app/stories/magical-forest.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,191 +26,936 @@
             --light-blue: #60a5fa;
             --text: #f1f5f9;
             --muted: #b6c2d3;
+            --border: rgba(96, 165, 250, .2);
         }
 
         * { box-sizing: border-box; }
 
         html {
             scroll-behavior: smooth;
-            background: var(--bg);
+            scroll-padding-top: 30px;
         }
 
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background:
-                radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, .17), transparent 55%),
-                var(--bg);
             color: var(--text);
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, .18), transparent 55%),
+                var(--bg);
         }
 
-        .story-image {
-            box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+        a { text-decoration: none; }
+
+        .glass {
+            background: rgba(16, 24, 39, .84);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(14px);
         }
 
-        .story-content p {
+        .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(7,11,20,.96), rgba(7,11,20,.72)),
+                url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1800&auto=format&fit=crop') center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(0deg, var(--bg), transparent 65%);
+        }
+
+        .story-text p {
             color: var(--muted);
-            font-size: 1.04rem;
-            line-height: 2;
+            font-size: 1rem;
+            line-height: 2.05;
             margin: 0 0 1.5rem;
         }
 
-        .story-content h2 {
-            color: white;
+        .story-text h3 {
+            color: #f8fafc;
             font-size: 1.5rem;
             font-weight: 700;
-            margin: 2.5rem 0 1rem;
+            margin: 2.6rem 0 1rem;
         }
 
-        .blue-link {
-            color: var(--light-blue);
-            transition: color .2s ease;
+        .dialogue {
+            border-left: 3px solid var(--blue);
+            background: rgba(59,130,246,.07);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
         }
 
-        .blue-link:hover { color: white; }
-
-        .back-link {
-            border: 1px solid rgba(96, 165, 250, .3);
-            transition: background .25s ease, transform .25s ease;
+        .dialogue p {
+            margin-bottom: .65rem;
+            color: #dbeafe;
         }
 
-        .back-link:hover {
-            background: rgba(59, 130, 246, .15);
-            transform: translateX(-3px);
+        .dialogue p:last-child { margin-bottom: 0; }
+
+        .chapter-link {
+            display: block;
+            padding: .85rem 1rem;
+            border-radius: 10px;
+            color: #cbd5e1;
+            border: 1px solid transparent;
+            transition: .25s ease;
+        }
+
+        .chapter-link:hover,
+        .chapter-link.active {
+            color: #fff;
+            background: rgba(59,130,246,.13);
+            border-color: var(--border);
+        }
+
+        .chapter-link.active { color: var(--light-blue); }
+
+        .story-image {
+            width: 100%;
+            max-height: 430px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 55px rgba(0,0,0,.35);
+        }
+
+        .blue-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            padding: .8rem 1.2rem;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            transition: .25s ease;
+        }
+
+        .blue-button:hover {
+            background: #3b82f6;
+            box-shadow: 0 0 24px rgba(59,130,246,.22);
+            transform: translateY(-2px);
+        }
+
+        .fade-in {
+            animation: appear .8s ease both;
+        }
+
+        @keyframes appear {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (min-width: 1024px) {
+            .reading-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) 260px;
+                gap: 3rem;
+                align-items: start;
+            }
+
+            .chapter-sidebar {
+                position: sticky;
+                top: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header class="border-b border-blue-400/20 bg-slate-950/80">
-        <div class="max-w-5xl mx-auto px-5 py-5 flex items-center justify-between gap-4">
+    <header class="border-b border-blue-400/20 bg-slate-950/90">
+        <div class="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between gap-4">
             <a href="../index.html" class="text-xl sm:text-2xl font-extrabold tracking-tight">
                 Global <span class="text-blue-400">Insight</span>
             </a>
 
-            <a href="../index.html#stories"
-               class="text-sm text-slate-300 hover:text-blue-400 transition-colors">
+            <a href="../index.html#stories" class="text-sm text-slate-300 hover:text-blue-400 transition">
                 <i class="fa-solid fa-arrow-left mr-2"></i>All Stories
             </a>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-5 py-10 md:py-16">
-        <nav aria-label="Breadcrumb" class="text-sm text-slate-400 mb-7">
-            <a href="../index.html" class="blue-link">Home</a>
+    <section class="hero min-h-[470px] flex items-center">
+        <div class="max-w-7xl mx-auto w-full px-5 py-20 fade-in">
+            <div class="max-w-3xl">
+                <span class="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-300">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Original Fantasy Adventure
+                </span>
+
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mt-6 mb-6">
+                    The Magical Forest of <span class="text-blue-400">Eldoria</span>
+                </h1>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-8 max-w-2xl">
+                    A forgotten kingdom. A fading crystal. Five unlikely allies.
+                    One boy must discover that the strongest magic is not always found in a spell.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-8 text-sm text-slate-300">
+                    <span><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>5 Chapters</span>
+                    <span><i class="fa-solid fa-dragon text-blue-400 mr-2"></i>Fantasy</span>
+                    <span><i class="fa-regular fa-clock text-blue-400 mr-2"></i>Adventure</span>
+                </div>
+
+                <a href="#chapter-1" class="blue-button mt-8">
+                    Begin Reading <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-5 py-12">
+        <nav aria-label="Breadcrumb" class="text-sm text-slate-500 mb-8">
+            <a href="../index.html" class="hover:text-blue-400">Home</a>
             <span class="mx-2">/</span>
-            <a href="../index.html#stories" class="blue-link">Stories</a>
+            <a href="../index.html#stories" class="hover:text-blue-400">Stories</a>
             <span class="mx-2">/</span>
-            <span class="text-slate-300">Children's Stories</span>
+            <span class="text-slate-300">The Magical Forest of Eldoria</span>
         </nav>
 
-        <div class="mb-6">
-            <span class="inline-block rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-300">
-                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Fantasy Adventure
-            </span>
-        </div>
+        <div class="reading-layout">
+            <article class="min-w-0">
+                <section class="glass rounded-2xl p-6 sm:p-8 mb-10">
+                    <h2 class="text-2xl font-bold mb-5">Meet the Characters</h2>
 
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-            The Magical Forest of <span class="text-blue-400">Eldoria</span>
-        </h1>
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <h3 class="font-bold text-blue-300">Timmy Vale</h3>
+                            <p class="text-sm text-slate-400 mt-1">A curious twelve-year-old who is learning what courage really means.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-blue-300">Lumi</h3>
+                            <p class="text-sm text-slate-400 mt-1">A tiny fairy guardian whose light is fading with the forest's magic.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-blue-300">Orion</h3>
+                            <p class="text-sm text-slate-400 mt-1">An ancient owl who carries a secret about Eldoria's past.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-blue-300">Ember</h3>
+                            <p class="text-sm text-slate-400 mt-1">A clever fox who hides his worries behind jokes and sharp observations.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-blue-300">Morvath</h3>
+                            <p class="text-sm text-slate-400 mt-1">The mysterious Shadow Keeper, feared by the forest's inhabitants.</p>
+                        </div>
+                    </div>
+                </section>
 
-        <p class="text-slate-400 leading-7 mb-8">
-            An original adventure about courage, kindness, and discovering magic in unexpected places.
-        </p>
+                <section id="chapter-1" class="story-text scroll-mt-8">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter One</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Whisper Beyond the Oak</h2>
 
-        <figure class="mb-10">
-            <img
-                src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1400&auto=format&fit=crop"
-                alt="A mysterious night sky above a magical-looking landscape"
-                class="story-image w-full rounded-2xl object-cover max-h-[500px]"
-                fetchpriority="high"
-            >
-            <figcaption class="text-xs text-slate-500 mt-3">
-                An imaginative view of the world beyond the familiar.
-            </figcaption>
-        </figure>
+                    <img
+                        src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1400&auto=format&fit=crop"
+                        alt="A mysterious forest with towering trees and deep shadows"
+                        class="story-image mb-8"
+                        fetchpriority="high"
+                    >
 
-        <article class="story-content">
-            <h2>The Mysterious Light</h2>
+                    <p>
+                        In the quiet village of Willowmere, where stone cottages stood beside narrow streams, there lived a boy named Timmy Vale. He was twelve years old, endlessly curious, and famous for asking questions that adults could never answer.
+                    </p>
 
-            <p>
-                Little Timmy had always been curious about the old oak tree at the edge of his village. Its branches stretched high into the sky, and its twisted roots disappeared beneath a carpet of moss. The villagers said nobody should enter the forest after sunset, but nobody could explain why.
-            </p>
+                    <p>
+                        Why did the stars sometimes disappear behind perfectly clear skies? Why did the old village clock stop every year on the same winter night? And why did his grandmother lower her voice whenever anyone mentioned the enormous oak tree beyond the northern fields?
+                    </p>
 
-            <p>
-                One evening, as Timmy walked home, he noticed a tiny violet light flickering between the trees. It moved gently, almost as if it were waiting for him. Before he could change his mind, curiosity led him past the old oak and into the forest.
-            </p>
+                    <p>
+                        The oak had stood there longer than anyone could remember. Its trunk was wider than a cottage, and its branches twisted into the sky like the fingers of an ancient giant. Beyond it stretched the Eldorian Forest, a place surrounded by stories of glowing flowers, singing streams, and paths that changed direction when nobody was watching.
+                    </p>
 
-            <p>
-                The deeper he walked, the stranger the forest became. Leaves shimmered in shades of violet and gold. Flowers glowed beside the path, and little silver streams reflected stars that Timmy could not see in the sky above.
-            </p>
+                    <p>
+                        One autumn evening, Timmy was returning from the village library when a strange blue light flickered between the trees. He stopped. The light appeared again, brighter this time, then vanished.
+                    </p>
 
-            <h2>A Tiny Guide</h2>
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "Hello? Is somebody there?"</p>
+                        <p><strong>Narration:</strong> Only the wind answered, carrying the smell of rain and something sweet, like wildflowers.</p>
+                    </div>
 
-            <p>
-                Suddenly, the light stopped beside a fallen branch. It was a tiny creature with transparent wings and bright blue eyes. “My name is Lumi,” it said softly. “Our forest is losing its light, and I need someone brave enough to help.”
-            </p>
+                    <p>
+                        He should have gone home. His grandmother had warned him never to enter the forest after sunset. But the light appeared once more, and this time Timmy noticed that it was moving deeper into the trees, almost as if it wanted him to follow.
+                    </p>
 
-            <p>
-                Timmy was nervous, but he remembered something his grandmother always told him: being brave did not mean having no fear. It meant choosing to do what was right, even when something felt frightening.
-            </p>
+                    <p>
+                        Taking a small lantern from his bag, he stepped past the ancient oak. The sounds of the village disappeared behind him. The forest floor glimmered with tiny silver mushrooms, and leaves shone with violet edges even though no moonlight reached them.
+                    </p>
 
-            <p>
-                He followed Lumi along a winding path until they reached a clear pool surrounded by ancient stones. At its centre stood a small crystal, once bright as the morning sun, now barely glowing.
-            </p>
+                    <p>
+                        Suddenly, a voice called from somewhere above his head.
+                    </p>
 
-            <h2>The Choice That Changed Everything</h2>
+                    <div class="dialogue">
+                        <p><strong>Mysterious Voice:</strong> "You're late."</p>
+                        <p><strong>Timmy:</strong> "Late for what? And who are you?"</p>
+                        <p><strong>Mysterious Voice:</strong> "Questions, questions. Humans always bring so many questions."</p>
+                    </div>
 
-            <p>
-                Lumi explained that the crystal grew dim whenever the forest's creatures stopped caring for one another. The animals had argued over food and shelter, and nobody wanted to make the first move toward peace.
-            </p>
+                    <p>
+                        A tiny figure dropped from a branch and hovered before him. It was no bigger than a teacup, with translucent wings and bright blue eyes. Light pulsed gently beneath its skin.
+                    </p>
 
-            <p>
-                Timmy suggested that everyone gather around the pool and listen to one another. At first, the creatures hesitated. Then a little rabbit spoke, followed by a fox, an owl, and a family of squirrels. Each discovered that the others had worries of their own.
-            </p>
+                    <p>
+                        "My name is Lumi," the creature said. "Guardian of the eastern glades, messenger of the old roots, and currently the only person in this forest who knows how much trouble we're in."
+                    </p>
 
-            <p>
-                Together, they made a plan to share food, protect the young animals, and care for the trees and streams. As their promises filled the clearing, the crystal began to shine. Blue and violet light spread through the branches, and the entire forest seemed to take a deep, happy breath.
-            </p>
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "You're a fairy."</p>
+                        <p><strong>Lumi:</strong> "Excellent observation."</p>
+                        <p><strong>Timmy:</strong> "Fairies are real!"</p>
+                        <p><strong>Lumi:</strong> "And children are loud. We all have our surprises."</p>
+                    </div>
 
-            <h2>The Magic of Kindness</h2>
+                    <p>
+                        Despite his fear, Timmy laughed. But Lumi's expression quickly became serious. Far away, deep within the forest, a low rumble rolled through the ground. The glowing flowers dimmed, and several branches shook although the air was still.
+                    </p>
 
-            <p>
-                When Timmy returned to the village, the first rays of sunrise were appearing beyond the hills. Lumi thanked him and gave him a tiny glowing leaf to remember the adventure.
-            </p>
+                    <p>
+                        "The Heart Crystal is weakening," Lumi whispered. "If its light disappears completely, Eldoria will fall into an endless night."
+                    </p>
 
-            <p>
-                From that day on, Timmy understood that magic was not always about spells or mysterious crystals. Sometimes, the greatest magic began when people listened, helped one another, and chose kindness over selfishness.
-            </p>
-        </article>
+                    <p>
+                        Timmy looked toward the dark trees. "Then we need to fix it. Where is this crystal?"
+                    </p>
 
-        <aside class="mt-12 rounded-2xl border border-blue-400/20 bg-blue-500/5 p-6 md:p-8">
-            <h2 class="text-xl font-bold mb-3">The lesson of Eldoria</h2>
-            <p class="text-slate-300 leading-7">
-                True courage means doing the right thing, and even small acts of kindness can make a big difference.
-            </p>
-        </aside>
+                    <p>
+                        Lumi studied him with a mixture of hope and worry. "At the centre of the forest. But the journey is dangerous, and the forest doesn't trust humans anymore."
+                    </p>
 
-        <div class="mt-10 flex flex-wrap gap-4">
-            <a href="../index.html#stories"
-               class="back-link inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold text-blue-300">
-                <i class="fa-solid fa-arrow-left"></i> Back to Stories
-            </a>
+                    <p>
+                        "Why not?"
+                    </p>
 
-            <a href="../index.html"
-               class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-500">
-                <i class="fa-solid fa-house"></i> Homepage
-            </a>
+                    <p>
+                        Before Lumi could answer, a pair of golden eyes appeared between the trees. Something moved silently through the undergrowth. Lumi's wings flashed bright blue.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Lumi:</strong> "Stay behind me."</p>
+                        <p><strong>Timmy:</strong> "You are about the size of my thumb."</p>
+                        <p><strong>Lumi:</strong> "And yet I am still your best chance of surviving this conversation."</p>
+                    </div>
+
+                    <p>
+                        The golden eyes vanished. A moment later, a red fox stepped onto the path, carrying a stolen apple in its mouth. It dropped the fruit, sat down, and looked at them with an expression of deep disappointment.
+                    </p>
+
+                    <p>
+                        "Honestly," said the fox, "if you're going to announce yourselves to every creature in the forest, you might as well bring a marching band."
+                    </p>
+
+                    <p>
+                        Timmy stared. The fox sighed.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Fox:</strong> "Ember. Scout, guide, occasional apple collector. And before you ask, yes, I can talk."</p>
+                        <p><strong>Timmy:</strong> "This is the strangest evening of my life."</p>
+                        <p><strong>Ember:</strong> "Give it an hour."</p>
+                    </div>
+
+                    <p>
+                        Above them, the forest canopy darkened. Somewhere in the distance, a bell rang three times. Lumi went completely still.
+                    </p>
+
+                    <p>
+                        "The warning bell," she whispered. "Someone has entered the forbidden valley."
+                    </p>
+
+                    <p>
+                        Ember's playful expression disappeared. "If that bell is ringing, then the Shadow Keeper has awakened."
+                    </p>
+
+                    <p>
+                        And for the first time that evening, Timmy wished he had listened to his grandmother.
+                    </p>
+                </section>
+
+                <div class="border-t border-blue-400/20 my-12"></div>
+
+                <section id="chapter-2" class="story-text scroll-mt-8">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Two</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Owl's Forgotten Warning</h2>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1400&auto=format&fit=crop"
+                        alt="A wild woodland landscape beneath a mysterious sky"
+                        class="story-image mb-8"
+                        loading="lazy"
+                    >
+
+                    <p>
+                        Ember led Timmy and Lumi along a narrow path that seemed to appear only when the fox stepped on it. Behind them, the warning bell rang again. Each note sounded deeper than the last, as if something enormous were answering from beneath the earth.
+                    </p>
+
+                    <p>
+                        "What is the Shadow Keeper?" Timmy asked.
+                    </p>
+
+                    <p>
+                        "A name people use when they want to frighten children," Ember replied. "Also a name adults use when they want children to stop asking questions. Very convenient, really."
+                    </p>
+
+                    <p>
+                        Lumi floated beside them, her glow weaker than before. "Morvath was once a guardian of Eldoria. He protected the ancient gates and kept dangerous magic away from the village."
+                    </p>
+
+                    <p>
+                        "What happened to him?"
+                    </p>
+
+                    <p>
+                        "Nobody tells the same story," she answered. "Some say he betrayed the forest. Others say the forest betrayed him."
+                    </p>
+
+                    <p>
+                        Their path ended at a towering tree whose trunk split into three enormous branches. On one branch sat an owl with silver feathers and eyes like polished amber. He was so still that Timmy initially mistook him for a carved statue.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Orion:</strong> "A human child. A fading fairy. And Ember, who still owes me three apples."</p>
+                        <p><strong>Ember:</strong> "Two apples. The third was a gift."</p>
+                        <p><strong>Orion:</strong> "You took it from my windowsill."</p>
+                        <p><strong>Ember:</strong> "A gift can be complicated."</p>
+                    </div>
+
+                    <p>
+                        Orion opened his wings and glided to a lower branch. His gaze settled on Timmy, and the humour left his face.
+                    </p>
+
+                    <p>
+                        "The Heart Crystal is not simply a source of light," he explained. "It holds the memories, promises, and bonds that connect every living thing in Eldoria. When trust breaks, the crystal weakens."
+                    </p>
+
+                    <p>
+                        "Can we make it shine again?" Timmy asked.
+                    </p>
+
+                    <p>
+                        "Perhaps. But first you must understand what made it begin to fade."
+                    </p>
+
+                    <p>
+                        Orion described a time when the forest and village lived together in peace. Humans planted trees beside the streams, forest creatures protected the fields, and the crystal shone so brightly that its blue light could be seen from the distant mountains.
+                    </p>
+
+                    <p>
+                        Then a terrible winter arrived. Food became scarce. The villagers blamed the forest creatures for taking their crops, while the creatures accused the villagers of cutting down sacred trees. Neither side listened. Fear became suspicion, and suspicion became hatred.
+                    </p>
+
+                    <p>
+                        "Morvath tried to protect the crystal," Orion said quietly. "But when everyone demanded that he choose a side, he made a decision that changed the forest forever."
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "What decision?"</p>
+                        <p><strong>Orion:</strong> "That is the part I have been afraid to tell."</p>
+                    </div>
+
+                    <p>
+                        A cold wind passed through the branches. For a moment, the trees seemed to whisper Timmy's name.
+                    </p>
+
+                    <p>
+                        Orion finally spoke. "Morvath sealed the Heart Crystal away to stop the fighting. He believed that if nobody could reach its power, nobody could use it against another. But the seal also prevented the crystal from receiving the trust and kindness that kept it alive."
+                    </p>
+
+                    <p>
+                        Timmy looked at Lumi. Her light flickered like a candle in a storm.
+                    </p>
+
+                    <p>
+                        "Then Morvath wasn't trying to destroy the forest," Timmy said. "He was trying to stop the fighting."
+                    </p>
+
+                    <p>
+                        "Intentions can begin with kindness and still lead to terrible consequences," Orion replied. "That is why wisdom must always travel with compassion."
+                    </p>
+
+                    <p>
+                        The ancient owl lowered his head and pointed one wing toward a ravine hidden behind the tree. Blue markings glimmered across the stones.
+                    </p>
+
+                    <p>
+                        "Beneath that ravine lies the entrance to the forgotten kingdom. If you wish to find the crystal, you must go there."
+                    </p>
+
+                    <p>
+                        Ember swallowed. "I was hoping you'd suggest a pleasant picnic."
+                    </p>
+
+                    <p>
+                        Timmy tightened the straps of his little bag. "We have to try."
+                    </p>
+
+                    <p>
+                        Orion watched them disappear into the ravine. "Then remember this, young Timmy: the darkest secrets are not always guarded by monsters. Sometimes they are guarded by regret."
+                    </p>
+                </section>
+
+                <div class="border-t border-blue-400/20 my-12"></div>
+
+                <section id="chapter-3" class="story-text scroll-mt-8">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Three</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Kingdom Beneath the Roots</h2>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1400&auto=format&fit=crop"
+                        alt="Towering trees and tangled roots in an ancient woodland"
+                        class="story-image mb-8"
+                        loading="lazy"
+                    >
+
+                    <p>
+                        The ravine descended into a world that sunlight had forgotten. Enormous roots covered the stone walls, twisting around old staircases and broken arches. Blue symbols appeared beneath Timmy's fingers whenever he touched the rock.
+                    </p>
+
+                    <p>
+                        At the bottom stood a pair of stone doors. A circular carving showed a crystal surrounded by five figures: a child, a fairy, an owl, a fox, and a shadow.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "That's us. Or versions of us."</p>
+                        <p><strong>Ember:</strong> "If the stone artist gave me those ears, I would like to complain."</p>
+                        <p><strong>Lumi:</strong> "Focus, Ember."</p>
+                    </div>
+
+                    <p>
+                        Timmy placed his hand against the carving. The stone warmed beneath his palm, and a line of blue light travelled around the circle. With a deep groan, the doors opened.
+                    </p>
+
+                    <p>
+                        Beyond them lay a forgotten kingdom. Bridges crossed underground rivers, empty towers rose from a cavernous ceiling, and thousands of tiny crystals glimmered in the walls. Yet the city was silent.
+                    </p>
+
+                    <p>
+                        "Who lived here?" Timmy whispered.
+                    </p>
+
+                    <p>
+                        "The first guardians," Lumi answered. "Long before Willowmere existed, this kingdom protected the Heart Crystal. When the great disagreement began, its people left rather than take sides."
+                    </p>
+
+                    <p>
+                        They crossed a bridge toward a circular hall. At its centre stood a pedestal, and above it floated a faint blue image of a young guardian wearing a silver cloak.
+                    </p>
+
+                    <p>
+                        The image spoke in a voice that seemed to come from every wall at once.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Memory of the Guardian:</strong> "If you have reached this place, the crystal is nearly silent. Do not seek to command it. Do not seek to own it. The heart of Eldoria cannot be forced to shine."</p>
+                    </div>
+
+                    <p>
+                        The image faded, revealing a narrow staircase leading farther down. On the final step, Timmy found a small silver key engraved with the same five figures.
+                    </p>
+
+                    <p>
+                        Suddenly, the hall shook. Dark mist poured from the cracks in the walls, and a voice filled the chamber.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Unknown Voice:</strong> "You have come farther than I expected."</p>
+                        <p><strong>Ember:</strong> "If this is the part where the walls start talking, I officially miss the forest."</p>
+                    </div>
+
+                    <p>
+                        A tall figure emerged from the mist. He wore a dark cloak edged with silver, and his face was hidden beneath a hood. Yet his hands were not those of a monster. They trembled as he looked at the key in Timmy's palm.
+                    </p>
+
+                    <p>
+                        "Give me that key," the stranger said.
+                    </p>
+
+                    <p>
+                        Timmy stepped back. "Are you Morvath?"
+                    </p>
+
+                    <p>
+                        The figure said nothing for a long moment.
+                    </p>
+
+                    <p>
+                        "I was," he finally answered. "Before this forest decided that a guardian was no longer worth trusting."
+                    </p>
+
+                    <p>
+                        Lumi moved in front of Timmy. "You sealed the Heart Crystal. You let the forest fade."
+                    </p>
+
+                    <p>
+                        Morvath's eyes flashed beneath the hood. "I sealed it because the forest was tearing itself apart! Every creature demanded power, and every village demanded protection. I could not save everyone, so I chose a silence that would hurt no one."
+                    </p>
+
+                    <p>
+                        "But silence didn't solve the problem," Timmy said.
+                    </p>
+
+                    <p>
+                        "No," Morvath replied. "It only made the pain quieter."
+                    </p>
+
+                    <p>
+                        For the first time, Timmy heard sadness in the Shadow Keeper's voice. But before he could ask another question, the floor split between them. Morvath vanished into the mist, leaving behind a single warning.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Morvath:</strong> "When the final bell rings, the choice will no longer be yours alone."</p>
+                    </div>
+
+                    <p>
+                        The staircase began to crumble. Timmy, Lumi, and Ember raced back toward the bridge. Behind them, the ancient doors slammed shut.
+                    </p>
+
+                    <p>
+                        Timmy looked down at the silver key. Its blue markings were glowing brighter than before.
+                    </p>
+
+                    <p>
+                        The next part of their journey would not simply be about finding the crystal. It would be about deciding what should happen when they finally reached it.
+                    </p>
+                </section>
+
+                <div class="border-t border-blue-400/20 my-12"></div>
+
+                <section id="chapter-4" class="story-text scroll-mt-8">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Four</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Night of a Thousand Shadows</h2>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1400&auto=format&fit=crop"
+                        alt="A shadowy woodland path beneath towering trees"
+                        class="story-image mb-8"
+                        loading="lazy"
+                    >
+
+                    <p>
+                        The way out of the forgotten kingdom led to a valley where the trees grew so closely together that their branches formed a roof above the path. The air was cold, and the blue light in Lumi's wings had almost disappeared.
+                    </p>
+
+                    <p>
+                        Timmy offered her his lantern. "Will this help?"
+                    </p>
+
+                    <p>
+                        "A little," she said, hovering close to the flame. "But this darkness isn't ordinary. It grows stronger wherever fear and distrust take root."
+                    </p>
+
+                    <p>
+                        As they entered the valley, shadows began to move against the direction of the lantern light. Timmy saw shapes between the trees: a village with empty houses, a broken bridge, and figures turning away from one another.
+                    </p>
+
+                    <p>
+                        "Are those real?" he asked.
+                    </p>
+
+                    <p>
+                        Ember's ears lowered. "They are memories. The valley shows you the things you most wish you could change."
+                    </p>
+
+                    <p>
+                        Timmy saw himself standing at home while Lumi called for help from beyond the window. He heard his own voice saying he was too frightened to leave. The image felt so real that his feet stopped moving.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "What if I'm not brave enough?"</p>
+                        <p><strong>Lumi:</strong> "Being brave doesn't mean you never feel afraid."</p>
+                        <p><strong>Timmy:</strong> "Then what does it mean?"</p>
+                        <p><strong>Lumi:</strong> "It means fear doesn't get to make every decision for you."</p>
+                    </div>
+
+                    <p>
+                        Timmy took a breath and stepped forward. The false image dissolved like mist in sunlight.
+                    </p>
+
+                    <p>
+                        Farther along the path, they heard a frightened cry. A young deer stood beside a fallen tree, unable to free its trapped leg. Ember hurried toward it, but the shadows closed around the path.
+                    </p>
+
+                    <p>
+                        "We don't have time!" Ember cried. "The final bell is almost due!"
+                    </p>
+
+                    <p>
+                        Timmy looked from the trapped deer to the distant glow beyond the valley. He remembered the crystal, the village, and the promise he had made.
+                    </p>
+
+                    <p>
+                        Then he put down his bag.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Timmy:</strong> "If we leave it here, then what are we trying to save?"</p>
+                        <p><strong>Ember:</strong> "You humans are remarkably good at making simple plans complicated."</p>
+                        <p><strong>Timmy:</strong> "Can you help me move the branch?"</p>
+                        <p><strong>Ember:</strong> "Of course. I was only hoping to complain first."</p>
+                    </div>
+
+                    <p>
+                        Together they lifted the branch enough for the deer to pull free. Lumi used the last of her light to show them a safe path through the shadows. The deer limped away, then turned and touched its nose gently to Timmy's hand before disappearing between the trees.
+                    </p>
+
+                    <p>
+                        A warm glow spread across the ground. The shadows retreated, and the path opened toward a stone archway.
+                    </p>
+
+                    <p>
+                        At the arch stood Morvath. He looked older than before, and the silver edges of his cloak had turned almost black.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Morvath:</strong> "You stopped for one frightened creature while an entire forest waits."</p>
+                        <p><strong>Timmy:</strong> "It needed help."</p>
+                        <p><strong>Morvath:</strong> "And what will you do when helping one means disappointing another?"</p>
+                        <p><strong>Timmy:</strong> "I'll listen. I'll try to understand. I won't pretend there is an easy answer."</p>
+                    </div>
+
+                    <p>
+                        Morvath stared at him. For a moment, the shadows around the guardian softened.
+                    </p>
+
+                    <p>
+                        "That," he whispered, "is what I should have done."
+                    </p>
+
+                    <p>
+                        He stepped aside. Beyond the arch, an enormous chamber glowed with faint blue light. At its centre floated the Heart Crystal, cracked and almost dark.
+                    </p>
+
+                    <p>
+                        The final bell began to ring.
+                    </p>
+                </section>
+
+                <div class="border-t border-blue-400/20 my-12"></div>
+
+                <section id="chapter-5" class="story-text scroll-mt-8">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Five</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Last Light of Eldoria</h2>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1400&auto=format&fit=crop"
+                        alt="A brilliant night sky filled with stars above a distant mountain"
+                        class="story-image mb-8"
+                        loading="lazy"
+                    >
+
+                    <p>
+                        The chamber was larger than the village square. Ancient pillars rose into darkness, and thin streams of blue light ran across the floor toward the Heart Crystal. Every crack in the crystal pulsed like a fading heartbeat.
+                    </p>
+
+                    <p>
+                        Timmy approached the pedestal. The silver key in his hand grew warm.
+                    </p>
+
+                    <p>
+                        "Tell me what to do," he said.
+                    </p>
+
+                    <p>
+                        Orion's voice came from the entrance. The old owl had followed them, his wings tired but his eyes bright.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Orion:</strong> "The crystal cannot be repaired by force. It was weakened by broken trust, and only a new promise can begin to heal it."</p>
+                        <p><strong>Timmy:</strong> "Whose promise?"</p>
+                        <p><strong>Orion:</strong> "Everyone's. That is what makes this difficult."</p>
+                    </div>
+
+                    <p>
+                        Morvath stepped toward the pedestal. "They will never agree. The villagers blame the forest. The forest blames the villagers. They remember every wrong and forget every kindness."
+                    </p>
+
+                    <p>
+                        "Then we remind them," Timmy answered.
+                    </p>
+
+                    <p>
+                        He turned to the crystal and spoke, although he had no idea whether it could hear him.
+                    </p>
+
+                    <p>
+                        "I can't promise that nobody will ever argue again. I can't promise that everyone will always be fair. But I can promise that we will listen before we judge. We will help before we turn away. And when we make mistakes, we will try to put things right."
+                    </p>
+
+                    <p>
+                        The key shone brightly, but the crystal remained still.
+                    </p>
+
+                    <p>
+                        Lumi floated forward. Her tiny wings trembled.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Lumi:</strong> "I promise to guard this forest without forgetting the people who live beyond its trees."</p>
+                        <p><strong>Ember:</strong> "I promise to share what I can. And perhaps to borrow fewer apples without asking."</p>
+                        <p><strong>Orion:</strong> "I promise to speak the truth, even when silence feels safer."</p>
+                    </div>
+
+                    <p>
+                        At last, Morvath removed his hood. He was not a monster, but a tired guardian with silver hair and eyes filled with centuries of regret.
+                    </p>
+
+                    <p>
+                        "I promise," he said, his voice breaking, "that I will no longer decide what is best for everyone without allowing them to choose for themselves."
+                    </p>
+
+                    <p>
+                        The chamber became completely silent.
+                    </p>
+
+                    <p>
+                        Then a single thread of blue light appeared inside the crystal. Another followed it. Soon, the cracks were filled with glowing lines, and the entire chamber shone with brilliant blue and silver light.
+                    </p>
+
+                    <p>
+                        The light rushed through the underground kingdom, travelled along the ancient roots, and spread into the forest. Flowers opened. Streams sparkled. Trees lifted their branches toward the sky.
+                    </p>
+
+                    <p>
+                        Far away, in Willowmere, the villagers saw blue lights dancing beyond the northern fields. Doors opened, and people stepped outside. For the first time in years, they looked toward the forest without fear.
+                    </p>
+
+                    <p>
+                        When Timmy returned home, the morning sun was rising. His grandmother stood beside the old oak, waiting for him.
+                    </p>
+
+                    <div class="dialogue">
+                        <p><strong>Grandmother:</strong> "You went into the forest."</p>
+                        <p><strong>Timmy:</strong> "Yes."</p>
+                        <p><strong>Grandmother:</strong> "You were frightened."</p>
+                        <p><strong>Timmy:</strong> "Very."</p>
+                        <p><strong>Grandmother:</strong> "And did you learn anything?"</p>
+                    </div>
+
+                    <p>
+                        Timmy opened his hand. A tiny silver leaf rested in his palm, glowing with the softest blue light.
+                    </p>
+
+                    <p>
+                        "I learned that being brave doesn't mean doing everything alone," he said. "And sometimes, the thing that needs saving isn't a place. It's the trust between the people who belong there."
+                    </p>
+
+                    <p>
+                        His grandmother smiled. Behind them, the ancient oak shimmered as sunlight passed through its leaves.
+                    </p>
+
+                    <p>
+                        In the weeks that followed, the villagers and forest creatures began working together. They replanted trees, shared food, repaired bridges, and listened to stories they had once refused to hear.
+                    </p>
+
+                    <p>
+                        Morvath returned to the old gates, not as a ruler, but as a guardian willing to learn from the people he protected. Orion began teaching the young creatures the forgotten history of Eldoria. Ember became famous for returning borrowed apples—usually before anyone noticed they were missing.
+                    </p>
+
+                    <p>
+                        And Timmy? He visited the forest whenever he could. Sometimes he met Lumi beside the glowing streams. Sometimes he heard Orion telling stories beneath the branches. And sometimes, on quiet evenings, he saw a pair of golden eyes watching from the trees.
+                    </p>
+
+                    <p>
+                        The Heart Crystal continued to shine. Not because the forest had become perfect, but because its inhabitants had learned that peace required care, honesty, and effort every single day.
+                    </p>
+
+                    <p>
+                        And on nights when the stars were bright, a soft blue light could still be seen beyond the old oak tree—a reminder that even in the darkest places, a little kindness could help the world begin again.
+                    </p>
+                </section>
+
+                <section class="glass rounded-2xl p-6 sm:p-8 mt-12">
+                    <h2 class="text-2xl font-bold mb-4">
+                        <i class="fa-solid fa-star text-blue-400 mr-2"></i>The Lesson of Eldoria
+                    </h2>
+                    <p class="text-slate-300 leading-8">
+                        Courage is not the absence of fear. True strength comes from listening, accepting responsibility, and choosing kindness even when the answer is difficult. Trust can take years to build, but one honest promise can be the beginning of healing.
+                    </p>
+                </section>
+
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="../index.html#stories" class="blue-button">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Stories
+                    </a>
+                    <button type="button" onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl border border-blue-400/30 px-5 py-3 font-semibold text-blue-300 hover:bg-blue-500/10 transition">
+                        <i class="fa-solid fa-print"></i> Print Story
+                    </button>
+                </div>
+            </article>
+
+            <aside class="chapter-sidebar mt-10 lg:mt-0">
+                <div class="glass rounded-2xl p-5">
+                    <h2 class="text-lg font-bold mb-2">Story Chapters</h2>
+                    <p class="text-xs text-slate-500 mb-4">Choose a chapter to jump to it.</p>
+
+                    <nav aria-label="Story chapters" class="space-y-1">
+                        <a class="chapter-link active" href="#chapter-1">01. The Whisper Beyond the Oak</a>
+                        <a class="chapter-link" href="#chapter-2">02. The Owl's Forgotten Warning</a>
+                        <a class="chapter-link" href="#chapter-3">03. The Kingdom Beneath the Roots</a>
+                        <a class="chapter-link" href="#chapter-4">04. The Night of a Thousand Shadows</a>
+                        <a class="chapter-link" href="#chapter-5">05. The Last Light of Eldoria</a>
+                    </nav>
+
+                    <div class="border-t border-blue-400/20 mt-5 pt-5">
+                        <p class="text-sm font-semibold text-slate-300 mb-2">Reading tip</p>
+                        <p class="text-sm leading-6 text-slate-400">
+                            Take your time and follow the characters' choices. Every chapter reveals another part of Eldoria's mystery.
+                        </p>
+                    </div>
+                </div>
+            </aside>
         </div>
     </main>
 
-    <footer class="mt-10 border-t border-blue-400/20 px-5 py-8 text-center text-sm text-slate-500">
-        © <span id="year"></span> Global Insight. All rights reserved.
+    <footer class="border-t border-blue-400/20 mt-16">
+        <div class="max-w-7xl mx-auto px-5 py-8 text-center text-sm text-slate-500">
+            <p>© <span id="year"></span> Global Insight. All rights reserved.</p>
+            <p class="mt-2">Original fantasy storytelling for curious minds.</p>
+        </div>
     </footer>
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        const chapterLinks = document.querySelectorAll(".chapter-link");
+        const chapters = document.querySelectorAll("article section[id^='chapter-']");
+
+        function updateActiveChapter() {
+            let current = chapters[0];
+
+            chapters.forEach(chapter => {
+                if (chapter.getBoundingClientRect().top < 180) {
+                    current = chapter;
+                }
+            });
+
+            chapterLinks.forEach(link => {
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href") === "#" + current.id
+                );
+            });
+        }
+
+        window.addEventListener("scroll", updateActiveChapter, { passive: true });
+        updateActiveChapter();
     </script>
 </body>
 </html>
-

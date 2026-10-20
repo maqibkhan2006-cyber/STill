@@ -2,622 +2,493 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AI Tools Hub: Discover Useful AI Tools | Global Insight</title>
-  <meta name="description" content="Explore AI tools for writing, research, design and productivity. Compare their uses, limitations and official websites in one directory.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://globalinsightsaqib.vercel.app/ai-tools.html">
+<title>AI Tools Hub 2026 | Global Insight</title>
+<meta name="description" content="Explore AI tools for writing, research, image generation, video editing, coding, education, audio and productivity. Search and compare useful tools.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://globalinsightsaqib.vercel.app/ai-tools.html">
+<meta property="og:title" content="AI Tools Hub | Global Insight">
+<meta property="og:description" content="Discover AI tools for creativity, learning, work and productivity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://globalinsightsaqib.vercel.app/ai-tools.html">
 
-  <meta property="og:title" content="AI Tools Hub | Global Insight">
-  <meta property="og:description" content="Explore AI tools for writing, research, design and productivity.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://globalinsightsaqib.vercel.app/ai-tools.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #080d18;
-      --panel: #101827;
-      --panel2: #141f32;
-      --text: #f1f5ff;
-      --muted: #a4b0c5;
-      --blue: #68a4ff;
-      --border: #25334a;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(8, 13, 24, .94);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 800;
-      text-decoration: none;
-      letter-spacing: -.6px;
-    }
-
-    .logo span { color: var(--blue); }
-
-    .back-link {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .back-link:hover { color: white; }
-
-    .hero {
-      padding: 76px 0 44px;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 50% 0%, #183665 0%, transparent 65%);
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: #a9caff;
-      border: 1px solid #34517e;
-      background: #10203b;
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 20px 0 14px;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.13;
-      letter-spacing: -2px;
-    }
-
-    .gradient {
-      color: var(--blue);
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .directory { padding: 24px 0 75px; }
-
-    .search-wrap {
-      max-width: 720px;
-      margin: 0 auto 24px;
-    }
-
-    .search-wrap input {
-      width: 100%;
-      padding: 17px 19px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      outline: none;
-      background: var(--panel);
-      color: white;
-      font: inherit;
-      font-size: 15px;
-    }
-
-    .search-wrap input:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px #68a4ff20;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 9px;
-      margin-bottom: 30px;
-    }
-
-    .filter {
-      padding: 9px 15px;
-      border-radius: 30px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      cursor: pointer;
-      font: inherit;
-      font-size: 13px;
-      transition: .2s;
-    }
-
-    .filter:hover,
-    .filter.active {
-      color: white;
-      background: #1b3c6b;
-      border-color: var(--blue);
-    }
-
-    .results-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      padding: 23px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      background: linear-gradient(145deg, var(--panel), #0c1422);
-      transition: transform .2s, border-color .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #537eb9;
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      margin-bottom: 15px;
-    }
-
-    .tool-icon {
-      width: 49px;
-      height: 49px;
-      flex: 0 0 49px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: #1b2d48;
-      color: #c5dcff;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .category {
-      font-size: 11px;
-      color: #a9caff;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      font-weight: 700;
-    }
-
-    .card h2 {
-      margin: 2px 0 0;
-      font-size: 19px;
-      line-height: 1.4;
-    }
-
-    .card p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .best-for {
-      padding: 12px;
-      margin: auto 0 17px;
-      border-radius: 10px;
-      background: #0a1220;
-      color: #c8d4e8;
-      font-size: 12px;
-    }
-
-    .best-for strong { color: white; }
-
-    .official-link {
-      display: block;
-      text-align: center;
-      padding: 11px;
-      border-radius: 10px;
-      background: #18345a;
-      color: #e8f1ff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      border: 1px solid #294c7b;
-      transition: .2s;
-    }
-
-    .official-link:hover {
-      background: #24508a;
-    }
-
-    .empty {
-      grid-column: 1 / -1;
-      padding: 35px;
-      text-align: center;
-      color: var(--muted);
-      border: 1px dashed var(--border);
-      border-radius: 14px;
-    }
-
-    .editorial {
-      margin-top: 55px;
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--panel);
-    }
-
-    .editorial h2 { margin-top: 0; }
-
-    .editorial p,
-    .editorial li {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .editorial a { color: #a9caff; }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-links a { text-decoration: none; }
-    .footer-links a:hover { color: white; }
-
-    @media (max-width: 850px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 560px) {
-      .grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 54px; }
-      .nav { min-height: 64px; }
-      .logo { font-size: 18px; }
-      .card { padding: 20px; }
-      .editorial { padding: 21px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-    }
-  </style>
+<style>
+:root {
+  --bg:#080d18;
+  --panel:#101827;
+  --panel2:#142137;
+  --text:#f1f5ff;
+  --muted:#a4b0c5;
+  --blue:#68a4ff;
+  --purple:#9270ff;
+  --pink:#f278bd;
+  --border:#25334a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  margin:0;font-family:Inter,Arial,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.7;
+}
+a{color:inherit}
+button,input{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(8,13,24,.94);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(16px);
+}
+.nav{
+  min-height:72px;display:flex;justify-content:space-between;
+  align-items:center;gap:16px;
+}
+.logo{
+  font-size:21px;font-weight:800;text-decoration:none;
+  letter-spacing:-.6px;white-space:nowrap;
+}
+.logo span{
+  background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.back-link{
+  color:var(--muted);text-decoration:none;font-size:14px;
+}
+.back-link:hover{color:white}
+.hero{
+  padding:75px 0 55px;text-align:center;
+  background:
+    radial-gradient(ellipse at 15% 5%,#6233a82a,transparent 42%),
+    radial-gradient(ellipse at 85% 15%,#2476d82b,transparent 40%),
+    radial-gradient(ellipse at 50% 100%,#b83f7a14,transparent 55%);
+}
+.eyebrow{
+  display:inline-block;padding:7px 14px;border-radius:30px;
+  border:1px solid #48649a;background:#142440;
+  color:#c8dcff;font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;
+}
+h1{
+  font-size:clamp(36px,6vw,64px);line-height:1.12;
+  letter-spacing:-2px;margin:22px 0 16px;
+}
+.gradient{
+  background:linear-gradient(90deg,#72b4ff,#a38aff,#f18bc8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{
+  max-width:700px;margin:auto;color:var(--muted);font-size:16px;
+}
+.hero-stats{
+  display:flex;justify-content:center;gap:25px;flex-wrap:wrap;
+  margin-top:28px;color:#c6d5eb;font-size:13px;
+}
+.hero-stats span{display:flex;align-items:center;gap:7px}
+.hero-stats b{color:white}
+.directory{padding:26px 0 75px}
+.search-wrap{max-width:760px;margin:0 auto 20px;position:relative}
+.search-wrap input{
+  width:100%;padding:17px 48px 17px 19px;
+  border-radius:14px;border:1px solid var(--border);
+  background:var(--panel);color:white;outline:none;font-size:15px;
+}
+.search-wrap input:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px #68a4ff20;
+}
+.search-icon{
+  position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  color:var(--muted);pointer-events:none;font-size:19px;
+}
+.search-help{text-align:center;color:var(--muted);font-size:12px;margin-top:8px}
+.filters{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:9px;
+  margin:27px 0 32px;
+}
+.filter{
+  padding:9px 14px;border-radius:30px;background:var(--panel);
+  border:1px solid var(--border);color:var(--muted);
+  cursor:pointer;font-size:12px;font-weight:600;transition:.2s;
+}
+.filter:hover,.filter.active{
+  color:white;background:#233c65;border-color:#659bff;
+}
+.results-line{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;color:var(--muted);font-size:13px;margin-bottom:17px;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;
+}
+.card{
+  min-width:0;display:flex;flex-direction:column;padding:22px;
+  border:1px solid var(--border);border-radius:17px;
+  background:linear-gradient(145deg,#111b2b,#0c1422);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+}
+.card:hover{
+  transform:translateY(-4px);border-color:#537eb9;
+  box-shadow:0 12px 35px #00000020;
+}
+.card-top{display:flex;align-items:center;gap:13px;margin-bottom:15px}
+.tool-logo{
+  width:49px;height:49px;flex:0 0 49px;object-fit:contain;
+  padding:7px;border-radius:13px;background:#fff;
+  border:1px solid #dbe4f0;
+}
+.tool-icon{
+  width:49px;height:49px;flex:0 0 49px;display:grid;
+  place-items:center;border-radius:13px;
+  background:linear-gradient(135deg,#7048e8,#3289f5);
+  color:white;font-size:16px;font-weight:800;
+}
+.category{
+  font-size:10px;color:#a9caff;text-transform:uppercase;
+  letter-spacing:.8px;font-weight:700;
+}
+.card h2{margin:3px 0 0;font-size:19px;line-height:1.35}
+.card p{margin:0 0 17px;color:var(--muted);font-size:13px}
+.best-for{
+  padding:11px;margin:auto 0 16px;border-radius:10px;
+  background:#0a1220;color:#c8d4e8;font-size:12px;
+}
+.best-for strong{color:white}
+.official-link{
+  display:block;text-align:center;padding:11px;border-radius:10px;
+  background:#18345a;color:#e8f1ff;text-decoration:none;
+  font-weight:700;font-size:13px;border:1px solid #294c7b;transition:.2s;
+}
+.official-link:hover{background:#24508a}
+.card[hidden]{display:none!important}
+.empty{
+  grid-column:1/-1;padding:38px;text-align:center;
+  color:var(--muted);border:1px dashed var(--border);border-radius:14px;
+}
+.guides{margin-top:60px}
+.section-heading{text-align:center;margin-bottom:24px}
+.section-heading h2{font-size:clamp(25px,4vw,34px);margin:0 0 8px}
+.section-heading p{color:var(--muted);font-size:14px;margin:0}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.guide{
+  padding:22px;border-radius:15px;background:var(--panel);
+  border:1px solid var(--border);
+}
+.guide-icon{
+  width:42px;height:42px;display:grid;place-items:center;
+  border-radius:12px;background:#24375b;color:#c4d9ff;font-size:20px;
+}
+.guide h3{font-size:17px;margin:14px 0 7px}
+.guide p{font-size:13px;color:var(--muted);margin:0}
+.editorial{
+  margin-top:50px;padding:28px;border:1px solid var(--border);
+  border-radius:16px;background:var(--panel);
+}
+.editorial h2{margin-top:0}
+.editorial h3{margin-bottom:6px}
+.editorial p,.editorial li{color:var(--muted);font-size:14px}
+.editorial a{color:#a9caff}
+footer{
+  border-top:1px solid var(--border);padding:28px 0;
+  color:var(--muted);font-size:13px;
+}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px}
+.footer-links a{text-decoration:none}
+.footer-links a:hover{color:white}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .grid,.guide-grid{grid-template-columns:1fr}
+  .hero{padding-top:52px}
+  .logo{font-size:17px}
+  .nav{min-height:64px}
+  .back-link{font-size:12px}
+  .card{padding:19px}
+  .editorial{padding:21px}
+  .hero-stats{gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="logo" href="index.html">GLOBAL <span>INSIGHT</span></a>
-      <a class="back-link" href="index.html">← Back to homepage</a>
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html">GLOBAL <span>INSIGHT</span></a>
+    <a class="back-link" href="index.html">← Back to homepage</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">✦ Explore the AI landscape</span>
+    <h1>Discover your next<br><span class="gradient">AI tool.</span></h1>
+    <p>
+      Explore tools for writing, research, design, video, audio, coding and more.
+      Search by name, category or the task you want to accomplish.
+    </p>
+    <div class="hero-stats">
+      <span>✦ <b id="totalTools">40+</b> listed tools</span>
+      <span>⌕ Searchable directory</span>
+      <span>↗ Official websites</span>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow">Explore the AI landscape</span>
-        <h1>Discover your next<br><span class="gradient">AI tool.</span></h1>
-        <p>
-          Explore tools for writing, research, design and everyday productivity.
-          Learn what each tool can do, who it may help, and where to find it.
-        </p>
-      </div>
-    </section>
+<section class="directory container" aria-label="AI tools directory">
+  <div class="search-wrap">
+    <input id="searchInput" type="search"
+      placeholder="Search e.g. video editing, students, writing..."
+      aria-label="Search AI tools" autocomplete="off">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+    <div class="search-help">Search tool names, categories and use cases. No AI-generated answers.</div>
+  </div>
 
-    <section class="directory container" aria-label="AI tools directory">
-      <div class="search-wrap">
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Search tools, tasks or categories..."
-          aria-label="Search AI tools"
-          autocomplete="off">
-      </div>
+  <div class="filters" aria-label="Filter by category">
+    <button class="filter active" data-category="all" aria-pressed="true">All Tools</button>
+    <button class="filter" data-category="writing" aria-pressed="false">Writing</button>
+    <button class="filter" data-category="research" aria-pressed="false">Research</button>
+    <button class="filter" data-category="design" aria-pressed="false">Design & Images</button>
+    <button class="filter" data-category="video" aria-pressed="false">Video</button>
+    <button class="filter" data-category="audio" aria-pressed="false">Voice & Audio</button>
+    <button class="filter" data-category="coding" aria-pressed="false">Coding</button>
+    <button class="filter" data-category="productivity" aria-pressed="false">Productivity</button>
+    <button class="filter" data-category="education" aria-pressed="false">Education</button>
+    <button class="filter" data-category="marketing" aria-pressed="false">Marketing</button>
+    <button class="filter" data-category="automation" aria-pressed="false">Automation</button>
+  </div>
 
-      <div class="filters" aria-label="Filter by category">
-        <button class="filter active" data-category="all" aria-pressed="true">All tools</button>
-        <button class="filter" data-category="writing" aria-pressed="false">Writing</button>
-        <button class="filter" data-category="research" aria-pressed="false">Research</button>
-        <button class="filter" data-category="design" aria-pressed="false">Design</button>
-        <button class="filter" data-category="productivity" aria-pressed="false">Productivity</button>
-      </div>
+  <div class="results-line">
+    <span id="resultCount" aria-live="polite">Loading tools...</span>
+    <span>External links open in a new tab</span>
+  </div>
 
-      <div class="results-line">
-        <span id="resultCount" aria-live="polite">8 tools</span>
-        <span>Official websites linked below</span>
-      </div>
+  <div class="grid" id="toolGrid"></div>
 
-      <div class="grid" id="toolGrid">
-
-        <article class="card" data-category="writing"
-          data-search="chatgpt writing brainstorming explanations coding general assistant">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">C</div>
-            <div>
-              <div class="category">Writing & assistance</div>
-              <h2>ChatGPT</h2>
-            </div>
-          </div>
-          <p>An AI assistant for drafting, brainstorming, explanations and a range of everyday tasks.</p>
-          <div class="best-for"><strong>Potential use:</strong> First drafts, learning and idea development.</div>
-          <a class="official-link" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="writing"
-          data-search="claude writing analysis long documents brainstorming assistant">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">Cl</div>
-            <div>
-              <div class="category">Writing & analysis</div>
-              <h2>Claude</h2>
-            </div>
-          </div>
-          <p>An AI assistant that can help with writing, document analysis and exploring complex ideas.</p>
-          <div class="best-for"><strong>Potential use:</strong> Editing, outlining and document work.</div>
-          <a class="official-link" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="research"
-          data-search="perplexity research web search answers sources citations">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">P</div>
-            <div>
-              <div class="category">Research</div>
-              <h2>Perplexity</h2>
-            </div>
-          </div>
-          <p>A search-focused AI service designed to help explore questions and discover source material.</p>
-          <div class="best-for"><strong>Potential use:</strong> Initial research and finding references to verify.</div>
-          <a class="official-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="productivity"
-          data-search="gemini Google assistant writing ideas learning productivity">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">G</div>
-            <div>
-              <div class="category">Productivity</div>
-              <h2>Google Gemini</h2>
-            </div>
-          </div>
-          <p>Google's AI assistant for exploring ideas, asking questions and working through tasks.</p>
-          <div class="best-for"><strong>Potential use:</strong> Learning, planning and idea generation.</div>
-          <a class="official-link" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="design"
-          data-search="Canva design presentations social media graphics templates">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">Ca</div>
-            <div>
-              <div class="category">Design</div>
-              <h2>Canva</h2>
-            </div>
-          </div>
-          <p>A visual design platform for creating graphics, presentations and social media content.</p>
-          <div class="best-for"><strong>Potential use:</strong> Visual content and presentation design.</div>
-          <a class="official-link" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="design"
-          data-search="Adobe Express design social media images videos templates">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">Ae</div>
-            <div>
-              <div class="category">Design & content</div>
-              <h2>Adobe Express</h2>
-            </div>
-          </div>
-          <p>A design and content creation tool for graphics, short videos and promotional materials.</p>
-          <div class="best-for"><strong>Potential use:</strong> Quick visual assets and social content.</div>
-          <a class="official-link" href="https://www.adobe.com/express/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="writing"
-          data-search="Grammarly grammar spelling clarity proofreading writing">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">Gr</div>
-            <div>
-              <div class="category">Writing & editing</div>
-              <h2>Grammarly</h2>
-            </div>
-          </div>
-          <p>A writing assistant for checking grammar, clarity and tone in supported writing workflows.</p>
-          <div class="best-for"><strong>Potential use:</strong> Proofreading and improving readability.</div>
-          <a class="official-link" href="https://www.grammarly.com/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-        <article class="card" data-category="productivity"
-          data-search="Notion AI notes summaries documents organization productivity">
-          <div class="card-top">
-            <div class="tool-icon" aria-hidden="true">N</div>
-            <div>
-              <div class="category">Productivity</div>
-              <h2>Notion</h2>
-            </div>
-          </div>
-          <p>A workspace for notes, documents and project organization, with AI features available in its ecosystem.</p>
-          <div class="best-for"><strong>Potential use:</strong> Organizing notes, projects and information.</div>
-          <a class="official-link" href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Visit official website ↗</a>
-        </article>
-
-      </div>
-
-      <section class="editorial">
-        <h2>How to choose an AI tool</h2>
-        <p>
-          Start with the task you need to complete rather than choosing a tool
-          just because it is popular. Compare output quality, ease of use,
-          privacy options, usage limits and the time needed to learn it.
-        </p>
-
-        <h3>Check before you sign up</h3>
-        <ul>
-          <li>Review the provider's current pricing and free-plan limits.</li>
-          <li>Read the privacy policy before uploading personal or confidential information.</li>
-          <li>Verify important facts instead of relying on AI output alone.</li>
-          <li>Test the tool with your own task before deciding whether it suits you.</li>
-        </ul>
-
-        <h3>About this directory</h3>
-        <p>
-          Global Insight is an independent information website. Listings are
-          provided to help readers discover tools; inclusion is not an endorsement.
-          Features, availability and pricing can change, so check each provider's
-          official website. We are not affiliated with the listed providers unless
-          a specific relationship is clearly disclosed.
-        </p>
-
-        <p>
-          This directory is an introduction, not a substitute for detailed,
-          independently checked reviews. We aim to add hands-on examples,
-          comparisons and limitations to help readers make informed decisions.
-        </p>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Global Insight. All rights reserved.</span>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+  <section class="guides">
+    <div class="section-heading">
+      <h2>Explore by what you want to do</h2>
+      <p>Choose a task to discover tools that may help.</p>
     </div>
-  </footer>
+    <div class="guide-grid">
+      <article class="guide">
+        <div class="guide-icon">✎</div>
+        <h3>Write & Improve</h3>
+        <p>Explore writing assistants, grammar checkers and tools for drafting or summarising text.</p>
+      </article>
+      <article class="guide">
+        <div class="guide-icon">▧</div>
+        <h3>Create Visual Content</h3>
+        <p>Find design and image tools for graphics, thumbnails, illustrations and presentations.</p>
+      </article>
+      <article class="guide">
+        <div class="guide-icon">▶</div>
+        <h3>Edit Videos</h3>
+        <p>Discover video tools for editing clips, generating visuals and adding captions.</p>
+      </article>
+      <article class="guide">
+        <div class="guide-icon">♫</div>
+        <h3>Create Audio</h3>
+        <p>Explore voice, music, transcription and podcast production tools.</p>
+      </article>
+      <article class="guide">
+        <div class="guide-icon">{ }</div>
+        <h3>Build with Code</h3>
+        <p>Discover coding assistants and platforms for developing websites and applications.</p>
+      </article>
+      <article class="guide">
+        <div class="guide-icon">◎</div>
+        <h3>Learn & Research</h3>
+        <p>Explore study, scientific research and computational tools for learning.</p>
+      </article>
+    </div>
+  </section>
 
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const cards = Array.from(document.querySelectorAll(".card"));
-    const filterButtons = Array.from(document.querySelectorAll(".filter"));
-    const resultCount = document.getElementById("resultCount");
+  <section class="editorial">
+    <h2>How to choose an AI tool</h2>
+    <p>
+      Start with the task you need to complete rather than choosing a tool
+      just because it is popular. Compare output quality, ease of use,
+      privacy options, usage limits and the time needed to learn it.
+    </p>
+    <h3>Check before you sign up</h3>
+    <ul>
+      <li>Review the provider's current pricing and free-plan limits.</li>
+      <li>Read the privacy policy before uploading personal or confidential information.</li>
+      <li>Verify important facts instead of relying on AI output alone.</li>
+      <li>Test the tool with your own task before deciding whether it suits you.</li>
+    </ul>
+    <h3>About this directory</h3>
+    <p>
+      Global Insight is an independent information website. Listings are provided
+      to help readers discover tools; inclusion is not an endorsement. Features,
+      availability and pricing can change, so check each provider's official website.
+      We are not affiliated with the listed providers unless a specific relationship
+      is clearly disclosed.
+    </p>
+    <p>
+      This directory is an introduction, not a substitute for detailed,
+      independently checked reviews. Tool descriptions are brief summaries;
+      readers should verify current capabilities and suitability with the provider.
+    </p>
+  </section>
+</section>
+</main>
 
-    let selectedCategory = "all";
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Global Insight. All rights reserved.</span>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
 
-    function filterTools() {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
+<script>
+const tools = [
+  {name:"ChatGPT",cat:"writing",logo:"C",url:"https://chatgpt.com/",desc:"An AI assistant for writing, brainstorming, learning and everyday tasks.",use:"Drafts, explanations and ideas",tags:"chatbot essays questions coding assistant"},
+  {name:"Claude",cat:"writing",logo:"Cl",url:"https://claude.ai/",desc:"An AI assistant for writing, document analysis and exploring complex ideas.",use:"Editing and document work",tags:"documents long text analysis chatbot"},
+  {name:"Google Gemini",cat:"writing",logo:"G",url:"https://gemini.google.com/",desc:"Google's AI assistant for exploring ideas and completing tasks.",use:"Planning and explanations",tags:"google chatbot answers writing"},
+  {name:"Grammarly",cat:"writing",logo:"Gr",url:"https://www.grammarly.com/",desc:"Writing assistance for grammar, clarity and tone.",use:"Proofreading and readability",tags:"grammar spelling editing english"},
+  {name:"QuillBot",cat:"writing",logo:"Q",url:"https://quillbot.com/",desc:"Writing utilities including paraphrasing and summarisation.",use:"Rewriting and summarising",tags:"paraphraser summary grammar"},
+  {name:"DeepL Write",cat:"writing",logo:"D",url:"https://www.deepl.com/write",desc:"Writing suggestions to help improve clarity and phrasing.",use:"Polishing sentences",tags:"rewrite editing language"},
+  {name:"Perplexity",cat:"research",logo:"P",url:"https://www.perplexity.ai/",desc:"A search-focused service for exploring questions and discovering sources.",use:"Initial research",tags:"web search citations answers information"},
+  {name:"NotebookLM",cat:"research",logo:"N",url:"https://notebooklm.google.com/",desc:"A research assistant that works with supported source materials.",use:"Study notes and summaries",tags:"documents pdf sources notes study"},
+  {name:"Elicit",cat:"research",logo:"E",url:"https://elicit.com/",desc:"A research tool designed to support literature reviews and evidence discovery.",use:"Reviewing research papers",tags:"academic papers science literature"},
+  {name:"Consensus",cat:"research",logo:"Co",url:"https://consensus.app/",desc:"A search service focused on research literature and scientific evidence.",use:"Exploring published research",tags:"science papers studies academic"},
+  {name:"Canva",cat:"design",logo:"Ca",url:"https://www.canva.com/",desc:"A visual design platform for graphics, presentations and social content.",use:"Posters and thumbnails",tags:"graphic design templates social media"},
+  {name:"Adobe Firefly",cat:"design",logo:"A",url:"https://firefly.adobe.com/",desc:"Adobe's generative tools for creating and editing visual content.",use:"Creative images and edits",tags:"image generator photo art"},
+  {name:"Ideogram",cat:"design",logo:"I",url:"https://ideogram.ai/",desc:"An image generation platform for visual concepts and designs.",use:"Creative graphics",tags:"ai image generator typography art"},
+  {name:"Leonardo AI",cat:"design",logo:"L",url:"https://leonardo.ai/",desc:"Creative tools for generating and developing visual assets.",use:"Artwork and concept images",tags:"image generation game assets art"},
+  {name:"Microsoft Designer",cat:"design",logo:"M",url:"https://designer.microsoft.com/",desc:"A design tool for creating graphics and visual content.",use:"Social graphics",tags:"images graphics templates"},
+  {name:"Remove.bg",cat:"design",logo:"R",url:"https://www.remove.bg/",desc:"A tool designed to remove image backgrounds.",use:"Transparent-background images",tags:"background remover photo png"},
+  {name:"CapCut",cat:"video",logo:"C",url:"https://www.capcut.com/",desc:"A video editing platform with creative and AI-assisted features.",use:"Short videos and social content",tags:"reels shorts editing subtitles"},
+  {name:"Runway",cat:"video",logo:"R",url:"https://runwayml.com/",desc:"Creative AI tools for video generation and editing workflows.",use:"Video concepts and effects",tags:"text to video generation editing"},
+  {name:"Pika",cat:"video",logo:"P",url:"https://pika.art/",desc:"A creative platform for generating and transforming video content.",use:"Short visual clips",tags:"video generator animation"},
+  {name:"Descript",cat:"video",logo:"D",url:"https://www.descript.com/",desc:"An editing platform for audio and video with transcript-based workflows.",use:"Spoken content editing",tags:"transcription subtitles podcast"},
+  {name:"VEED",cat:"video",logo:"V",url:"https://www.veed.io/",desc:"A browser-based video editor with caption and content tools.",use:"Captions and online editing",tags:"subtitles clips social videos"},
+  {name:"ElevenLabs",cat:"audio",logo:"11",url:"https://elevenlabs.io/",desc:"Voice technology tools for supported speech and audio tasks.",use:"Voiceovers and narration",tags:"text to speech voice generator"},
+  {name:"Suno",cat:"audio",logo:"S",url:"https://suno.com/",desc:"A platform for creating music with AI-assisted workflows.",use:"Music ideas and songs",tags:"music song generator audio"},
+  {name:"Udio",cat:"audio",logo:"U",url:"https://www.udio.com/",desc:"A platform for AI-assisted music creation.",use:"Exploring musical ideas",tags:"music songs audio generation"},
+  {name:"Adobe Podcast",cat:"audio",logo:"A",url:"https://podcast.adobe.com/",desc:"Audio tools for recording and improving spoken content.",use:"Podcast and voice workflows",tags:"audio cleanup speech podcast"},
+  {name:"GitHub Copilot",cat:"coding",logo:"GH",url:"https://github.com/features/copilot",desc:"A coding assistant integrated with supported development environments.",use:"Code suggestions and explanations",tags:"programming developer autocomplete"},
+  {name:"Cursor",cat:"coding",logo:"Cu",url:"https://cursor.com/",desc:"A code editor with AI-assisted development features.",use:"Writing and understanding code",tags:"editor programming software"},
+  {name:"Replit",cat:"coding",logo:"Re",url:"https://replit.com/",desc:"An online development environment with AI-assisted building tools.",use:"Prototyping coding projects",tags:"web development apps programming"},
+  {name:"Lovable",cat:"coding",logo:"Lo",url:"https://lovable.dev/",desc:"A platform for building web applications with AI assistance.",use:"Web app prototypes",tags:"website builder app generator"},
+  {name:"Bolt",cat:"coding",logo:"B",url:"https://bolt.new/",desc:"A browser-based environment for building web applications with AI.",use:"Rapid web prototypes",tags:"coding website app builder"},
+  {name:"Notion",cat:"productivity",logo:"N",url:"https://www.notion.so/",desc:"A workspace for notes, documents and project organisation.",use:"Managing notes and projects",tags:"planning tasks documents notes"},
+  {name:"Otter.ai",cat:"productivity",logo:"O",url:"https://otter.ai/",desc:"A service for supported meeting transcription and note-taking tasks.",use:"Meeting notes and transcripts",tags:"meetings speech notes transcript"},
+  {name:"Gamma",cat:"productivity",logo:"Ga",url:"https://gamma.app/",desc:"A tool for creating presentations and visual documents.",use:"Presentation drafts",tags:"slides presentations documents"},
+  {name:"ClickUp",cat:"productivity",logo:"C",url:"https://clickup.com/",desc:"A work management platform with productivity and AI features.",use:"Tasks and team projects",tags:"project management tasks work"},
+  {name:"Khan Academy",cat:"education",logo:"K",url:"https://www.khanacademy.org/",desc:"A learning platform with educational resources across many subjects.",use:"Practice and learning",tags:"math science school student tutoring"},
+  {name:"Wolfram Alpha",cat:"education",logo:"W",url:"https://www.wolframalpha.com/",desc:"A computational knowledge engine for supported maths and factual queries.",use:"Calculations and maths",tags:"math equations calculator science"},
+  {name:"Photomath",cat:"education",logo:"Ph",url:"https://photomath.com/",desc:"A maths learning app that explains supported problems step by step.",use:"Understanding maths solutions",tags:"math homework equations student"},
+  {name:"HubSpot",cat:"marketing",logo:"H",url:"https://www.hubspot.com/",desc:"A customer platform with marketing, sales and AI-assisted tools.",use:"Marketing workflows",tags:"marketing crm business sales"},
+  {name:"Jasper",cat:"marketing",logo:"J",url:"https://www.jasper.ai/",desc:"A platform focused on AI-assisted marketing content workflows.",use:"Marketing copy and campaign drafts",tags:"copywriting ads content campaigns"},
+  {name:"Buffer",cat:"marketing",logo:"B",url:"https://buffer.com/",desc:"A platform for planning and managing social media publishing.",use:"Social content scheduling",tags:"social media marketing posts"},
+  {name:"Zapier",cat:"automation",logo:"Z",url:"https://zapier.com/",desc:"A platform for connecting apps and automating supported workflows.",use:"Connecting apps and repetitive tasks",tags:"automation integrations apps workflows"},
+  {name:"Make",cat:"automation",logo:"M",url:"https://www.make.com/",desc:"A visual platform for designing app integrations and automated workflows.",use:"Workflow automation",tags:"integrations automation business"}
+];
 
-      cards.forEach(card => {
-        const matchesCategory =
-          selectedCategory === "all" ||
-          card.dataset.category === selectedCategory;
+const categoryNames = {
+  writing:"Writing & AI",
+  research:"Research",
+  design:"Design & Images",
+  video:"Video",
+  audio:"Voice & Audio",
+  coding:"Coding",
+  productivity:"Productivity",
+  education:"Education",
+  marketing:"Marketing",
+  automation:"Automation"
+};
 
-        const searchableText =
-          (card.innerText + " " + (card.dataset.search || "")).toLowerCase();
+const searchInput=document.getElementById("searchInput");
+const toolGrid=document.getElementById("toolGrid");
+const resultCount=document.getElementById("resultCount");
+const filterButtons=[...document.querySelectorAll(".filter")];
+let selectedCategory="all";
 
-        const matchesSearch = searchableText.includes(query);
-        const show = matchesCategory && matchesSearch;
+document.getElementById("totalTools").textContent=tools.length+" tools";
+document.getElementById("year").textContent=new Date().getFullYear();
 
-        card.hidden = !show;
+function renderTools(){
+  const query=searchInput.value.trim().toLowerCase();
+  const terms=query.split(/\s+/).filter(Boolean);
 
-        if (show) visibleCount++;
-      });
+  const results=tools.filter(tool=>{
+    const categoryMatches=selectedCategory==="all"||tool.cat===selectedCategory;
+    const searchable=[
+      tool.name,tool.cat,categoryNames[tool.cat],tool.desc,tool.use,tool.tags
+    ].join(" ").toLowerCase();
 
-      resultCount.textContent =
-        visibleCount + (visibleCount === 1 ? " tool found" : " tools found");
+    const searchMatches=terms.every(term=>searchable.includes(term));
+    return categoryMatches&&searchMatches;
+  });
 
-      let emptyMessage = document.getElementById("emptyMessage");
+  resultCount.textContent=results.length+" "+(results.length===1?"tool":"tools")+" found";
 
-      if (visibleCount === 0) {
-        if (!emptyMessage) {
-          emptyMessage = document.createElement("p");
-          emptyMessage.id = "emptyMessage";
-          emptyMessage.className = "empty";
-          emptyMessage.textContent =
-            "No matching tools found. Try another search or category.";
-          document.getElementById("toolGrid").appendChild(emptyMessage);
-        }
-      } else if (emptyMessage) {
-        emptyMessage.remove();
-      }
-    }
+  if(!results.length){
+    toolGrid.innerHTML='<p class="empty">No matching tools found. Try a different name, task or category.</p>';
+    return;
+  }
 
-    searchInput.addEventListener("input", filterTools);
+  toolGrid.innerHTML=results.map(tool=>{
+    const domain=new URL(tool.url).hostname.replace(/^www\./,"");
+    const safeName=tool.name.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    const safeDesc=tool.desc.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    const safeUse=tool.use.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
-    filterButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        selectedCategory = button.dataset.category;
+    return `
+      <article class="card">
+        <div class="card-top">
+          <img class="tool-logo"
+            src="https://www.google.com/s2/favicons?domain=${domain}&sz=128"
+            alt="${safeName} logo" width="49" height="49" loading="lazy"
+            onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+          <div class="tool-icon" hidden aria-hidden="true">${tool.logo}</div>
+          <div>
+            <div class="category">${categoryNames[tool.cat]}</div>
+            <h2>${safeName}</h2>
+          </div>
+        </div>
+        <p>${safeDesc}</p>
+        <div class="best-for"><strong>Potential use:</strong> ${safeUse}</div>
+        <a class="official-link" href="${tool.url}" target="_blank" rel="noopener noreferrer">
+          Visit official website ↗
+        </a>
+      </article>`;
+  }).join("");
+}
 
-        filterButtons.forEach(item => {
-          const active = item === button;
-          item.classList.toggle("active", active);
-          item.setAttribute("aria-pressed", String(active));
-        });
+searchInput.addEventListener("input",renderTools);
 
-        filterTools();
-      });
+filterButtons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    selectedCategory=button.dataset.category;
+    filterButtons.forEach(item=>{
+      const active=item===button;
+      item.classList.toggle("active",active);
+      item.setAttribute("aria-pressed",String(active));
     });
+    renderTools();
+  });
+});
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    filterTools();
-  </script>
+renderTools();
+</script>
 </body>
 </html>
-

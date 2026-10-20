@@ -1,17 +1,83 @@
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://globalinsightsaqib.vercel.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://globalinsightsaqib.vercel.app/xauusd.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://globalinsightsaqib.vercel.app/ai-tools.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/global-climate-summit.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/eu-enlargement.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/iss-transition.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/quantum-computing.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/next-gen-ai.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/open-source-security.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/personalized-mrna-therapies.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/micro-workouts.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/gut-microbiome-mental-health.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/ai-workflows-2026.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/scaling-online-startup.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/global-markets-inflation.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/four-day-workweek.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/green-tech-startups.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/future-of-work-ai.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/ai-cybersecurity.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/return-of-analog.html</loc>
+  </url>
+
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/magical-forest.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/barnaby-dragon.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/captain-mia-starship.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/a-citys-echo.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/the-last-coffee-shop.html</loc>
+  </url>
+  <url>
+    <loc>https://globalinsightsaqib.vercel.app/stories/the-corporate-ladder.html</loc>
   </url>
 </urlset>

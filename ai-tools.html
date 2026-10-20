@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Tools Hub 2026 | Global Insight</title>
-<meta name="description" content="Explore AI tools for writing, research, image generation, video editing, coding, education, audio and productivity. Search and compare useful tools.">
+<title>AI Tools Directory &amp; Comparison Guide | Global Insight</title>
+<meta name="description" content="Browse an independent directory of AI tools for writing, research, design, video, audio, coding, education and productivity. Compare use cases and visit official provider websites.">
 <meta name="robots" content="index,follow">
+<meta name="author" content="Global Insight">
 <link rel="canonical" href="https://globalinsightsaqib.vercel.app/ai-tools.html">
 <meta property="og:title" content="AI Tools Hub | Global Insight">
 <meta property="og:description" content="Discover AI tools for creativity, learning, work and productivity.">
@@ -158,6 +159,7 @@ h1{
   background:#0a1220;color:#c8d4e8;font-size:12px;
 }
 .best-for strong{color:white}
+.access-note{font-size:11px!important;margin:0 0 13px!important;color:#9eabc1!important}
 .official-link{
   display:block;text-align:center;padding:11px;border-radius:10px;
   background:#18345a;color:#e8f1ff;text-decoration:none;
@@ -192,6 +194,11 @@ h1{
 .editorial h3{margin-bottom:6px}
 .editorial p,.editorial li{color:var(--muted);font-size:14px}
 .editorial a{color:#a9caff}
+.category-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}
+.category-summary{padding:16px;border:1px solid var(--border);border-radius:12px;background:#0b1422}
+.category-summary h3{margin:0 0 6px;font-size:15px;color:#eaf1ff}
+.category-summary p{margin:0}
+.directory-caveat{margin:8px 0 0;padding:14px;border-left:3px solid var(--blue);background:#0b1422;border-radius:0 9px 9px 0}
 footer{
   border-top:1px solid var(--border);padding:28px 0;
   color:var(--muted);font-size:13px;
@@ -205,7 +212,7 @@ footer{
   .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:560px){
-  .grid,.guide-grid{grid-template-columns:1fr}
+  .grid,.guide-grid,.category-summary-grid{grid-template-columns:1fr}
   .hero{padding-top:52px}
   .logo{font-size:17px}
   .nav{min-height:64px}
@@ -238,7 +245,7 @@ footer{
       Search by name, category or the task you want to accomplish.
     </p>
     <div class="hero-stats">
-      <span>✦ <b id="totalTools">40+</b> listed tools</span>
+      <span>✦ <b id="totalTools">40</b> listed tools</span>
       <span>⌕ Searchable directory</span>
       <span>↗ Official websites</span>
     </div>
@@ -273,7 +280,22 @@ footer{
     <span>External links open in a new tab</span>
   </div>
 
-  <div class="grid" id="toolGrid"></div>
+  <section class="editorial directory-overview" aria-labelledby="directory-guide-title" style="margin:0 0 28px">
+    <h2 id="directory-guide-title">Browse AI tools by task</h2>
+    <p>This directory groups tools by their main use. Products can overlap categories, and features may change as providers update their services.</p>
+    <div class="category-summary-grid">
+      <div class="category-summary"><h3>Writing &amp; communication</h3><p>ChatGPT, Claude, Gemini, Grammarly, QuillBot and DeepL Write can support drafting, editing, explanation and language tasks. Review outputs carefully before publishing.</p></div>
+      <div class="category-summary"><h3>Research &amp; reading</h3><p>Perplexity, NotebookLM, Elicit and Consensus can help explore questions or organise source material. Check citations against original papers and documents.</p></div>
+      <div class="category-summary"><h3>Design &amp; images</h3><p>Canva, Adobe Firefly, Ideogram, Leonardo AI, Microsoft Designer and Remove.bg serve different visual-content workflows. Check usage rights and output suitability.</p></div>
+      <div class="category-summary"><h3>Video &amp; audio</h3><p>CapCut, Runway, Pika, Descript, VEED, ElevenLabs, Suno, Udio and Adobe Podcast support selected editing or media tasks. Confirm rights and consent before using voices or likenesses.</p></div>
+      <div class="category-summary"><h3>Coding &amp; app building</h3><p>GitHub Copilot, Cursor, Replit, Lovable and Bolt can assist development. Test generated code, review security implications and keep backups of important work.</p></div>
+      <div class="category-summary"><h3>Productivity &amp; automation</h3><p>Notion, Otter.ai, Gamma, ClickUp, Zapier and Make can help organise information or connect workflows. Check what data an integration can access before enabling it.</p></div>
+      <div class="category-summary"><h3>Education &amp; calculations</h3><p>Khan Academy, Wolfram Alpha and Photomath can support learning and problem-solving. Use explanations to understand the method and verify important results.</p></div>
+      <div class="category-summary"><h3>Marketing &amp; publishing</h3><p>HubSpot, Jasper and Buffer support selected marketing and publishing workflows. Review factual claims, permissions and platform rules before publishing content.</p></div>
+    </div>
+    <p class="directory-caveat"><strong>Pricing and access:</strong> Plans, free allowances, regional availability and features change frequently. Open each official provider page for current details rather than relying on an outdated price list.</p>
+  </section>
+  <div class="grid" id="toolGrid" aria-live="polite"></div>
 
   <section class="guides">
     <div class="section-heading">
@@ -422,7 +444,7 @@ const resultCount=document.getElementById("resultCount");
 const filterButtons=[...document.querySelectorAll(".filter")];
 let selectedCategory="all";
 
-document.getElementById("totalTools").textContent=tools.length+" tools";
+document.getElementById("totalTools").textContent=tools.length;
 document.getElementById("year").textContent=new Date().getFullYear();
 
 function renderTools(){
@@ -472,6 +494,7 @@ function renderTools(){
 
   <p>${safeDesc}</p>
   <div class="best-for"><strong>Potential use:</strong> ${safeUse}</div>
+  <p class="access-note">Pricing, free limits and account requirements: check the official provider site.</p>
 
   <a class="official-link" href="${tool.url}" target="_blank" rel="noopener noreferrer">
     Visit official website ↗

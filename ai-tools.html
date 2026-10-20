@@ -453,25 +453,31 @@ function renderTools(){
     const safeUse=tool.use.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
     return `
-      <article class="card">
-        <div class="card-top">
-          <img class="tool-logo"
-            src="https://www.google.com/s2/favicons?domain=${domain}&sz=128"
-            alt="${safeName} logo" width="49" height="49" loading="lazy"
-            onerror="this.hidden=true;this.nextElementSibling.hidden=false">
-          <div class="tool-icon" hidden aria-hidden="true">${tool.logo}</div>
-          <div>
-            <div class="category">${categoryNames[tool.cat]}</div>
-            <h2>${safeName}</h2>
-          </div>
-        </div>
-        <p>${safeDesc}</p>
-        <div class="best-for"><strong>Potential use:</strong> ${safeUse}</div>
-        <a class="official-link" href="${tool.url}" target="_blank" rel="noopener noreferrer">
-          Visit official website ↗
-        </a>
-      </article>`;
-  }).join("");
+     
+<article class="card">
+  <div class="card-top">
+    <img class="tool-logo"
+      src="https://www.google.com/s2/favicons?domain=${domain}&sz=128"
+      alt="${safeName} logo"
+      width="49"
+      height="49"
+      loading="lazy"
+      onerror="this.style.display='none'">
+
+    <div>
+      <div class="category">${categoryNames[tool.cat]}</div>
+      <h2>${safeName}</h2>
+    </div>
+  </div>
+
+  <p>${safeDesc}</p>
+  <div class="best-for"><strong>Potential use:</strong> ${safeUse}</div>
+
+  <a class="official-link" href="${tool.url}" target="_blank" rel="noopener noreferrer">
+    Visit official website ↗
+  </a>
+</article>`;
+}).join("");
 }
 
 searchInput.addEventListener("input",renderTools);

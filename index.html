@@ -875,6 +875,114 @@ img:hover {
         transform: none;
     }
 }
+    
+/* ===== FINAL NAVIGATION BUTTON CONSISTENCY ===== */
+
+/* Gold link: remove special button appearance */
+#navbar a.gold-nav-btn,
+#mobile-menu a.gold-nav-btn,
+a.gold-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #475569 !important;
+    box-shadow: none !important;
+    font: inherit;
+    font-weight: 500;
+    text-decoration: none;
+    transform: none;
+}
+
+#navbar a.gold-nav-btn:hover,
+#mobile-menu a.gold-nav-btn:hover,
+a.gold-nav-btn:hover {
+    background: transparent !important;
+    color: #7c3aed !important;
+    box-shadow: none !important;
+    transform: none;
+}
+
+.gold-nav-btn .gold-icon,
+.gold-nav-btn .gold-arrow {
+    color: inherit !important;
+}
+
+/* ===== ANIMATED HOMEPAGE BACKGROUND ===== */
+
+#home {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(
+        -45deg,
+        #e0eaff,
+        #ffffff,
+        #f0e7ff,
+        #ffe8f3,
+        #e0f7ff
+    ) !important;
+    background-size: 400% 400% !important;
+    animation: giAnimatedBackground 14s ease infinite !important;
+}
+
+@keyframes giAnimatedBackground {
+    0%   { background-position: 0% 50%; }
+    25%  { background-position: 50% 0%; }
+    50%  { background-position: 100% 50%; }
+    75%  { background-position: 50% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glowing animated light effects */
+#home::before,
+#home::after {
+    content: "";
+    position: absolute;
+    width: min(45vw, 520px);
+    height: min(45vw, 520px);
+    border-radius: 50%;
+    filter: blur(75px);
+    opacity: 0.38;
+    pointer-events: none;
+    z-index: -1;
+    animation: giGlowFloat 12s ease-in-out infinite alternate;
+}
+
+#home::before {
+    top: 0;
+    left: -10%;
+    background: #93c5fd;
+}
+
+#home::after {
+    right: -10%;
+    bottom: 0;
+    background: #d8b4fe;
+    animation-delay: -6s;
+}
+
+@keyframes giGlowFloat {
+    from {
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    to {
+        transform: translate3d(35px, -25px, 0) scale(1.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #home,
+    #home::before,
+    #home::after {
+        animation: none !important;
+    }
+}
+
 </style>
 
 </head>

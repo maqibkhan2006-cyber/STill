@@ -219,6 +219,48 @@
             transition-duration: 0.01ms !important;
         }
     }
+    .gold-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border: 1px solid rgba(217, 180, 91, 0.55);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #f4d98b, #d9b45b);
+  color: #111 !important;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(217, 180, 91, 0.12);
+  transition: all 0.25s ease;
+}
+
+.gold-nav-btn .gold-icon {
+  font-size: 12px;
+}
+
+.gold-nav-btn .gold-arrow {
+  font-size: 15px;
+  transition: transform 0.25s ease;
+}
+
+.gold-nav-btn:hover {
+  background: linear-gradient(135deg, #ffe9a8, #e8bf5b);
+  color: #000 !important;
+  border-color: #ffe9a8;
+  box-shadow: 0 6px 20px rgba(217, 180, 91, 0.25);
+  transform: translateY(-2px);
+}
+
+.gold-nav-btn:hover .gold-arrow {
+  transform: translate(2px, -2px);
+}
+
+.gold-nav-btn:focus-visible {
+  outline: 2px solid #f4d98b;
+  outline-offset: 3px;
+}
 </style>
 
 </head>

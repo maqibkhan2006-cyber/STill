@@ -1,1 +1,557 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Barnaby, The Clumsy Dragon | Global Insight</title>
+<meta name="description" content="Join Barnaby, a clumsy young dragon who sneezes bubbles instead of fire, on a magical adventure about courage, creativity, and friendship.">
+<meta name="author" content="Global Insight">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#070b14">
+<link rel="canonical" href="https://globalinsightsaqib.vercel.app/stories/barnaby-dragon.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<style>
+:root {
+    --bg:#070b14;
+    --surface:#101827;
+    --blue:#3b82f6;
+    --light-blue:#60a5fa;
+    --text:#f1f5f9;
+    --muted:#b6c2d3;
+    --border:rgba(96,165,250,.2);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:25px}
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    background:radial-gradient(ellipse at 50% 0%,rgba(37,99,235,.18),transparent 55%),var(--bg);
+}
+a{text-decoration:none}
+.glass{
+    background:rgba(16,24,39,.85);
+    border:1px solid var(--border);
+    backdrop-filter:blur(14px);
+}
+.hero{
+    background:linear-gradient(90deg,rgba(7,11,20,.94),rgba(7,11,20,.65)),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1800&auto=format&fit=crop') center/cover;
+}
+.story-text p{
+    color:var(--muted);
+    font-size:1rem;
+    line-height:2.05;
+    margin:0 0 1.5rem;
+}
+.story-text h3{
+    color:#f8fafc;
+    font-size:1.5rem;
+    font-weight:700;
+    margin:2.6rem 0 1rem;
+}
+.dialogue{
+    border-left:3px solid var(--blue);
+    background:rgba(59,130,246,.07);
+    padding:1rem 1.25rem;
+    margin:1.5rem 0;
+    border-radius:0 12px 12px 0;
+}
+.dialogue p{color:#dbeafe;margin-bottom:.65rem}
+.dialogue p:last-child{margin-bottom:0}
+.story-image{
+    width:100%;
+    max-height:430px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid var(--border);
+    box-shadow:0 18px 55px rgba(0,0,0,.35);
+}
+.chapter-link{
+    display:block;
+    padding:.85rem 1rem;
+    border-radius:10px;
+    color:#cbd5e1;
+    border:1px solid transparent;
+    transition:.25s;
+}
+.chapter-link:hover,.chapter-link.active{
+    color:var(--light-blue);
+    background:rgba(59,130,246,.13);
+    border-color:var(--border);
+}
+.blue-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.6rem;
+    padding:.8rem 1.2rem;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-weight:600;
+    transition:.25s;
+}
+.blue-button:hover{
+    background:#3b82f6;
+    transform:translateY(-2px);
+    box-shadow:0 0 24px rgba(59,130,246,.22);
+}
+@media(min-width:1024px){
+    .reading-layout{
+        display:grid;
+        grid-template-columns:minmax(0,1fr) 260px;
+        gap:3rem;
+        align-items:start;
+    }
+    .chapter-sidebar{position:sticky;top:24px}
+}
+@media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+<header class="border-b border-blue-400/20 bg-slate-950/90">
+    <div class="max-w-7xl mx-auto px-5 py-5 flex items-center justify-between gap-4">
+        <a href="../index.html" class="text-xl sm:text-2xl font-extrabold">Global <span class="text-blue-400">Insight</span></a>
+        <a href="../index.html#stories" class="text-sm text-slate-300 hover:text-blue-400">
+            <i class="fa-solid fa-arrow-left mr-2"></i>All Stories
+        </a>
+    </div>
+</header>
+
+<section class="hero py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-5">
+        <span class="inline-block rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-300">
+            Fantasy • Comedy • Adventure
+        </span>
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight mt-6 mb-6 max-w-4xl">
+            Barnaby, <span class="text-blue-400">The Clumsy Dragon</span>
+        </h1>
+        <p class="text-slate-300 text-lg leading-8 max-w-2xl">
+            A young dragon who cannot breathe fire discovers that his unusual talent may be the only thing that can save his mountain home.
+        </p>
+        <div class="flex flex-wrap gap-5 mt-7 text-sm text-slate-300">
+            <span><i class="fa-solid fa-book-open text-blue-400 mr-2"></i>5 Chapters</span>
+            <span><i class="fa-solid fa-dragon text-blue-400 mr-2"></i>Fantasy Adventure</span>
+        </div>
+        <a href="#chapter-1" class="blue-button mt-8">Start Reading <i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-5 py-12">
+<nav aria-label="Breadcrumb" class="text-sm text-slate-500 mb-8">
+    <a href="../index.html" class="hover:text-blue-400">Home</a>
+    <span class="mx-2">/</span>
+    <a href="../index.html#stories" class="hover:text-blue-400">Stories</a>
+    <span class="mx-2">/</span>
+    <span class="text-slate-300">Barnaby</span>
+</nav>
+
+<div class="reading-layout">
+<article class="min-w-0">
+
+<section class="glass rounded-2xl p-6 sm:p-8 mb-10">
+    <h2 class="text-2xl font-bold mb-5">Meet the Characters</h2>
+    <div class="grid sm:grid-cols-2 gap-5">
+        <div><h3 class="font-bold text-blue-300">Barnaby</h3><p class="text-sm text-slate-400 mt-1">A kind young dragon who sneezes bubbles instead of breathing fire.</p></div>
+        <div><h3 class="font-bold text-blue-300">Princess Elara</h3><p class="text-sm text-slate-400 mt-1">A clever inventor who believes every problem has an unexpected solution.</p></div>
+        <div><h3 class="font-bold text-blue-300">Pip</h3><p class="text-sm text-slate-400 mt-1">A tiny mountain bird who becomes Barnaby's loyal friend and lookout.</p></div>
+        <div><h3 class="font-bold text-blue-300">Master Flint</h3><p class="text-sm text-slate-400 mt-1">An old dragon trainer who thinks only fire-breathing dragons can be heroes.</p></div>
+        <div><h3 class="font-bold text-blue-300">The Mountain Giant</h3><p class="text-sm text-slate-400 mt-1">A mysterious giant whose actions accidentally put the mountain village in danger.</p></div>
+    </div>
+</section>
+
+<section id="chapter-1" class="story-text">
+<span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter One</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Dragon Who Sneezed Bubbles</h2>
+
+<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1400&auto=format&fit=crop" alt="A magical rocky landscape that inspires the world of Barnaby" class="story-image mb-8" fetchpriority="high">
+
+<p>High above the green valleys of the kingdom of Aurelion stood Emberpeak Mountain. Its caves glowed with warm orange crystals, its cliffs were covered with ancient carvings, and its highest summit disappeared into clouds that looked like mountains of cotton.</p>
+
+<p>For hundreds of years, Emberpeak had been home to dragons. They guarded the mountain, watched over the villages below, and celebrated their strength in an annual festival called the Great Flame Gathering.</p>
+
+<p>Every young dragon dreamed of the day they would stand before Master Flint, inhale a deep breath, and send a magnificent stream of fire into the sky.</p>
+
+<p>Every young dragon except Barnaby.</p>
+
+<p>Barnaby was a small green dragon with golden eyes, little curved horns, and wings that always seemed to fold the wrong way. He was friendly, curious, and spectacularly clumsy. He bumped into cave walls, tripped over his own tail, and once accidentally wore a cooking pot as a helmet for an entire afternoon.</p>
+
+<p>But his biggest problem appeared whenever he tried to breathe fire.</p>
+
+<div class="dialogue">
+<p><strong>Master Flint:</strong> "Stand straight, Barnaby! Chest out. Chin up. Now, take a deep breath and release your fire!"</p>
+<p><strong>Barnaby:</strong> "Yes, Master Flint! I'm ready!"</p>
+</div>
+
+<p>Barnaby inhaled until his little chest puffed out like a balloon. His nostrils glowed orange. A tiny spark appeared on his tongue.</p>
+
+<p>Then his nose began to twitch.</p>
+
+<div class="dialogue">
+<p><strong>Barnaby:</strong> "Ah... ah... AH-CHOO!"</p>
+<p><strong>Master Flint:</strong> "Oh, not again."</p>
+</div>
+
+<p>A stream of shimmering bubbles burst from Barnaby's mouth. Hundreds of them floated across the training field, reflecting rainbows in the sunlight. One landed on Master Flint's nose. Another settled gently on the tip of his tail.</p>
+
+<p>The other young dragons burst into laughter. Barnaby lowered his head as the bubbles drifted toward the clouds.</p>
+
+<p>"Fire is the mark of a true dragon," Master Flint declared. "You cannot protect anyone with soap bubbles."</p>
+
+<p>Barnaby tried to smile, but the words hurt. He returned to his cave that evening and watched the other dragons practising their fiery displays beyond his window.</p>
+
+<p>A tiny mountain bird landed on the windowsill. Its feathers were blue and white, and its head tilted to one side as it studied Barnaby.</p>
+
+<div class="dialogue">
+<p><strong>Bird:</strong> "Why are you hiding in here?"</p>
+<p><strong>Barnaby:</strong> "Because everyone else can breathe fire."</p>
+<p><strong>Bird:</strong> "I can't breathe fire."</p>
+<p><strong>Barnaby:</strong> "You're a bird."</p>
+<p><strong>Bird:</strong> "Exactly. And nobody expects me to be a dragon. It's wonderfully relaxing."</p>
+</div>
+
+<p>Barnaby laughed for the first time that day. The bird introduced himself as Pip, a messenger who carried notes between the mountain and the villages below.</p>
+
+<p>"You know," Pip said, "those bubbles you make are rather beautiful."</p>
+
+<p>"Beautiful isn't useful," Barnaby replied.</p>
+
+<p>Pip flapped his wings. "Perhaps you haven't discovered what they're useful for yet."</p>
+
+<p>That night, Barnaby lay awake, wondering whether there was a place in the world for a dragon who could not breathe fire.</p>
+</section>
+
+<div class="border-t border-blue-400/20 my-12"></div>
+
+<section id="chapter-2" class="story-text">
+<span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Two</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Princess with a Strange Plan</h2>
+
+<img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1400&auto=format&fit=crop" alt="A mysterious woodland where an unexpected adventure begins" class="story-image mb-8" loading="lazy">
+
+<p>The next morning, Barnaby was sent to deliver a bundle of mountain herbs to the royal workshop. Master Flint considered it a suitable task for a dragon who, in his opinion, was unlikely to be useful anywhere else.</p>
+
+<p>The workshop stood beside the royal gardens. Strange machines filled its rooms: brass wheels, glass tubes, wind-up birds, and little mechanical carts that occasionally drove into walls.</p>
+
+<p>Princess Elara was leaning over a workbench when Barnaby arrived. Unlike the other members of the royal family, she preferred inventing machines to attending ceremonies.</p>
+
+<div class="dialogue">
+<p><strong>Elara:</strong> "You must be Barnaby. I've heard about your bubbles."</p>
+<p><strong>Barnaby:</strong> "Everyone has."</p>
+<p><strong>Elara:</strong> "Excellent! I've been trying to invent a floating transport system for months. My last attempt carried a basket three feet into the air and then dropped it into the royal fountain."</p>
+<p><strong>Barnaby:</strong> "Was the basket all right?"</p>
+<p><strong>Elara:</strong> "The basket was fine. The king's favourite hat was less fortunate."</p>
+</div>
+
+<p>Elara explained that she wanted to create a safe way to lift supplies over the steep mountain paths. Ropes snapped, wooden platforms broke, and strong winds made ordinary balloons unreliable.</p>
+
+<p>When she heard that Barnaby's bubbles could lift tiny objects, she immediately began sketching a new design.</p>
+
+<p>"If we combine hundreds of your bubbles with a lightweight net," she said, "we might be able to carry a basket across the valley!"</p>
+
+<p>Barnaby looked doubtful. "You want to build a machine around my sneezes?"</p>
+
+<p>"When you put it that way, it sounds much less scientific."</p>
+
+<p>For the next several days, Barnaby and Elara worked together. They tested bubbles of different sizes, experimented with woven nets, and measured how much weight each bubble could support.</p>
+
+<p>The first test lifted three apples. The second lifted a wooden spoon. The third lifted Pip, who had volunteered before asking what the experiment involved.</p>
+
+<div class="dialogue">
+<p><strong>Pip:</strong> "I would like to report that this is an excellent invention!"</p>
+<p><strong>Barnaby:</strong> "You're upside down."</p>
+<p><strong>Pip:</strong> "I would also like to report that I have discovered a design flaw."</p>
+</div>
+
+<p>They laughed so loudly that a royal guard came running to check whether the workshop had exploded.</p>
+
+<p>By the end of the week, Elara had created a small floating carrier. It was not elegant, but it worked. Barnaby could lift a basket of supplies from the courtyard to the castle balcony without using a single flame.</p>
+
+<p>For the first time, Barnaby felt proud of what he could do.</p>
+
+<p>Then a messenger arrived from the mountain village with terrible news. A landslide had blocked the only road to the upper farms. Several families were trapped, and a storm was approaching.</p>
+
+<p>The villagers needed medicine, food, and warm blankets before nightfall.</p>
+
+<p>Elara looked at the floating carrier. Then she looked at Barnaby.</p>
+
+<div class="dialogue">
+<p><strong>Elara:</strong> "I think it's time for your bubbles to become something extraordinary."</p>
+<p><strong>Barnaby:</strong> "What if I fail?"</p>
+<p><strong>Elara:</strong> "Then we'll learn something and try again. But we won't know what is possible if we never try."</p>
+</div>
+
+<p>Barnaby spread his wings. For once, he wasn't thinking about the dragons who laughed at him. He was thinking about the families waiting for help.</p>
+</section>
+
+<div class="border-t border-blue-400/20 my-12"></div>
+
+<section id="chapter-3" class="story-text">
+<span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Three</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Storm Above the Valley</h2>
+
+<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1400&auto=format&fit=crop" alt="Powerful clouds gathering above a dramatic landscape" class="story-image mb-8" loading="lazy">
+
+<p>Dark clouds gathered over Emberpeak. Wind rushed between the mountain peaks, and distant thunder rolled through the valley.</p>
+
+<p>Master Flint stood at the training ground when Barnaby arrived with Elara and a stack of supplies secured inside the experimental carrier.</p>
+
+<div class="dialogue">
+<p><strong>Master Flint:</strong> "You intend to fly into that storm with bubbles?"</p>
+<p><strong>Barnaby:</strong> "With a carrier, a net, and a very clever inventor."</p>
+<p><strong>Elara:</strong> "The design is still experimental."</p>
+<p><strong>Pip:</strong> "And the pilot is still learning."</p>
+<p><strong>Barnaby:</strong> "Thank you, Pip. Your confidence is overwhelming."</p>
+</div>
+
+<p>Master Flint shook his head. "A dragon's duty is to protect the mountain. If you cannot produce fire, you should leave this to those who can."</p>
+
+<p>Barnaby looked toward the distant village. A thin column of smoke rose from a farmhouse, and tiny figures could be seen gathering near the blocked road.</p>
+
+<p>"I may not be able to burn through a landslide," Barnaby said, "but I can carry supplies over it."</p>
+
+<p>Before Master Flint could answer, Barnaby leapt from the ledge.</p>
+
+<p>He flapped his wings, sneezed a string of bubbles, and watched the carrier rise. For a few glorious seconds, everything worked perfectly.</p>
+
+<p>Then a gust of wind caught the carrier and spun it sideways.</p>
+
+<div class="dialogue">
+<p><strong>Elara:</strong> "Pull the left rope!"</p>
+<p><strong>Barnaby:</strong> "Which left?"</p>
+<p><strong>Elara:</strong> "Your other left!"</p>
+<p><strong>Pip:</strong> "I knew we should have labelled the ropes!"</p>
+</div>
+
+<p>Barnaby struggled against the wind. One section of the net began to loosen, and a basket of medicine tilted dangerously. He remembered Elara's instructions and released a fresh cluster of bubbles beneath the carrier, lifting the sagging side.</p>
+
+<p>The carrier steadied.</p>
+
+<p>Below them, the blocked road came into view. Several villagers waved from a clearing, their faces pale with worry. Barnaby guided the supplies down as gently as he could.</p>
+
+<p>A little girl ran forward and hugged the basket as though it were a treasure chest.</p>
+
+<div class="dialogue">
+<p><strong>Girl:</strong> "You brought the medicine!"</p>
+<p><strong>Barnaby:</strong> "And blankets. And bread. And one slightly squashed apple."</p>
+<p><strong>Girl:</strong> "You're a hero!"</p>
+</div>
+
+<p>Barnaby felt warmth spread through his chest. He had never been called a hero before.</p>
+
+<p>But the storm was growing stronger. As the group prepared to return to the mountain, a deep rumble echoed from the upper cliffs. Stones tumbled down the slope, and a shadow moved across the clouds.</p>
+
+<p>A huge figure stood on the ridge above the village. It was the Mountain Giant, a creature of stone and moss who had slept beneath the peaks for centuries.</p>
+
+<p>The giant had awakened in the storm and was unknowingly pushing boulders down the mountain as he searched for his lost home.</p>
+
+<p>The villagers scattered as another rock rolled toward the bridge. Barnaby looked at the giant, then at the people below.</p>
+
+<p>His bubbles could not stop the mountain from moving. But perhaps they could do something else.</p>
+</section>
+
+<div class="border-t border-blue-400/20 my-12"></div>
+
+<section id="chapter-4" class="story-text">
+<span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Four</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Bubble Bridge</h2>
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1400&auto=format&fit=crop" alt="High mountain peaks rising above a deep valley" class="story-image mb-8" loading="lazy">
+
+<p>Barnaby circled above the valley, searching for a way to help. The giant was not attacking anyone on purpose. He looked confused and frightened, and every step he took shook the ground.</p>
+
+<p>"We need to get the villagers away from the bridge," Elara called. "If another rock falls, the whole crossing could collapse!"</p>
+
+<p>Barnaby studied the carrier, the ropes, and the glowing bubbles drifting around him. A strange idea began to form.</p>
+
+<div class="dialogue">
+<p><strong>Barnaby:</strong> "Elara, what if we make the bubbles larger?"</p>
+<p><strong>Elara:</strong> "Larger bubbles would be harder to control."</p>
+<p><strong>Barnaby:</strong> "But could they support a net across the gap?"</p>
+<p><strong>Elara:</strong> "A floating bridge?"</p>
+<p><strong>Pip:</strong> "I would like everyone to remember that I am a bird and can already fly across."</p>
+<p><strong>Elara:</strong> "You can also carry messages to the villagers."</p>
+<p><strong>Pip:</strong> "A noble use of my talents. I accept."</p>
+</div>
+
+<p>Elara drew a quick plan in the dirt. The carrier's ropes could be tied to sturdy trees on either side of a narrow ravine. Barnaby would produce a steady stream of bubbles beneath the woven net, helping keep it above the rocks.</p>
+
+<p>It was risky. The wind could scatter the bubbles, and the bridge would need constant support. But it might give the villagers a safe way across.</p>
+
+<p>Barnaby took a deep breath. His nose twitched, and for one alarming moment he feared he would sneeze at the wrong time.</p>
+
+<p>"Not now," he whispered to his nose.</p>
+
+<p>Then he sneezed.</p>
+
+<p>A stream of enormous bubbles floated beneath the net. Elara secured the ropes, and the makeshift bridge slowly rose above the ravine. The first villager stepped onto it. The bridge wobbled, but held.</p>
+
+<p>One by one, the villagers crossed while Pip guided them from above. Barnaby kept producing bubbles, his wings aching as he fought the wind.</p>
+
+<p>At last, everyone reached safe ground.</p>
+
+<p>But the Mountain Giant was still on the ridge. He lowered himself onto a rock and covered his face with enormous hands.</p>
+
+<div class="dialogue">
+<p><strong>Barnaby:</strong> "Why is he crying?"</p>
+<p><strong>Elara:</strong> "Perhaps he isn't angry. Perhaps he's lost."</p>
+</div>
+
+<p>Barnaby flew closer, keeping a safe distance. He called out to the giant and asked what had happened.</p>
+
+<p>The giant's voice rumbled like distant thunder.</p>
+
+<p>"My home was beneath the northern peak. The storm changed the mountain, and I cannot find the path. I only wanted to return. Every time I move, the stones fall. I do not know how to stop hurting this place."</p>
+
+<p>Barnaby understood that feeling. He had spent so long trying to become the kind of dragon everyone expected that he had never considered what his own talents might mean.</p>
+
+<div class="dialogue">
+<p><strong>Barnaby:</strong> "I can't make the mountain stop being a mountain. But maybe I can help you find your way."</p>
+<p><strong>Giant:</strong> "Why would you help me? You have every reason to be afraid."</p>
+<p><strong>Barnaby:</strong> "Because being different doesn't make either of us a monster."</p>
+</div>
+
+<p>The giant slowly lifted his head. Barnaby asked Pip to search the ridge while Elara studied the ancient markings carved into the stones. Together, they discovered an old trail hidden behind a curtain of vines.</p>
+
+<p>The giant followed the trail toward the northern peak. Before disappearing into the clouds, he turned and bowed his enormous head.</p>
+
+<p>"Little dragon," he said, "your strange gift has saved more than a village today."</p>
+
+<p>Barnaby smiled. For the first time, he no longer wished his bubbles were fire.</p>
+</section>
+
+<div class="border-t border-blue-400/20 my-12"></div>
+
+<section id="chapter-5" class="story-text">
+<span class="text-blue-400 text-sm font-bold uppercase tracking-widest">Chapter Five</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">The Dragon Who Saved the Day</h2>
+
+<img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1400&auto=format&fit=crop" alt="A spectacular sky filled with light and stars" class="story-image mb-8" loading="lazy">
+
+<p>When Barnaby returned to Emberpeak, the storm had begun to clear. The villagers had crossed the ravine safely, the medicine had reached those who needed it, and the Mountain Giant was heading home.</p>
+
+<p>Master Flint waited at the training ground. Around him stood the other young dragons, who had heard the story from Pip's excited reports.</p>
+
+<p>Barnaby landed awkwardly, stumbled over his own tail, and accidentally released three tiny bubbles.</p>
+
+<div class="dialogue">
+<p><strong>Barnaby:</strong> "I meant to do that."</p>
+<p><strong>Pip:</strong> "Of course. A highly advanced landing technique."</p>
+</div>
+
+<p>Some dragons laughed, but this time the laughter was friendly. One of the youngest dragons stepped forward and asked Barnaby to show him how the bubbles worked.</p>
+
+<p>Master Flint approached slowly. For a long time, the old trainer said nothing.</p>
+
+<div class="dialogue">
+<p><strong>Master Flint:</strong> "I spent my life believing that fire was the only thing that made a dragon useful."</p>
+<p><strong>Barnaby:</strong> "I used to believe that too."</p>
+<p><strong>Master Flint:</strong> "I was wrong. You saw a problem none of us knew how to solve, and you found a way to help."</p>
+<p><strong>Barnaby:</strong> "I had help from Elara and Pip."</p>
+<p><strong>Master Flint:</strong> "And that is another lesson worth learning. A good leader knows when to work with others."</p>
+</div>
+
+<p>The following morning, the Great Flame Gathering began. Dragons filled the sky with brilliant streams of fire, painting the clouds orange and gold. When Barnaby's turn came, he walked onto the platform with his head held high.</p>
+
+<p>He took a deep breath.</p>
+
+<p>"Please don't sneeze on the judges," Pip whispered.</p>
+
+<p>Barnaby's nose twitched. A single bubble floated from his mouth, then another, then a hundred more. They rose above the gathering and reflected every colour of the sunrise.</p>
+
+<p>Children cheered. Dragons reached toward the shimmering bubbles, and even Master Flint laughed as one settled on the tip of his nose.</p>
+
+<p>Princess Elara unveiled a new invention: a bubble-powered carrier designed to transport supplies across the mountain. The villagers would use it to deliver food and medicine to remote homes.</p>
+
+<p>Barnaby was appointed the first official Bubble Guardian of Emberpeak. His duty was not to breathe fire, but to use his unusual ability wherever it could help someone.</p>
+
+<p>That evening, Barnaby sat on a ledge overlooking the valley. Pip perched beside him, and Elara brought a basket of apples from the royal gardens.</p>
+
+<div class="dialogue">
+<p><strong>Pip:</strong> "So, are you still disappointed that you can't breathe fire?"</p>
+<p><strong>Barnaby:</strong> "Sometimes. I still think it would be rather impressive."</p>
+<p><strong>Elara:</strong> "You can always learn to breathe fire someday."</p>
+<p><strong>Barnaby:</strong> "Perhaps. But I don't think I'll stop making bubbles."</p>
+</div>
+
+<p>Below them, the village glowed with warm lights. In the distance, the Mountain Giant's silhouette appeared against the northern ridge, safely returning to his home.</p>
+
+<p>Barnaby watched the first stars appear. He finally understood that being special did not mean being the same as everyone else. It meant discovering what he could offer and having the courage to offer it.</p>
+
+<p>And from that day forward, whenever a child in the kingdom felt different, Barnaby would tell them the story of a dragon who sneezed bubbles—and saved an entire village because of it.</p>
+</section>
+
+<section class="glass rounded-2xl p-6 sm:p-8 mt-12">
+<h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-star text-blue-400 mr-2"></i>The Lesson of Barnaby</h2>
+<p class="text-slate-300 leading-8">Your differences do not make you less valuable. Creativity, teamwork, kindness, and courage can turn an unexpected weakness into a remarkable strength.</p>
+</section>
+
+<div class="flex flex-wrap gap-4 mt-10">
+<a href="../index.html#stories" class="blue-button"><i class="fa-solid fa-arrow-left"></i> Back to Stories</a>
+<button type="button" onclick="window.print()" class="inline-flex items-center gap-2 rounded-xl border border-blue-400/30 px-5 py-3 font-semibold text-blue-300 hover:bg-blue-500/10"> <i class="fa-solid fa-print"></i> Print Story</button>
+</div>
+
+</article>
+
+<aside class="chapter-sidebar mt-10 lg:mt-0">
+<div class="glass rounded-2xl p-5">
+<h2 class="text-lg font-bold mb-2">Story Chapters</h2>
+<p class="text-xs text-slate-500 mb-4">Choose a chapter.</p>
+<nav aria-label="Story chapters" class="space-y-1">
+<a class="chapter-link active" href="#chapter-1">01. The Dragon Who Sneezed Bubbles</a>
+<a class="chapter-link" href="#chapter-2">02. The Princess with a Strange Plan</a>
+<a class="chapter-link" href="#chapter-3">03. The Storm Above the Valley</a>
+<a class="chapter-link" href="#chapter-4">04. The Bubble Bridge</a>
+<a class="chapter-link" href="#chapter-5">05. The Dragon Who Saved the Day</a>
+</nav>
+<div class="border-t border-blue-400/20 mt-5 pt-5">
+<p class="text-sm font-semibold text-slate-300 mb-2">Reading tip</p>
+<p class="text-sm leading-6 text-slate-400">Follow Barnaby's journey and discover how an unusual talent becomes a remarkable strength.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+
+<footer class="border-t border-blue-400/20 mt-16">
+<div class="max-w-7xl mx-auto px-5 py-8 text-center text-sm text-slate-500">
+<p>© <span id="year"></span> Global Insight. All rights reserved.</p>
+<p class="mt-2">Original fantasy storytelling for curious minds.</p>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const links = document.querySelectorAll(".chapter-link");
+const chapters = document.querySelectorAll("article section[id^='chapter-']");
+
+function updateActiveChapter() {
+    let current = chapters[0];
+    chapters.forEach(chapter => {
+        if (chapter.getBoundingClientRect().top < 180) current = chapter;
+    });
+    links.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
+    });
+}
+
+window.addEventListener("scroll", updateActiveChapter, { passive: true });
+updateActiveChapter();
+</script>
+</body>
+</html>
+

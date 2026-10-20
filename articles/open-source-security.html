@@ -154,7 +154,19 @@
           industry initiative from the original homepage headline.
         </p>
       </div>
-    </article>
+    
+      <h2>A dependency review checklist for developers</h2>
+      <p>Security reviews are most useful when they become part of the normal development process rather than a one-time exercise. Before adding or updating a package, check the following:</p>
+      <ul>
+        <li>Confirm the package name and official repository to reduce the risk of selecting a similarly named or malicious package.</li>
+        <li>Check the latest release, maintenance activity, documented security policy and process for reporting vulnerabilities.</li>
+        <li>Use a lockfile and review dependency changes so builds are repeatable and unexpected upgrades are visible.</li>
+        <li>Run a reputable dependency scanner, then investigate its findings instead of assuming every alert has the same severity.</li>
+        <li>Limit permissions and secrets available to build scripts; do not expose production credentials to untrusted code.</li>
+        <li>Keep an inventory of important components and a documented process for applying urgent security updates.</li>
+      </ul>
+      <p>Automated tools can identify known issues, but they cannot prove that a package is safe or that an application has no vulnerabilities. Pair scanning with code review, testing and a clear response plan. The <a href="https://www.cisa.gov/resources-tools/resources/secure-software-development" target="_blank" rel="noopener noreferrer">CISA secure software development resources</a> and <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">OWASP Top 10</a> provide further guidance.</p>
+</article>
 
     <div class="border-t border-white/10 mt-12 pt-6">
       <a href="/" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition">

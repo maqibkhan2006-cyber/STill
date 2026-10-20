@@ -450,6 +450,175 @@ button,
   font-size: 15px;
   transition: transform 0.25s ease;
 }
+    
+/* ===== GLOBAL INSIGHT: LIGHT THEME ===== */
+:root {
+    --gi-bg: #f7f9ff;
+    --gi-surface: #ffffff;
+    --gi-text: #172033;
+    --gi-muted: #64748b;
+    --gi-blue: #2563eb;
+    --gi-purple: #7c3aed;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--gi-bg) !important;
+    color: var(--gi-text);
+}
+
+/* Light, clean section backgrounds */
+#news,
+#contact {
+    background: #f8faff !important;
+    color: var(--gi-text);
+}
+
+#stories {
+    background: #f5f7ff !important;
+    color: var(--gi-text);
+}
+
+/* Turn dark story cards into light cards */
+#stories .bg-gray-900,
+#stories .bg-gray-800,
+#stories .bg-gray-950 {
+    background: #ffffff !important;
+    color: #172033 !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 12px 35px rgba(30, 41, 59, 0.08);
+}
+
+#stories .text-white {
+    color: #172033 !important;
+}
+
+#stories .text-gray-400 {
+    color: #64748b !important;
+}
+
+#stories .text-gray-300 {
+    color: #475569 !important;
+}
+
+/* Consistent gradient buttons */
+#home a[href="#news"],
+#home a[href="#stories"],
+#contact button[type="submit"],
+#news a[href*="t.me"],
+.tab-btn.active,
+.story-tab.active {
+    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.20);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#home a[href="#news"]:hover,
+#home a[href="#stories"]:hover,
+#contact button[type="submit"]:hover,
+#news a[href*="t.me"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(79, 70, 229, 0.28);
+}
+
+/* Light story tabs */
+.story-tab {
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+
+/* Light article cards */
+#news .hover-card {
+    background: #ffffff;
+    border-color: #e5eaf3;
+    box-shadow: 0 10px 30px rgba(30, 41, 59, 0.06);
+}
+
+#news .hover-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(79, 70, 229, 0.13);
+}
+
+/* Navigation */
+#navbar > div:first-child {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-color: #e5eaf3 !important;
+}
+
+#mobile-menu {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-color: #e2e8f0 !important;
+}
+
+#navbar a:not(.gold-nav-btn) {
+    text-decoration-thickness: 2px;
+}
+
+/* Contact form */
+#contact input,
+#contact textarea {
+    background: #ffffff;
+    color: #172033;
+    border-color: #dbe3ef;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* Light footer */
+footer {
+    background: #ffffff !important;
+    color: #172033 !important;
+    border-top: 1px solid #e2e8f0 !important;
+}
+
+footer p {
+    color: #64748b !important;
+}
+
+footer .bg-gray-800 {
+    background: #eef
+
+    
+/* Gold & XAUUSD — Match the global theme */
+.gold-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.18);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.gold-nav-btn:hover {
+    background: linear-gradient(135deg, #1d4ed8, #6d28d9) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.28);
+}
+
+.gold-nav-btn .gold-icon,
+.gold-nav-btn .gold-arrow {
+    color: #ffffff !important;
+}
+
 </style>
 
 </head>

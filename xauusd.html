@@ -1,1 +1,859 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gold & XAUUSD | Global Insight</title>
+  <meta name="description" content="Learn about gold trading, XAUUSD technical analysis, market-moving economic events, trading risk management and gold market fundamentals.">
+  <meta name="keywords" content="XAUUSD, gold trading, gold market, forex education, gold technical analysis, economic calendar">
+  <meta name="author" content="Global Insight">
+  <meta name="theme-color" content="#090909">
+  <link rel="canonical" href="https://globalinsightsaqib.vercel.app/xauusd.html">
+
+  <meta property="og:title" content="Gold & XAUUSD | Global Insight">
+  <meta property="og:description" content="Explore gold market education, charts, economic events and risk management.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://globalinsightsaqib.vercel.app/xauusd.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --panel: #121212;
+      --panel2: #181818;
+      --gold: #d9b45b;
+      --gold-light: #f4d98b;
+      --red: #e34747;
+      --text: #f5f2e9;
+      --muted: #a5a29a;
+      --border: rgba(217,180,91,.19);
+      --green: #79c99a;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; }
+    .container { width: min(1160px, 92%); margin: auto; }
+    .gold { color: var(--gold-light); }
+    .muted { color: var(--muted); }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+    .section { padding: 76px 0; }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .section-heading h2 {
+      font: 700 clamp(1.8rem,4vw,2.7rem)/1.2 "Playfair Display", serif;
+      margin: 8px 0;
+    }
+    .section-heading p { color: var(--muted); margin: 0; max-width: 610px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 11px 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: #111; }
+    .btn-outline { background: rgba(0,0,0,.25); color: var(--text); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+    /* Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9,9,9,.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      color: var(--gold-light);
+      font-size: 1.35rem;
+      background: linear-gradient(145deg,#292113,#101010);
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #d0cec7; font-size: .88rem; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 72px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 78% 35%,rgba(191,144,40,.17),transparent 34%),
+        radial-gradient(ellipse at 95% 85%,rgba(190,37,37,.10),transparent 27%),
+        linear-gradient(120deg,#090909 25%,#15120c 70%,#0b0b0b);
+    }
+    .hero:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image: linear-gradient(rgba(217,180,91,.12) 1px,transparent 1px),
+                        linear-gradient(90deg,rgba(217,180,91,.12) 1px,transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(90deg,black,transparent);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font: 800 clamp(2.7rem,6vw,5rem)/1.06 "Playfair Display", serif;
+      letter-spacing: -1.5px;
+      margin: 16px 0 20px;
+    }
+    .hero h1 span { color: var(--gold-light); }
+    .hero-copy { color: #c0bdb4; max-width: 600px; font-size: 1.04rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+    .hero-note { font-size: .8rem; color: var(--muted); margin-top: 18px; }
+    .hero-art {
+      min-height: 335px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      padding: 25px;
+      background:
+        linear-gradient(0deg,rgba(5,5,5,.95),rgba(5,5,5,.05) 75%),
+        url("https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1100&q=85") center/cover,
+        #17130a;
+      box-shadow: 0 25px 90px rgba(0,0,0,.3);
+    }
+    .hero-art-label { position: relative; z-index: 1; }
+    .hero-art-label strong {
+      display: block;
+      font: 700 2.2rem "Playfair Display",serif;
+      color: var(--gold-light);
+    }
+    .hero-art-label span { color: #ddd7c7; font-size: .9rem; }
+    .floating-tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(10,10,10,.83);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      color: var(--gold-light);
+      font-size: .75rem;
+    }
+
+    /* Info strip */
+    .info-strip {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .info-box {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .info-box strong { display: block; color: var(--gold-light); margin-bottom: 4px; }
+    .info-box span { color: var(--muted); font-size: .83rem; }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+    }
+    .card {
+      background: linear-gradient(150deg,#171717,#101010);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .22s,border-color .22s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(217,180,91,.55); }
+    .card-body { padding: 23px; }
+    .card h3 { font: 700 1.25rem/1.35 "Playfair Display",serif; margin: 12px 0; }
+    .card p { color: var(--muted); font-size: .92rem; }
+    .card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #211b0e;
+    }
+    .tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 5px;
+      background: rgba(217,180,91,.1);
+      color: var(--gold-light);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .read-link { color: var(--gold-light); font-size: .88rem; font-weight: 700; }
+    .read-link:hover { color: white; }
+
+    /* Chart */
+    .chart-shell {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .chart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 8px 5px 16px;
+    }
+    .chart-head h3 { margin: 0; font-size: 1.1rem; }
+    .chart-frame { width: 100%; height: 500px; border: 0; border-radius: 9px; }
+    .chart-note { color: var(--muted); font-size: .8rem; margin: 13px 5px 3px; }
+
+    /* Learning guides */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .learning-panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      padding: 25px;
+    }
+    .learning-panel h3 {
+      font: 700 1.4rem "Playfair Display",serif;
+      margin-top: 0;
+    }
+    details {
+      border-top: 1px solid rgba(255,255,255,.09);
+      padding: 15px 0;
+    }
+    details:first-of-type { border-top: 0; }
+    summary { cursor: pointer; font-weight: 700; color: #eee8d9; }
+    details p { color: var(--muted); font-size: .91rem; margin-bottom: 0; }
+
+    /* Calendar */
+    .calendar-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .calendar-top {
+      padding: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .calendar-top h3 { margin: 0 0 6px; }
+    .calendar-frame { width: 100%; height: 520px; border: 0; display: block; }
+    .calendar-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+
+    /* Risk */
+    .risk-banner {
+      padding: 28px;
+      border: 1px solid rgba(227,71,71,.35);
+      background: linear-gradient(120deg,rgba(227,71,71,.10),rgba(217,180,91,.04));
+      border-radius: var(--radius);
+    }
+    .risk-banner h3 { color: #ff9696; margin-top: 0; }
+    .risk-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; padding-left: 20px; }
+    .risk-list li { color: #c9c6be; padding-left: 4px; }
+
+    /* Newsletter / CTA */
+    .cta {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 38px;
+      background: radial-gradient(ellipse at top right,rgba(217,180,91,.12),transparent 50%),#121212;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .cta h2 { font: 700 clamp(1.7rem,3vw,2.5rem) "Playfair Display",serif; margin: 0 0 8px; }
+    .cta p { margin: 0; color: var(--muted); max-width: 650px; }
+
+    footer { border-top: 1px solid var(--border); padding: 35px 0; background: #070707; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { color: var(--muted); font-size: .86rem; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .disclaimer { color: #88857d; font-size: .78rem; max-width: 850px; margin-top: 22px; }
+
+    @media(max-width:850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-art { min-height: 300px; }
+      .cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 22px 5%;
+        background: #0d0d0d;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
+    @media(max-width:600px) {
+      .section { padding: 52px 0; }
+      .hero { padding: 60px 0 48px; }
+      .hero h1 { letter-spacing: -.7px; }
+      .cards,.learning-grid,.info-strip { grid-template-columns: 1fr; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+      .chart-frame { height: 430px; }
+      .calendar-frame { height: 550px; }
+      .risk-list { grid-template-columns: 1fr; }
+      .cta { padding: 25px; align-items: flex-start; flex-direction: column; }
+      .hero-art { min-height: 250px; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Global Insight home">
+        <span class="brand-mark">G</span>
+        <span>GLOBAL INSIGHT<small>GOLD MARKET DESK</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="#market" class="active">Gold &amp; XAUUSD</a>
+        <a href="#learn">Learn</a>
+        <a href="#calendar">Economic Calendar</a>
+        <a href="#articles">Articles</a>
+        <a href="#risk">Risk Management</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="market">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Global Insight · Gold Market Desk</div>
+          <h1>Understand the <span>Gold Market.</span></h1>
+          <p class="hero-copy">
+            Your learning hub for XAUUSD, gold-market fundamentals, technical analysis,
+            economic events and responsible trading decisions. Learn the factors behind
+            gold-price movements before making your own decisions.
+          </p>
+          <div class="hero-actions">
+            <a href="#live-chart" class="btn btn-gold">Explore Gold Chart ↗</a>
+            <a href="#learn" class="btn btn-outline">Start Learning</a>
+          </div>
+          <p class="hero-note">
+            Educational content only. Market conditions change; no trading outcome is guaranteed.
+          </p>
+        </div>
+
+        <div class="hero-art" role="img" aria-label="Gold bullion against a dark background">
+          <div class="floating-tag">XAUUSD · GOLD / US DOLLAR</div>
+          <div class="hero-art-label">
+            <strong>Gold Market</strong>
+            <span>Fundamentals · Technicals · Risk Awareness</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK INTRO -->
+    <section class="container" style="margin-top:-1px">
+      <div class="info-strip">
+        <div class="info-box">
+          <strong>Market Fundamentals</strong>
+          <span>Understand rates, inflation, the US dollar and demand.</span>
+        </div>
+        <div class="info-box">
+          <strong>Technical Education</strong>
+          <span>Learn charts, trends, support and resistance.</span>
+        </div>
+        <div class="info-box">
+          <strong>Risk First</strong>
+          <span>Study position sizing and the risks of leverage.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHART -->
+    <section class="section" id="live-chart">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Market chart</div>
+            <h2>XAUUSD Chart</h2>
+            <p>View the available gold-versus-US-dollar chart from TradingView. Prices and symbols depend on the data provider and may be delayed.</p>
+          </div>
+          <a class="btn btn-outline" href="https://www.tradingview.com/symbols/XAUUSD/" target="_blank" rel="noopener noreferrer">Open TradingView ↗</a>
+        </div>
+
+        <div class="chart-shell">
+          <div class="chart-head">
+            <h3><span class="gold">◆</span> Gold / US Dollar</h3>
+            <span class="muted" style="font-size:.82rem">External market data · Provider dependent</span>
+          </div>
+
+          <div class="tradingview-widget-container" style="height:500px;width:100%">
+            <div id="tradingview_gold_chart" style="height:100%;width:100%"></div>
+          </div>
+
+          <p class="chart-note">
+            This chart is provided by TradingView. It may not represent the exact execution price offered by your broker.
+            If the chart does not load, use the Open TradingView link above.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKET DRIVERS -->
+    <section class="section" style="background:#0e0e0e" id="drivers">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">What moves gold?</div>
+            <h2>Key Market Drivers</h2>
+            <p>These factors can influence gold, but their impact varies with market conditions. None predicts price direction on its own.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80" alt="Financial charts on a trading screen" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Monetary policy</span>
+              <h3>Interest Rates &amp; Bond Yields</h3>
+              <p>Gold does not pay interest. Changes in interest rates and inflation-adjusted yields can affect the relative appeal of holding gold.</p>
+              <a class="read-link" href="https://www.federalreserve.gov/monetarypolicy.htm" target="_blank" rel="noopener noreferrer">Explore Federal Reserve policy ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&w=900&q=80" alt="US dollar banknotes" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Currency markets</span>
+              <h3>The US Dollar</h3>
+              <p>Gold is commonly quoted in US dollars. Dollar movements may influence gold's price, although the relationship is not constant.</p>
+              <a class="read-link" href="https://www.marketwatch.com/investing/index/dxy" target="_blank" rel="noopener noreferrer">View dollar-index coverage ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=900&q=80" alt="Gold bars" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Supply &amp; demand</span>
+              <h3>Inflation, Demand &amp; Uncertainty</h3>
+              <p>Investor demand, central-bank purchases, jewellery demand and geopolitical uncertainty can all play a role in gold-market conditions.</p>
+              <a class="read-link" href="https://www.gold.org/goldhub/research" target="_blank" rel="noopener noreferrer">Read World Gold Council research ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section class="section" id="learn">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Build your knowledge</div>
+            <h2>XAUUSD Learning Center</h2>
+            <p>Begin with the essentials. Open each topic to read a concise explanation.</p>
+          </div>
+        </div>
+
+        <div class="learning-grid">
+          <div class="learning-panel">
+            <h3><span class="gold">01.</span> Gold Trading Basics</h3>
+
+            <details open>
+              <summary>What does XAUUSD mean?</summary>
+              <p>XAU is the market code commonly used for one troy ounce of gold, while USD is the US dollar. XAUUSD quotes show how many US dollars are needed for the quoted amount of gold. Check your broker's contract specifications.</p>
+            </details>
+
+            <details>
+              <summary>What is a pip in gold?</summary>
+              <p>Gold brokers do not all define a pip or minimum price increment in the same way. Check your platform's quote precision, tick size and contract specifications before calculating gains or losses.</p>
+            </details>
+
+            <details>
+              <summary>What are spread and leverage?</summary>
+              <p>The spread is the difference between a market's bid and ask prices. Leverage lets you control a larger position relative to your margin, but it also magnifies losses and can trigger liquidation.</p>
+            </details>
+
+            <details>
+              <summary>What are trading sessions?</summary>
+              <p>Gold can be traded across several major global market sessions. Liquidity, spreads and volatility can change throughout the day and around major economic announcements.</p>
+            </details>
+          </div>
+
+          <div class="learning-panel">
+            <h3><span class="gold">02.</span> Technical Analysis</h3>
+
+            <details open>
+              <summary>Support and resistance</summary>
+              <p>Support and resistance are areas where price has previously struggled to move lower or higher. They are analytical zones, not guaranteed turning points.</p>
+            </details>
+
+            <details>
+              <summary>Trend and market structure</summary>
+              <p>Traders study successive highs and lows to describe possible uptrends, downtrends or ranges. A trend can change unexpectedly, so analysis should include invalidation conditions.</p>
+            </details>
+
+            <details>
+              <summary>Candlestick patterns</summary>
+              <p>Candlesticks summarise open, high, low and close prices over a chosen period. Individual patterns can be misleading when separated from broader context and risk controls.</p>
+            </details>
+
+            <details>
+              <summary>Fundamental vs technical analysis</summary>
+              <p>Fundamental analysis considers economic conditions and events. Technical analysis examines price and volume data. Neither method guarantees a reliable forecast, and they may give conflicting signals.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECONOMIC CALENDAR -->
+    <section class="section" style="background:#0e0e0e" id="calendar">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Economic events</div>
+            <h2>Economic Calendar</h2>
+            <p>US inflation, employment and Federal Reserve announcements can affect financial markets. Check the release time, country, importance and actual data directly with the provider.</p>
+          </div>
+        </div>
+
+        <div class="calendar-box">
+          <div class="calendar-top">
+            <h3>Upcoming Economic Releases</h3>
+            <p class="muted" style="margin:0;font-size:.88rem">Calendar availability, event times and data are supplied by TradingView.</p>
+            <div class="calendar-links">
+              <a class="btn btn-gold" href="https://www.tradingview.com/economic-calendar/" target="_blank" rel="noopener noreferrer">Open Economic Calendar ↗</a>
+              <a class="btn btn-outline" href="https://www.bls.gov/schedule/" target="_blank" rel="noopener noreferrer">US Data Release Schedule ↗</a>
+              <a class="btn btn-outline" href="https://www.federalreserve.gov/newsevents/calendar.htm" target="_blank" rel="noopener noreferrer">Fed Calendar ↗</a>
+            </div>
+          </div>
+
+          <div class="tradingview-widget-container" style="height:520px;width:100%">
+            <div id="tradingview_economic_calendar" style="height:100%;width:100%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="section" id="articles">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Editorial desk</div>
+            <h2>Gold Trading Articles</h2>
+            <p>Practical introductory guides to help you understand gold markets, analyse information and manage risk.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=80" alt="Market chart displayed on a screen" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Fundamentals</span>
+              <h3>How US Inflation Data Can Influence Gold</h3>
+              <p>Learn why inflation reports matter, how markets compare results with expectations, and why gold's response can differ from one release to another.</p>
+              <button class="btn btn-outline article-btn" data-article="inflation" type="button">Read article ↓</button>
+              <div class="article-content" id="article-inflation" hidden>
+                <p>Inflation reports, including the Consumer Price Index, can change expectations for future interest-rate decisions. A report above or below expectations may influence bond yields and the US dollar, which can affect gold.</p>
+                <p>However, the market response also depends on the details of the report, earlier positioning and other simultaneous events. A single number is not a reliable trading signal.</p>
+                <p><strong>Research source:</strong> <a class="read-link" href="https://www.bls.gov/cpi/" target="_blank" rel="noopener noreferrer">US Bureau of Labor Statistics — CPI ↗</a></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80" alt="Financial data displayed on a computer" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Risk management</span>
+              <h3>Understanding Risk Before Trading Gold</h3>
+              <p>Discover how position size, stop-loss orders, spreads and leverage can affect potential losses on a gold position.</p>
+              <button class="btn btn-outline article-btn" data-article="risk" type="button">Read article ↓</button>
+              <div class="article-content" id="article-risk" hidden>
+                <p>Before considering a trade, understand your broker's contract size, tick value, margin requirements and trading costs. Different account types can have different specifications.</p>
+                <p>A stop-loss order may not execute at the exact requested price during a fast market or a price gap. Leverage can lead to rapid losses, including the loss of all funds in a trading account.</p>
+                <p>Never use money needed for essential expenses, and consider practising with a demo account before risking real money.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-image" src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=900&q=80" alt="Financial market analysis on a monitor" loading="lazy">
+            <div class="card-body">
+              <span class="tag">Technical analysis</span>
+              <h3>A Beginner's Guide to Support and Resistance</h3>
+              <p>Understand price zones, breakouts, false breaks and why technical levels should be treated as uncertain rather than guaranteed.</p>
+              <button class="btn btn-outline article-btn" data-article="technical" type="button">Read article ↓</button>
+              <div class="article-content" id="article-technical" hidden>
+                <p>Support is an area where buying interest has previously appeared; resistance is an area where selling pressure has previously appeared. These are interpretations of past price behaviour, not fixed boundaries.</p>
+                <p>A breakout can continue, fail or reverse. Traders often assess the broader trend, timeframe, market conditions and possible invalidation points instead of relying on one line.</p>
+                <p>Technical analysis is a framework for organising observations, not a guarantee that a market will move in a particular direction.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RISK -->
+    <section class="section" id="risk" style="background:#0e0e0e">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Protect your capital</div>
+            <h2>Risk Management First</h2>
+            <p>Understanding risk is an essential part of learning about leveraged markets.</p>
+          </div>
+        </div>
+
+        <div class="risk-banner">
+          <h3>⚠ Gold and leveraged trading involve substantial risk.</h3>
+          <p class="muted">Consider these general educational principles before making any financial decision:</p>
+          <ul class="risk-list">
+            <li>Learn contract size, margin, spread and tick value before trading.</li>
+            <li>Understand that leverage magnifies losses as well as gains.</li>
+            <li>Decide in advance how much risk you can afford to take.</li>
+            <li>Do not assume stop-loss orders guarantee an exact exit price.</li>
+            <li>Avoid trading decisions based only on social-media signals.</li>
+            <li>Never risk borrowed money or funds needed for essential expenses.</li>
+          </ul>
+          <a class="read-link" href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/forex-trading" target="_blank" rel="noopener noreferrer">Read investor education on forex risks ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELEGRAM CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <div class="eyebrow">Community</div>
+            <h2>Follow BIONTfx on Telegram</h2>
+            <p>Visit the channel for the material published by its owner. Verify information independently, and do not treat social-media posts as guaranteed trading advice.</p>
+          </div>
+
+          <!-- IMPORTANT: Replace this placeholder with your exact BIONTfx Telegram channel URL. -->
+          <a class="btn btn-gold" id="telegramLink" href="https://t.me/YOUR_BIONTFX_CHANNEL" target="_blank" rel="noopener noreferrer">Visit Telegram ↗</a>
+        </div>
+        <p class="muted" style="font-size:.8rem;margin-top:12px">
+          Website owner: replace the Telegram placeholder in this file with the exact channel link before publishing.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">G</span>
+          <span>GLOBAL INSIGHT<small>GOLD MARKET DESK</small></span>
+        </a>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="#risk">Risk Disclosure</a>
+        </div>
+      </div>
+
+      <p class="disclaimer">
+        <strong>Educational disclaimer:</strong> Global Insight provides general educational and informational content.
+        Nothing on this page is personalised financial advice, a recommendation to buy or sell, or a promise of returns.
+        Trading forex, CFDs and leveraged products can result in substantial losses. External charts, calendars and links
+        are provided by third parties and may be delayed, unavailable or subject to their own terms. Always verify information
+        with reliable sources and understand the rules and risks that apply in your jurisdiction.
+      </p>
+
+      <p class="muted" style="font-size:.8rem;margin-bottom:0">
+        © <span id="currentYear"></span> Global Insight. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- TradingView chart widget -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    document.querySelectorAll(".article-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const content = document.getElementById("article-" + button.dataset.article);
+        const isHidden = content.hidden;
+        content.hidden = !isHidden;
+        button.textContent = isHidden ? "Close article ↑" : "Read article ↓";
+      });
+    });
+
+    // TradingView XAUUSD chart. Requires an internet connection.
+    const chartScript = document.createElement("script");
+    chartScript.src = "https://s3.tradingview.com/tv.js";
+    chartScript.async = true;
+    chartScript.onload = () => {
+      if (window.TradingView) {
+        new TradingView.widget({
+          autosize: true,
+          symbol: "OANDA:XAUUSD",
+          interval: "60",
+          timezone: "Etc/UTC",
+          theme: "dark",
+          style: "1",
+          locale: "en",
+          enable_publishing: false,
+          allow_symbol_change: true,
+          hide_side_toolbar: false,
+          withdateranges: true,
+          details: true,
+          hotlist: false,
+          calendar: false,
+          container_id: "tradingview_gold_chart"
+        });
+      }
+    };
+    chartScript.onerror = () => {
+      document.getElementById("tradingview_gold_chart").innerHTML =
+        '<div style="padding:25px;color:#d9b45b">Chart unavailable. <a href="https://www.tradingview.com/symbols/XAUUSD/" target="_blank" rel="noopener noreferrer">Open the XAUUSD chart directly ↗</a></div>';
+    };
+    document.head.appendChild(chartScript);
+
+    // TradingView economic calendar widget.
+    const calendarScript = document.createElement("script");
+    calendarScript.src = "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
+    calendarScript.async = true;
+    calendarScript.innerHTML = JSON.stringify({
+      colorTheme: "dark",
+      isTransparent: true,
+      width: "100%",
+      height: "100%",
+      locale: "en",
+      importanceFilter: "-1,0,1",
+      countryFilter: "US"
+    });
+    document.getElementById("tradingview_economic_calendar").appendChild(calendarScript);
+
+    // If the Telegram placeholder has not been replaced, prevent an incorrect channel link.
+    document.getElementById("telegramLink").addEventListener("click", event => {
+      if (event.currentTarget.href.includes("YOUR_BIONTFX_CHANNEL")) {
+        event.preventDefault();
+        alert("Please add the correct BIONTfx Telegram channel URL in xauusd.html first.");
+      }
+    });
+  </script>
+</body>
+</html>
+

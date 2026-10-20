@@ -1,1 +1,329 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Mia's Starship | Global Insight</title>
+    <meta name="description" content="Join Captain Mia and her crew on an unforgettable journey through the stars, where courage, friendship, and discovery change the future.">
+    <meta name="author" content="Global Insight">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://globalinsightsaqib.vercel.app/stories/captain-mia-starship.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <style>
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: #050816;
+            color: #e2e8f0;
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(5,8,22,.94), rgba(5,8,22,.42)),
+                url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2000&q=85') center/cover;
+        }
+        .story-card {
+            background: rgba(15,23,42,.78);
+            border: 1px solid rgba(96,165,250,.18);
+            border-radius: 18px;
+            padding: 28px;
+            margin: 30px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,.15);
+        }
+        .story-card p {
+            color: #cbd5e1;
+            line-height: 2;
+            margin: 16px 0;
+        }
+        .story-card h2 {
+            color: #93c5fd;
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .story-image {
+            width: 100%;
+            max-height: 440px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 24px 0;
+        }
+        .dialogue {
+            border-left: 3px solid #60a5fa;
+            padding: 8px 0 8px 16px;
+            margin: 18px 0;
+            color: #bfdbfe;
+            font-style: italic;
+        }
+        .chapter-link {
+            display: block;
+            color: #cbd5e1;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: .2s;
+        }
+        .chapter-link:hover {
+            background: #172554;
+            color: #93c5fd;
+        }
+        .glow { text-shadow: 0 0 25px rgba(96,165,250,.45); }
+        @media(max-width:640px) {
+            .story-card { padding: 20px; }
+            .story-card h2 { font-size: 1.35rem; }
+        }
+    </style>
+</head>
+
+<body>
+<header class="sticky top-0 z-50 border-b border-blue-400/20 bg-slate-950/90 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between gap-4">
+        <a href="../index.html" class="text-xl font-extrabold tracking-tight">
+            GLOBAL <span class="text-blue-400">INSIGHT</span>
+        </a>
+        <a href="../index.html#stories" class="text-sm text-blue-300 hover:text-white transition">
+            <i class="fas fa-arrow-left mr-2"></i>Back to Stories
+        </a>
+    </div>
+</header>
+
+<section class="hero min-h-[470px] flex items-center">
+    <div class="max-w-7xl mx-auto px-6 py-20 w-full">
+        <span class="text-blue-300 uppercase tracking-[4px] text-xs font-bold">Children's Science Fiction</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mt-5 max-w-4xl glow">
+            Captain Mia's <span class="text-blue-400">Starship</span>
+        </h1>
+        <p class="text-slate-300 text-lg leading-8 max-w-2xl mt-6">
+            A young captain, a mysterious signal, and a voyage to the edge of the unknown. One brave crew may be the galaxy's only hope.
+        </p>
+        <div class="flex flex-wrap gap-5 text-sm text-slate-400 mt-7">
+            <span><i class="fas fa-book-open text-blue-400 mr-2"></i>5 Chapters</span>
+            <span><i class="fas fa-rocket text-blue-400 mr-2"></i>Space Adventure</span>
+            <span><i class="fas fa-clock text-blue-400 mr-2"></i>15 min read</span>
+        </div>
+    </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-5 py-12 grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+
+<article>
+    <div class="story-card">
+        <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest">The Beginning</p>
+        <p>
+            In the year 2189, humanity had built cities on Mars, floating research stations around Jupiter, and enormous spaceports that connected distant worlds. Beyond the familiar planets, however, lay a universe filled with mysteries nobody had solved.
+        </p>
+        <p>
+            Mia Rahman was the youngest captain ever selected to lead the exploration starship <strong class="text-white">Aurora</strong>. At seventeen, she had studied navigation, engineering, alien languages, and the history of space exploration. But her greatest strength was not her knowledge. It was her determination to listen, learn, and protect the people who trusted her.
+        </p>
+        <p>
+            On the morning of Aurora's departure, Mia stood beneath the ship's enormous glass observation window. Stars glittered beyond it like diamonds scattered across black velvet.
+        </p>
+        <div class="dialogue">“Captain, the crew is aboard. Engines are ready,” announced Leo, the ship's cheerful engineering specialist.</div>
+        <p>Mia took a breath and smiled.</p>
+        <div class="dialogue">“Then let's give the universe a reason to remember us. Aurora, prepare for launch!”</div>
+    </div>
+
+    <section id="chapter1" class="story-card">
+        <h2>Chapter 1: A Signal in the Darkness</h2>
+        <img class="story-image" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85" alt="Earth seen from space" loading="lazy">
+        <p>
+            Aurora left Earth's orbit with a gentle vibration. Blue oceans and white clouds slowly became a shining marble behind the ship. Mia's crew gathered on the bridge: Leo, the engineer; Dr. Sana, a scientist who specialized in strange life forms; and Orion, the ship's artificial intelligence.
+        </p>
+        <p>
+            For three days, their journey was peaceful. They mapped asteroids, photographed distant nebulae, and sent updates to the exploration station. Then, at 02:17 ship time, Orion interrupted the quiet hum of the bridge.
+        </p>
+        <div class="dialogue">“Captain Mia, an unidentified signal has been detected beyond the Kepler Belt. Its pattern does not match any known human transmission.”</div>
+        <p>Mia leaned toward the display. Three short pulses followed by three long ones repeated again and again.</p>
+        <div class="dialogue">“Could it be a distress call?” she asked.</div>
+        <div class="dialogue">Dr. Sana adjusted her glasses. “Possibly. But the signal is coming from a region that our maps mark as empty space.”</div>
+        <p>
+            Leo folded his arms. “Empty space doesn't send messages. At least, not according to my engineering textbooks.”
+        </p>
+        <p>
+            Mia studied the signal's direction. A faint blue point blinked on the navigation screen, far beyond their planned route.
+        </p>
+        <div class="dialogue">“We were sent to explore,” Mia said. “If someone is calling for help, we cannot ignore it.”</div>
+        <p>
+            She ordered Aurora to change course. None of them knew that this single decision would lead them to the greatest discovery in human history.
+        </p>
+    </section>
+
+    <section id="chapter2" class="story-card">
+        <h2>Chapter 2: The Planet That Wasn't on Any Map</h2>
+        <img class="story-image" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=1200&q=85" alt="A mysterious planet in space" loading="lazy">
+        <p>
+            After eighteen hours of travel, the crew reached the signal's source. A small planet floated behind a curtain of cosmic dust. Its surface glowed with blue rivers, silver mountains, and enormous forests that shimmered beneath a violet sky.
+        </p>
+        <p>
+            Orion scanned the planet and delivered an unexpected report.
+        </p>
+        <div class="dialogue">“Atmosphere appears breathable with protective equipment. No artificial satellites detected. Energy readings beneath the surface are unusually high.”</div>
+        <div class="dialogue">“And the signal?” Mia asked.</div>
+        <div class="dialogue">“Originating from a structure near the northern continent.”</div>
+        <p>
+            The crew landed beside a field of luminous plants. The moment Mia stepped onto the surface, the plants brightened beneath her boots. Tiny lights travelled across the grass like stars moving through a green ocean.
+        </p>
+        <p>
+            Dr. Sana knelt beside one of the plants, careful not to touch it.
+        </p>
+        <div class="dialogue">“These organisms are responding to our presence. This entire ecosystem may be connected.”</div>
+        <p>
+            A narrow stone path led them through the forest to a circular tower. Symbols covered its walls, glowing whenever the repeating signal sounded.
+        </p>
+        <p>
+            Inside, they found a floating crystal surrounded by rings of light. The crystal projected an image of a woman whose face seemed to be made of stars.
+        </p>
+        <div class="dialogue">“If you can understand this message,” the figure said, “our world's guardian has awakened. You must reach the Heart of Light before the final eclipse.”</div>
+        <p>
+            The projection vanished. The room fell silent.
+        </p>
+        <div class="dialogue">Leo swallowed. “I have a feeling this is going to be a very long day.”</div>
+        <p>Mia looked toward the tower's sealed door.</p>
+        <div class="dialogue">“Then we'd better start walking.”</div>
+    </section>
+
+    <section id="chapter3" class="story-card">
+        <h2>Chapter 3: The Guardian's Test</h2>
+        <img class="story-image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85" alt="A vast mountain beneath a starry sky" loading="lazy">
+        <p>
+            Beyond the tower, a bridge crossed a deep valley. At its far end stood a machine shaped like a silver tree. Its branches reached toward the sky, but its lights flickered weakly.
+        </p>
+        <p>
+            When Mia approached, the ground trembled. A tall mechanical guardian emerged from the rocks, its eyes glowing amber.
+        </p>
+        <div class="dialogue">“State your purpose,” it commanded.</div>
+        <div class="dialogue">“We followed a distress signal,” Mia replied. “We came to help.”</div>
+        <div class="dialogue">“Many have sought the Heart of Light. Most sought power. Why should you be different?”</div>
+        <p>
+            Mia had no clever answer. She thought about the people on Earth, the crew standing behind her, and the responsibility that came with being captain.
+        </p>
+        <div class="dialogue">“Because we don't own this planet,” she said. “We have no right to take anything from it. We only want to understand what is happening and help if we can.”</div>
+        <p>
+            The guardian's eyes dimmed. Then the bridge lights turned blue, and the machine stepped aside.
+        </p>
+        <div class="dialogue">“Your answer is acceptable. The Heart is failing. Its energy sustains this world, and its balance has been disturbed.”</div>
+        <p>
+            The guardian explained that the Heart of Light was an ancient energy source, designed to protect the planet from cosmic storms. A recent meteor shower had damaged its outer ring. Without repairs, the planet's protective field would collapse.
+        </p>
+        <p>
+            Dr. Sana checked the readings. “We have the tools to repair it, but we'll need to reach the central chamber.”
+        </p>
+        <p>
+            Mia nodded. “Then we work together. Nobody gets left behind.”
+        </p>
+    </section>
+
+    <section id="chapter4" class="story-card">
+        <h2>Chapter 4: The Choice at the Heart of Light</h2>
+        <img class="story-image" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85" alt="A glowing nebula in deep space" loading="lazy">
+        <p>
+            The central chamber lay beneath the tallest mountain. Inside it, a sphere of blue energy flickered like a candle in a storm. Cracks of darkness spread across its surface.
+        </p>
+        <p>
+            Leo opened his tool kit and began working on the outer ring. Dr. Sana monitored the energy levels while Orion calculated a safe repair sequence.
+        </p>
+        <div class="dialogue">“I can stabilize the ring,” Leo said, “but the system needs a steady power source for ninety seconds.”</div>
+        <div class="dialogue">“Aurora can supply the energy,” Orion replied. “However, the transfer may shut down our engines.”</div>
+        <p>
+            The chamber shook. Dust fell from the ceiling, and the sphere's light weakened further. Mia looked at the countdown on her wrist display. If they waited too long, there would be nothing left to save.
+        </p>
+        <div class="dialogue">Dr. Sana said, “Captain, once we begin, we may not be able to leave this planet quickly.”</div>
+        <p>
+            Mia looked at her crew. They were frightened, but none of them stepped away.
+        </p>
+        <div class="dialogue">“We came here because someone needed help,” Mia said. “We finish what we started. Orion, redirect Aurora's reserve power.”</div>
+        <p>
+            A beam of blue light connected the chamber to the distant starship. The outer ring began to turn. Leo tightened the final connector, and Sana called out the energy readings.
+        </p>
+        <div class="dialogue">“Seventy percent… eighty-five… ninety-eight!”</div>
+        <p>
+            For one terrible second, everything went dark.
+        </p>
+        <p>
+            Then the sphere burst into brilliant blue light. The mountain glowed from within. Across the planet, rivers of light returned, forests shimmered, and the protective field rose into the sky like a transparent shield.
+        </p>
+        <div class="dialogue">Orion's voice returned through Mia's communicator. “Power transfer complete. Aurora is stable. Captain, the planet's guardian field has been restored.”</div>
+        <p>
+            Mia closed her eyes and let out a breath she had been holding. They had done it—not through strength alone, but by trusting one another.
+        </p>
+    </section>
+
+    <section id="chapter5" class="story-card">
+        <h2>Chapter 5: A New Beginning</h2>
+        <img class="story-image" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&q=85" alt="The blue planet Earth from orbit" loading="lazy">
+        <p>
+            The guardian returned to the chamber. This time, its amber eyes shone with a gentle blue light.
+        </p>
+        <div class="dialogue">“Captain Mia, you have restored the balance without asking for a reward. Your people may be ready to meet the wider universe.”</div>
+        <p>
+            The crystal projection appeared once more. The star-shaped woman introduced herself as Elara, one of the planet's ancient keepers. She explained that her civilization had created the Heart of Light long before humans had reached space.
+        </p>
+        <p>
+            “We sent the signal because we hoped someone would answer,” Elara said. “Not the strongest civilization, or the most advanced one, but someone willing to listen.”
+        </p>
+        <p>
+            Before the crew left, the guardian gave Mia a small crystal that held a map of nearby star systems. It was not a weapon or a source of unlimited power. It was an invitation to learn.
+        </p>
+        <p>
+            Back aboard Aurora, Leo settled into his seat and grinned.
+        </p>
+        <div class="dialogue">“So, Captain, do we tell Earth we found an alien civilization?”</div>
+        <div class="dialogue">Mia smiled. “We tell them we found a neighbor. And that we should probably introduce ourselves politely.”</div>
+        <p>
+            Aurora rose above the planet. Behind it, the restored shield shimmered like a second atmosphere. Ahead lay a thousand unexplored stars.
+        </p>
+        <p>
+            Mia returned to the captain's chair and opened the new star map. A tiny light blinked at its farthest edge. Another signal. Another mystery.
+        </p>
+        <div class="dialogue">“Crew,” she said, “looks like our journey is only beginning.”</div>
+        <p>
+            The starship turned toward the unknown, carrying a crew who had learned that the greatest explorers were not those who conquered the universe, but those who approached it with courage, curiosity, and kindness.
+        </p>
+    </section>
+
+    <section class="story-card border-blue-400/30">
+        <h2><i class="fas fa-star mr-2"></i>The Lesson of the Story</h2>
+        <p>
+            True courage means helping others even when the outcome is uncertain. Curiosity helps us discover new possibilities, while teamwork and respect allow people from different worlds to solve problems together.
+        </p>
+        <p class="text-blue-300 font-semibold">The End — Until the Next Voyage!</p>
+        <button onclick="window.print()" class="mt-5 bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition">
+            <i class="fas fa-print mr-2"></i>Print Story
+        </button>
+    </section>
+</article>
+
+<aside class="lg:sticky lg:top-24 lg:self-start">
+    <div class="story-card !mt-0">
+        <h3 class="text-lg font-bold text-white mb-4">Story Chapters</h3>
+        <a class="chapter-link" href="#chapter1">01. A Signal in the Darkness</a>
+        <a class="chapter-link" href="#chapter2">02. The Unknown Planet</a>
+        <a class="chapter-link" href="#chapter3">03. The Guardian's Test</a>
+        <a class="chapter-link" href="#chapter4">04. The Heart of Light</a>
+        <a class="chapter-link" href="#chapter5">05. A New Beginning</a>
+    </div>
+    <div class="story-card">
+        <h3 class="text-lg font-bold text-white mb-3">Meet the Crew</h3>
+        <p><strong class="text-blue-300">Captain Mia:</strong> A brave and thoughtful young explorer.</p>
+        <p><strong class="text-blue-300">Leo:</strong> A clever engineer who keeps Aurora running.</p>
+        <p><strong class="text-blue-300">Dr. Sana:</strong> A scientist fascinated by life beyond Earth.</p>
+        <p><strong class="text-blue-300">Orion:</strong> The ship's intelligent navigation system.</p>
+    </div>
+    <a href="../index.html#stories" class="block text-center bg-blue-500/10 border border-blue-400/30 text-blue-300 hover:bg-blue-500 hover:text-white rounded-xl p-4 transition">
+        <i class="fas fa-book-open mr-2"></i>Explore More Stories
+    </a>
+</aside>
+
+</main>
+
+<footer class="border-t border-blue-400/20 text-center text-slate-500 py-8 px-5">
+    <p>&copy; 2026 Global Insight. All rights reserved.</p>
+    <p class="text-sm mt-2">Stories that take you beyond the ordinary.</p>
+</footer>
+</body>
+</html>
+```

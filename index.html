@@ -373,6 +373,9 @@ section {
 
 /* Mobile navigation panel */
 #mobile-menu {
+    display: block;
+    position: absolute;
+    z-index: 60;
     max-height: calc(100dvh - 64px);
     overflow-y: auto;
     background: rgba(255,255,255,.98) !important;
@@ -381,6 +384,9 @@ section {
     box-shadow: 0 20px 40px rgba(30,41,59,.14);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+}
+#mobile-menu[hidden] {
+    display: none !important;
 }
 #mobile-menu .mobile-nav-link {
     display: flex;
@@ -1004,7 +1010,7 @@ a.gold-nav-btn:hover {
                 <button
                     id="mobile-menu-btn"
                     type="button"
-                    class="inline-flex items-center justify-center w-11 h-11 rounded-xl text-gray-800 hover:bg-brand-purple/10 hover:text-brand-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                    class="relative z-[70] pointer-events-auto touch-manipulation inline-flex items-center justify-center w-11 h-11 rounded-xl text-gray-800 hover:bg-brand-purple/10 hover:text-brand-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                     aria-label="Open navigation menu"
                     aria-controls="mobile-menu"
                     aria-expanded="false">
@@ -1030,7 +1036,7 @@ a.gold-nav-btn:hover {
         </div>
 
         <!-- Mobile navigation drawer -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-xl" aria-label="Mobile navigation">
+        <div id="mobile-menu" hidden aria-hidden="true" class="absolute z-[60] top-full left-0 w-full bg-white/98 backdrop-blur-xl border-t border-gray-100 shadow-xl" aria-label="Site navigation menu">
             <div class="max-w-7xl mx-auto px-4 pt-3 pb-5 flex flex-col gap-1">
                 <a href="#home" class="mobile-nav-link"><i class="fas fa-house w-6 text-center" aria-hidden="true"></i><span>Home</span></a>
                 <a href="privacy-policy.html" class="mobile-nav-link"><i class="fas fa-shield-halved w-6 text-center" aria-hidden="true"></i><span>Privacy Policy</span></a>
@@ -1795,39 +1801,44 @@ a.gold-nav-btn:hover {
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Accessible mobile navigation toggle
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
+            // Accessible hamburger navigation: independent of Tailwind's hidden utility.
+            const menuButton = document.getElementById('mobile-menu-btn');
+            const siteMenu = document.getElementById('mobile-menu');
 
-            if (btn && menu) {
-                const setMenuOpen = (isOpen) => {
-                    menu.classList.toggle('hidden', !isOpen);
-                    btn.setAttribute('aria-expanded', String(isOpen));
-                    btn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-                    btn.innerHTML = isOpen
+            if (menuButton && siteMenu) {
+                const isMenuOpen = () => menuButton.getAttribute('aria-expanded') === 'true';
+
+                const setMenuOpen = (open) => {
+                    siteMenu.hidden = !open;
+                    siteMenu.setAttribute('aria-hidden', String(!open));
+                    menuButton.setAttribute('aria-expanded', String(open));
+                    menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+                    menuButton.innerHTML = open
                         ? '<i class="fas fa-xmark text-2xl" aria-hidden="true"></i>'
                         : '<i class="fas fa-bars text-2xl" aria-hidden="true"></i>';
                 };
 
-                btn.addEventListener('click', () => {
-                    setMenuOpen(menu.classList.contains('hidden'));
+                setMenuOpen(false);
+
+                menuButton.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setMenuOpen(!isMenuOpen());
                 });
 
-                menu.querySelectorAll('a').forEach(link => {
+                siteMenu.querySelectorAll('a').forEach((link) => {
                     link.addEventListener('click', () => setMenuOpen(false));
                 });
 
-                document.addEventListener('keydown', event => {
-                    if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && isMenuOpen()) {
                         setMenuOpen(false);
-                        btn.focus();
+                        menuButton.focus();
                     }
                 });
 
-                document.addEventListener('click', event => {
-                    if (!menu.classList.contains('hidden') &&
-                        !menu.contains(event.target) &&
-                        !btn.contains(event.target)) {
+                document.addEventListener('click', (event) => {
+                    if (isMenuOpen() && !siteMenu.contains(event.target) && !menuButton.contains(event.target)) {
                         setMenuOpen(false);
                     }
                 });

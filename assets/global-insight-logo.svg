@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<defs>
+ <linearGradient id="g" x1="18" y1="12" x2="110" y2="116" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6"/><stop offset=".48" stop-color="#7C3AED"/><stop offset="1" stop-color="#D946EF"/></linearGradient>
+ <linearGradient id="o" x1="13" y1="88" x2="115" y2="45" gradientUnits="userSpaceOnUse"><stop stop-color="#FB7185"/><stop offset=".52" stop-color="#EC4899"/><stop offset="1" stop-color="#A855F7"/></linearGradient>
+</defs>
+<circle cx="64" cy="64" r="43" fill="url(#g)"/>
+<path d="M28 48c11-18 30-29 50-25M25 67c12 7 25 10 39 9 16-1 29-8 39-20M39 99c-8-10-13-22-13-35 0-5 1-10 2-14M76 23c-7 12-11 26-11 41 0 17 6 32 16 44M92 35c-10 7-17 17-21 29M45 108c11-5 22-7 34-7 9 0 17 2 25 5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".92"/>
+<path d="M9 82c24 19 66 24 99 2 7-5 12-11 15-18-3 20-17 37-38 45C54 124 21 110 9 82Z" fill="url(#o)"/>
+<path d="M10 81c20 15 57 19 85 5" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" opacity=".8"/>
+<path d="M102 12l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#EC4899"/>
+</svg>

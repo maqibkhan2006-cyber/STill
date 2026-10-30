@@ -1005,33 +1005,26 @@ a.gold-nav-btn:hover {
     <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar" aria-label="Main navigation">
         <div class="absolute inset-0 bg-white/90 backdrop-blur-md shadow-lg border-b border-white/30"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <!-- Mobile hamburger: intentionally placed at the top-left -->
+            <div class="grid grid-cols-[1fr_auto_1fr] items-center h-16 md:h-20">
+                <!-- Hamburger menu stays on the left on desktop and mobile -->
                 <button
                     id="mobile-menu-btn"
                     type="button"
-                    class="relative z-[70] pointer-events-auto touch-manipulation inline-flex items-center justify-center w-11 h-11 rounded-xl text-gray-800 hover:bg-brand-purple/10 hover:text-brand-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
+                    class="relative z-[70] justify-self-start pointer-events-auto touch-manipulation inline-flex items-center justify-center w-11 h-11 rounded-xl text-gray-800 hover:bg-brand-purple/10 hover:text-brand-purple focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-purple"
                     aria-label="Open navigation menu"
                     aria-controls="mobile-menu"
                     aria-expanded="false">
                     <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
 
-                <!-- Website logo -->
-                <a href="#home" class="flex-shrink-0 flex items-center gap-2 cursor-pointer" aria-label="Global Insight home">
-                    <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center text-white font-bold text-xl shadow-lg">GI</span>
-                    <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange">Global Insight</span>
+                <!-- Centered website logo and name -->
+                <a href="#home" class="justify-self-center flex items-center gap-2 cursor-pointer max-w-full" aria-label="Global Insight home">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0">GI</span>
+                    <span class="font-extrabold text-lg sm:text-2xl tracking-tight whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange">Global Insight</span>
                 </a>
 
-                <!-- Desktop navigation -->
-                <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
-                    <a href="#home" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors">Home</a>
-                    <a href="#news" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors">News</a>
-                    <a href="#stories" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors">Stories</a>
-                    <a href="about.html" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors">About Us</a>
-                    <a href="privacy-policy.html" class="font-semibold text-gray-700 hover:text-brand-pink transition-colors">Privacy Policy</a>
-                    <a href="#contact" class="px-5 py-2 rounded-full text-white font-bold bg-gradient-to-r from-brand-purple to-brand-pink hover:shadow-lg transition-all">Contact Us</a>
-                </div>
+                <!-- Balancing space keeps the logo mathematically centered -->
+                <span aria-hidden="true"></span>
             </div>
         </div>
 

@@ -1,13 +1,15 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://globalinsightsaqib.vercel.app/about.html</loc>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/privacy-policy.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://globalinsightsaqib.vercel.app/xauusd.html</loc>
@@ -16,56 +18,73 @@
     <loc>https://globalinsightsaqib.vercel.app/ai-tools.html</loc>
   </url>
 
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/global-climate-summit.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/eu-enlargement.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/iss-transition.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/quantum-computing.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/next-gen-ai.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/open-source-security.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/personalized-mrna-therapies.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/micro-workouts.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/gut-microbiome-mental-health.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/ai-workflows-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/scaling-online-startup.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/global-markets-inflation.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/four-day-workweek.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/green-tech-startups.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/future-of-work-ai.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/ai-cybersecurity.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/return-of-analog.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
 
   <url>
@@ -86,15 +105,24 @@
   <url>
     <loc>https://globalinsightsaqib.vercel.app/stories/the-corporate-ladder.html</loc>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/petrol-price-pakistan-october-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/pakistan-vs-england-cricket-october-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url>
+    <url>
     <loc>https://globalinsightsaqib.vercel.app/articles/redmi-k100-launch-features-october-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
-  <url><loc>https://globalinsightsaqib.vercel.app/editorial-policy.html</loc></url>
-  <url><loc>https://globalinsightsaqib.vercel.app/articles/big-tech-ai-spending-market-reaction-october-2026.html</loc></url>
+    <url>
+    <loc>https://globalinsightsaqib.vercel.app/editorial-policy.html</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+    <url>
+    <loc>https://globalinsightsaqib.vercel.app/articles/big-tech-ai-spending-market-reaction-october-2026.html</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
 </urlset>

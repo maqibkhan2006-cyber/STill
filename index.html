@@ -13,6 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5207449371338921"
      crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="jk8Ph0ynN6eq9-HVvp9uXHJsE6CxoJ5S8YVXAqsiy7I" />
@@ -1135,6 +1136,98 @@ footer .bg-gray-800 { background: #19365e !important; color: #eaf2ff !important;
   *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
 
+
+/* GLOBAL INSIGHT — STRUCTURAL EDITORIAL REDESIGN (palette retained) */
+:root{--gi-font-body:'DM Sans',sans-serif;--gi-font-display:'Manrope',sans-serif}
+body{font-family:var(--gi-font-body);line-height:1.75}
+h1,h2,h3,h4,.font-extrabold,.font-bold{font-family:var(--gi-font-display);letter-spacing:-.035em}
+#navbar .max-w-7xl{max-width:1440px}
+#navbar .grid{grid-template-columns:auto 1fr auto;min-height:82px;height:auto}
+#navbar .grid>a[aria-label="Global Insight home"]{grid-column:2;grid-row:1;justify-self:start;margin-left:14px}
+#navbar .grid>a[aria-label="Global Insight home"] img{width:46px;height:46px}
+#navbar .grid>a[aria-label="Global Insight home"] span{font-family:var(--gi-font-display);font-size:1.35rem;letter-spacing:-.055em}
+#mobile-menu-btn{grid-column:1;grid-row:1}
+.gi-desktop-links{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,2vw,30px)}
+.gi-desktop-links a{color:#475569;font-size:.88rem;font-weight:700;text-decoration:none;white-space:nowrap}
+.gi-desktop-links a:hover{color:var(--gi-blue)}
+.gi-desktop-links .gi-contact-link{padding:10px 17px;border-radius:999px;background:var(--gi-blue);color:#fff!important}
+#mobile-menu{top:calc(100% - 1px);width:min(360px,calc(100vw - 24px));left:12px;border:1px solid var(--gi-border);border-radius:0 0 18px 18px;padding:8px}
+.gi-hero{min-height:0;padding:148px 0 32px;background:linear-gradient(120deg,#eef4ff 0%,#fff 54%,#f4f7ff 100%);isolation:isolate}
+.gi-hero-shell{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);align-items:center;gap:clamp(38px,7vw,100px)}
+.gi-hero-copy{max-width:660px;padding:22px 0 36px}
+.gi-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border:1px solid #dbeafe;border-radius:999px;color:#31558c;background:rgba(255,255,255,.78);font-size:.78rem;font-weight:700}
+.gi-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--gi-blue);box-shadow:0 0 0 4px rgba(37,99,235,.1)}
+.gi-kicker{margin:30px 0 13px;color:var(--gi-blue);font-size:.72rem;font-weight:800;letter-spacing:.2em}
+.gi-hero h1{max-width:720px;margin:0 0 22px;color:#14213a;font-size:clamp(2.7rem,5.2vw,5.15rem);font-weight:800;line-height:1.04;letter-spacing:-.075em}
+.gi-hero-description{max-width:570px;margin:0;color:#58677d;font-size:clamp(1rem,1.25vw,1.13rem);line-height:1.9}
+.gi-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:13px;margin-top:32px}
+.gi-primary-action,.gi-secondary-action{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 22px;border-radius:8px;font-size:.91rem;font-weight:800;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+.gi-primary-action{background:var(--gi-blue);color:#fff;box-shadow:0 10px 24px rgba(37,99,235,.2)}
+.gi-primary-action:hover{color:#fff;transform:translateY(-3px)}
+.gi-secondary-action{border:1px solid #d7e1f0;background:#fff;color:#29466e}
+.gi-secondary-action:hover{transform:translateY(-3px)}
+.gi-hero-note{display:flex;align-items:center;gap:12px;margin-top:42px;color:#718096;font-size:.78rem;font-weight:600}
+.gi-note-line{width:34px;height:1px;background:#8aa9d8}
+.gi-hero-visual{position:relative;width:100%;max-width:620px;justify-self:end;padding:0 22px 34px 0}
+.gi-image-frame{position:relative;overflow:hidden;aspect-ratio:.96/1;border-radius:10px 10px 90px 10px;background:#dce8f8;box-shadow:0 28px 70px rgba(30,64,120,.17)}
+.gi-image-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,27,56,.45));pointer-events:none}
+.gi-image-frame img{width:100%;height:100%;object-fit:cover}
+.gi-image-caption{position:absolute;z-index:1;bottom:20px;left:22px;display:flex;align-items:center;gap:10px;color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.15em}
+.gi-caption-mark{width:7px;height:7px;border-radius:50%;background:#fff}
+.gi-caption-divider{width:24px;height:1px;background:rgba(255,255,255,.7)}
+.gi-visual-index{position:absolute;right:0;top:25px;writing-mode:vertical-rl;color:#49658d;font-size:.7rem;font-weight:800;letter-spacing:.12em}
+.gi-visual-index span{color:#9aabc1;padding:7px 0}
+.gi-floating-note{position:absolute;z-index:2;left:-35px;bottom:0;display:flex;align-items:center;gap:13px;padding:16px 20px;border:1px solid #e2eaf5;border-radius:9px;background:#fff;box-shadow:0 16px 38px rgba(30,64,120,.14);color:var(--gi-blue)}
+.gi-floating-note i{font-size:1.35rem}.gi-floating-note span{display:grid;gap:2px;color:#1e3150;font-size:.82rem}.gi-floating-note small{color:#75849a;font-size:.7rem}
+.gi-hero-bottom{display:flex;align-items:center;gap:18px;margin-top:30px;color:#8190a5;font-size:.65rem;font-weight:800;letter-spacing:.16em}
+.gi-bottom-rule{width:70px;height:1px;background:#c9d7e9}.gi-hero-bottom a{margin-left:auto;color:#41638f;font-size:.72rem;letter-spacing:0;text-decoration:none}
+#news,#stories,#contact{padding-top:100px;padding-bottom:100px}
+#news>.max-w-7xl>.text-center{max-width:none;display:grid;grid-template-columns:minmax(0,.8fr) minmax(280px,1.2fr);align-items:end;gap:28px;text-align:left;margin-bottom:46px}
+#news>.max-w-7xl>.text-center h2,#stories h2,#contact h2{margin:0;font-size:clamp(2rem,3.6vw,3.35rem);line-height:1.1;letter-spacing:-.065em}
+#news>.max-w-7xl>.text-center p{max-width:570px;margin:0 0 4px auto;font-size:1rem;line-height:1.8}
+#news .hover-card{border-radius:12px;box-shadow:0 8px 28px rgba(30,64,120,.07)}
+#news .hover-card img{border-radius:0}
+#news .hover-card h3{font-size:1.38rem;line-height:1.3;letter-spacing:-.04em}
+#news .hover-card .p-7,#news .hover-card .p-8{padding:25px 27px}
+#news-tabs{gap:8px;margin-bottom:28px}
+#news-tabs .tab-btn,.story-tab{border-radius:7px;font-family:var(--gi-font-body);font-size:.82rem;font-weight:700}
+.news-category{gap:22px}.news-category .hover-card{border-radius:12px;overflow:hidden}
+#stories>.max-w-7xl>.text-center{max-width:none;display:flex;justify-content:space-between;align-items:end;gap:30px;text-align:left;margin-bottom:42px}
+#stories>.max-w-7xl>.text-center p{max-width:520px;margin:0}
+#stories .story-group{gap:22px}#stories .story-group>div{border-radius:12px;padding:18px;box-shadow:0 8px 28px rgba(30,64,120,.07)}
+#stories .story-group img{border-radius:8px;height:210px}#stories .story-group h3{font-size:1.35rem;line-height:1.3}
+#stories .story-tab{border-radius:7px}
+#contact .bg-gradient-to-br{border-radius:18px}#contact .bg-gradient-to-br>.bg-white{border-radius:15px;padding:clamp(24px,5vw,60px)}
+#contact .grid{gap:clamp(32px,6vw,80px)}#contact form input,#contact form textarea{border-radius:8px}
+footer{padding-top:55px;padding-bottom:55px}
+@media(max-width:1023px){.gi-hero{padding-top:130px}.gi-hero-shell{grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:32px}.gi-hero h1{font-size:clamp(2.6rem,5.4vw,4rem)}.gi-floating-note{left:-18px}.gi-desktop-links{gap:12px}.gi-desktop-links a{font-size:.78rem}}
+@media(max-width:767px){
+#navbar .grid{min-height:68px;grid-template-columns:42px 1fr 42px}
+#navbar .grid>a[aria-label="Global Insight home"]{grid-column:2;justify-self:center;margin:0}
+#navbar .grid>a[aria-label="Global Insight home"] img{width:39px;height:39px}
+#navbar .grid>a[aria-label="Global Insight home"] span{font-size:1.12rem}
+.gi-desktop-links{display:none}.gi-hero{padding:108px 0 26px}
+.gi-hero-shell{display:flex;flex-direction:column;align-items:stretch;gap:30px}
+.gi-hero-copy{padding:12px 0 0}.gi-kicker{margin-top:22px}
+.gi-hero h1{max-width:600px;font-size:clamp(2.55rem,10vw,4rem);line-height:1.04}
+.gi-hero-description{font-size:.98rem}.gi-hero-actions{display:grid;grid-template-columns:1fr;margin-top:25px}
+.gi-primary-action,.gi-secondary-action{width:100%}.gi-hero-note{margin-top:25px}
+.gi-hero-visual{max-width:none;padding:0 13px 26px 0}.gi-image-frame{aspect-ratio:1.2/1;border-radius:8px 8px 55px 8px}
+.gi-floating-note{left:-2px;padding:12px 15px}.gi-visual-index{right:-2px}
+.gi-hero-bottom{margin-top:22px;gap:10px;font-size:.55rem;letter-spacing:.1em}
+.gi-bottom-rule{width:24px}.gi-hero-bottom a{font-size:.68rem}
+#news,#stories,#contact{padding-top:68px;padding-bottom:68px}
+#news>.max-w-7xl>.text-center{display:block;text-align:left;margin-bottom:30px}
+#news>.max-w-7xl>.text-center p{margin:15px 0 0;font-size:.94rem}
+#stories>.max-w-7xl>.text-center{display:block;margin-bottom:30px}
+#stories>.max-w-7xl>.text-center p{margin-top:15px;font-size:.94rem}
+#news .hover-card h3,#stories .story-group h3{font-size:1.22rem}
+#stories .story-group img{height:190px}.story-tab{padding:10px 13px;font-size:.75rem}
+#contact .bg-gradient-to-br{border-radius:14px}
+#contact .bg-gradient-to-br>.bg-white{border-radius:11px;padding:22px 18px}
+}
+@media(max-width:380px){.gi-hero h1{font-size:2.35rem}.gi-eyebrow{font-size:.69rem}}
+
 </style>
 
 </head>
@@ -1166,8 +1259,10 @@ footer .bg-gray-800 { background: #19365e !important; color: #eaf2ff !important;
                     <span class="font-extrabold text-lg sm:text-2xl tracking-tight whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange">Global Insight</span>
                 </a>
 
-                <!-- Balancing space keeps the logo mathematically centered -->
-                <span aria-hidden="true"></span>
+                <!-- Desktop quick navigation; the hamburger retains the full site menu -->
+                <div class="gi-desktop-links" aria-label="Quick links">
+                    <a href="#home">Home</a><a href="#news">News</a><a href="#stories">Stories</a><a href="about.html">About</a><a href="#contact" class="gi-contact-link">Contact</a>
+                </div>
             </div>
         </div>
 
@@ -1185,49 +1280,29 @@ footer .bg-gray-800 { background: #19365e !important; color: #eaf2ff !important;
         </div>
     </nav>
 
-    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-screen flex items-center">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-pink-50 -z-10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="reveal-left">
-                    <div class="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 border border-brand-pink/20 mb-6">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-pink font-bold">
-                            <i class="fas fa-sparkles mr-2 text-brand-pink"></i> Discover the Extraordinary
-                        </span>
-                    </div>
-                    <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
-                        Explore <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan via-brand-purple to-brand-pink">Ideas, News & Stories</span> 
-                        That Inspire.
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl font-light">
-   Dive into a colorful universe of knowledge. From global headlines and cutting-edge tech to enchanting stories for all ages, we bring the world directly to your fingertips in vivid detail.
-</p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#news" class="px-8 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-brand-purple to-brand-pink hover:from-brand-pink hover:to-brand-purple shadow-xl hover:shadow-brand-pink/50 transition-all transform hover:-translate-y-1">
-                            Read Latest News
-                        </a>
-                        <a href="#stories" class="px-8 py-4 rounded-full text-gray-800 font-bold text-lg bg-white border-2 border-brand-purple hover:bg-brand-purple/5 shadow-lg transition-all transform hover:-translate-y-1 flex items-center gap-2">
-                            <i class="fas fa-book-open text-brand-purple"></i> Explore Stories
-                        </a>
-                    </div>
-                </div>
-                <div class="relative hidden lg:block reveal">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-pink to-brand-orange rounded-[3rem] transform rotate-6 opacity-30 animate-pulse"></div>
-                    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop" alt="News and Ideas" class="relative z-10 rounded-[3rem] shadow-2xl animate-float border-4 border-white">
-                    
-                    <!-- Floating badges -->
-                    <div class="absolute -left-10 top-1/4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 4s;">
-                        <i class="fas fa-globe-americas text-3xl text-brand-cyan"></i>
-                    </div>
-                    <div class="absolute -right-5 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 5s;">
-                        <i class="fas fa-rocket text-3xl text-brand-orange"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="home" class="gi-hero relative overflow-hidden">
+<div class="gi-hero-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="gi-hero-copy reveal-left">
+<div class="gi-eyebrow"><span class="gi-eyebrow-dot"></span> Independent perspectives. Global stories.</div>
+<p class="gi-kicker">THE WORLD, IN CONTEXT</p>
+<h1>Understand what’s happening. <span class="text-gradient">Discover what matters.</span></h1>
+<p class="gi-hero-description">Global Insight brings together important developments in technology, business, markets and culture — with clear reporting and stories that help you see the bigger picture.</p>
+<div class="gi-hero-actions">
+<a href="#news" class="gi-primary-action">Explore the latest <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a href="#stories" class="gi-secondary-action"><i class="fas fa-book-open" aria-hidden="true"></i> Read our stories</a>
+</div>
+<div class="gi-hero-note"><span class="gi-note-line"></span><span>News, ideas and perspectives worth your time.</span></div>
+</div>
+<div class="gi-hero-visual reveal">
+<div class="gi-image-frame"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1400&auto=format&fit=crop" alt="Newspapers and global news coverage" loading="eager">
+<div class="gi-image-caption"><span class="gi-caption-mark"></span><span>GLOBAL DESK</span><span class="gi-caption-divider"></span><span>NEWS &amp; IDEAS</span></div></div>
+<div class="gi-visual-index">01 <span>/</span> 04</div>
+<div class="gi-floating-note"><i class="fas fa-globe" aria-hidden="true"></i><span><strong>A wider view</strong><small>Connect the headlines</small></span></div>
+</div></div>
+<div class="gi-hero-bottom max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><span>YOUR DAILY WINDOW ON THE WORLD</span><span class="gi-bottom-rule"></span><a href="#news">Start exploring <i class="fas fa-arrow-down" aria-hidden="true"></i></a></div>
+</section>
 
-    <section id="news" class="py-24 relative bg-white">
+<section id="news" class="py-24 relative bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-4xl font-extrabold mb-4">Trending <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-cyan">News & Articles</span></h2>

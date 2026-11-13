@@ -655,29 +655,6 @@ a:focus-visible {
     outline-offset: 3px;
 }
 
-/* ---------- 13. Article Modal ---------- */
-#articleModal {
-    z-index: 1000;
-}
-
-#articleModal > div {
-    max-width: calc(100% - 32px);
-    max-height: 90dvh;
-    overflow-y: auto;
-    background: #ffffff;
-    color: var(--gi-text);
-    border: 1px solid var(--gi-border);
-    border-radius: 24px;
-    box-shadow: 0 25px 80px rgba(15, 23, 42, 0.22);
-}
-
-#articleModal h1,
-#articleModal h2,
-#articleModal h3,
-#articleModal p {
-    overflow-wrap: anywhere;
-}
-
 /* ---------- 14. Footer ---------- */
 footer {
     background: #ffffff !important;
@@ -2193,44 +2170,7 @@ footer .bg-gray-800 { background: #19365e !important; color: #eaf2ff !important;
             });
         });
     </script>
-    <!-- Article Modal Popup -->
-<div id="articleModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden">
-    <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative shadow-2xl m-4 max-h-[90vh] overflow-y-auto">
-        <!-- Close Button -->
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold">&times;</button>
-        
-        <!-- Modal Content -->
-        <div id="modalContent">
-            <!-- Yahan dynamic content load hoga -->
-        </div>
-    </div>
-</div>
-    <script>
-function openModal(title, date, description) {
-    const modal = document.getElementById('articleModal');
-    const content = document.getElementById('modalContent');
 
-    content.innerHTML = `
-        <div class="text-sm text-gray-400 mb-2 flex items-center gap-2"><i class="far fa-clock"></i> ${date}</div>
-        <h2 class="text-2xl lg:text-3xl font-bold mb-4 text-gray-900">${title}</h2>
-        <div class="text-gray-600 text-base leading-relaxed space-y-4">${description}</div>
-    `;
-
-    modal.classList.remove('hidden');
-}
-
-function closeModal() {
-    const modal = document.getElementById('articleModal');
-    modal.classList.add('hidden');
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById('articleModal');
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-</script>
     </section> <!-- Stories section ka closing tag -->
             
            
